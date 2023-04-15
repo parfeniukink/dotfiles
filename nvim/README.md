@@ -1,6 +1,15 @@
 # NVIM parfeniukink configuration
 
-✅ This folder represent the NVIM configuration setup for working with:
+References (_VIM as IDE_):
+
+- 🔗 [LunarVIM](https://www.lunarvim.org)
+- 🔗 [LazyVIM](https://www.lazyvim.org)
+
+<br>
+
+_This configuration is clean and simple in order to keep the transparency of all the processes in your editor_
+
+This folder represent the NVIM configuration setup for working with:
 
 - Python
 - Rust
@@ -81,3 +90,14 @@ brew install glow
 <br>
 
 🔗 For proper icons preview download [NERD fonts](https://www.nerdfonts.com)
+
+## Installation
+
+1. Download this fodler to your Desktop
+2. Copy it to the nvim configuration folder
+
+⚠️ Since this folder is used for the lazy.nvim setup it is mandatory to use this folder as a primary place for your configuration
+
+```bash
+cp ~/Desktop/nvim ~/.config/
+```
