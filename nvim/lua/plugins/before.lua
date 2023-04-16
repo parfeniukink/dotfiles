@@ -59,6 +59,9 @@ lazy.setup({
 	"saadparwaiz1/cmp_luasnip",
 	"L3MON4D3/LuaSnip",
 
+	-- github copilot
+	"github/copilot.vim",
+
 	-- formatting
 	"jose-elias-alvarez/null-ls.nvim"
 })
