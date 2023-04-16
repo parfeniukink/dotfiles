@@ -39,6 +39,7 @@ This folder represent the NVIM configuration setup for working with:
   - [cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)
   - [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
 - [null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim) tool to extend formatting especially
+- [GitHub Copilot](https://github.com/github/copilot.vim) autocomplete tool
 
 <br>
 
@@ -101,3 +102,12 @@ brew install glow
 ```bash
 cp ~/Desktop/nvim ~/.config/
 ```
+
+
+## GitHub Copilot setup
+⚠️ Once you enter this command in NVIM editor you will receive the code you have to enter in the browser after pressing Enter
+
+```
+:Copilot auth
+```
+
