@@ -33,15 +33,6 @@ map("n", "<C-I>", ":NeoTreeFloatToggle<CR>", {})
 
 
 
--- glow setup
-nmap("<Leader>m", ":Glow<CR>")
-require('glow').setup({
-	style = "dark",
-	width = 220,
-})
-
-
-
 -- lsp setup
 local lspconfig = require("lspconfig")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()

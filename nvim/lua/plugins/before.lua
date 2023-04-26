@@ -30,13 +30,13 @@ lazy.setup({
 		"nvim-neo-tree/neo-tree.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons", "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" }
 	},
-	{ "nvim-telescope/telescope.nvim", tag = "0.1.1", dependencies = { "nvim-lua/plenary.nvim" } },
+	{ "nvim-telescope/telescope.nvim", tag = "0.1.1",                   dependencies = { "nvim-lua/plenary.nvim" } },
 
 	-- colorscheme
 	"rebelot/kanagawa.nvim",
 
 	-- previews
-	{ "ellisonleao/glow.nvim",         config = true, cmd = "Glow" },
+	{ 'iamcco/markdown-preview.nvim',  build = 'cd app && yarn install' },
 	"chrisbra/csv.vim",
 
 
