@@ -63,12 +63,25 @@ Rust
 rustup component add rust-analyzer
 ```
 
+Typescript
+
+```bash
+npm install -g typescript-language-server typescript
+```
+
+Tailwindcss
+
+```bash
+npm install -g @tailwindcss/language-server
+```
+
 Lua
 
 ```bash
 brew install lua-language-server
 ```
 
+<br>
 <br>
 
 <b><u>Formatters</b></u>
@@ -103,11 +116,10 @@ brew install glow
 cp ~/Desktop/nvim ~/.config/
 ```
 
-
 ## GitHub Copilot setup
+
 ⚠️ Once you enter this command in NVIM editor you will receive the code you have to enter in the browser after pressing Enter
 
 ```
 :Copilot auth
 ```
-
