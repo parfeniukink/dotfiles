@@ -14,6 +14,7 @@ vmap("<Space>", ":Commentary<CR>")
 
 -- fugitive setup
 nmap("<Leader>g", ":Git<CR>")
+nmap("<Leader>c", ":Git commit -v<CR>")
 nmap("gdh", ":diffget //2<CR>")
 nmap("gdl", ":diffget //3<CR>")
 
@@ -33,11 +34,27 @@ map("n", "<C-I>", ":NeoTreeFloatToggle<CR>", {})
 
 
 
+-- telescope setup
+require('telescope').setup {
+	defaults = {
+		file_ignore_patterns = { "node_modules", "venv" }
+	}
+}
+
+
+
+-- auto-pairs setup
+require("nvim-autopairs").setup {
+	disable_filetype = { "TelescopePrompt", "vim" },
+}
+
+
+
 -- lsp setup
 local lspconfig = require("lspconfig")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-local servers = { "pyright", "rust_analyzer", "lua_ls" }
+local servers = { "pyright", "rust_analyzer", "tsserver", "tailwindcss", "lua_ls" }
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup {
 		-- on_attach = my_custom_on_attach,
@@ -64,11 +81,14 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set("n", "<Leader>rn", vim.lsp.buf.rename, opts)
 		vim.keymap.set("n", "<C-L>", function()
 			vim.lsp.buf.format { async = true }
+			print("🧹 Formatting finished")
 		end, opts)
 	end,
 })
 
 
+-- Restart the lsp key binding
+nmap("<S-E>", ":LspRestart<CR>")
 
 -- lsp cmp setup
 local luasnip = require("luasnip")
@@ -116,13 +136,30 @@ cmp.setup {
 -- null_ls setup
 local null_ls = require("null-ls")
 null_ls.setup({
+	debug = false,
 	sources = {
 		-- Python
-		null_ls.builtins.formatting.black.with({ filetypes = { "python" } }),
+		null_ls.builtins.formatting.black.with(
+			{
+				filetypes = { "python" },
+				extra_args = { "--fast" }
+			}
+		),
 		null_ls.builtins.formatting.isort.with({ filetypes = { "python" } }),
 		-- frontend
 		null_ls.builtins.formatting.prettier.with({
-			filetypes = { "html", "css", "javascript", "typescript", "json", "yaml", "markdown" },
+			filetypes = {
+				"html",
+				"css",
+				"javascript",
+				"javascriptreact",
+				"typescript",
+				"typescriptreact",
+				"json",
+				"yaml",
+				"markdown",
+			},
+			extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" }
 		}),
 	},
 })
