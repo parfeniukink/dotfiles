@@ -39,5 +39,10 @@ vim.opt.swapfile = false
 vim.opt.undofile = false
 
 
+-- tabs configuration
+vim.cmd("set tabstop=4")
+vim.cmd("set shiftwidth=4")
+vim.cmd("set expandtab")
+
 -- remove background color
 -- vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
