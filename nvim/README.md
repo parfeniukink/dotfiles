@@ -39,7 +39,7 @@ This folder represent the NVIM configuration setup for working with:
   - [cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)
   - [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
 - [null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim) tool to extend formatting especially
-- [GitHub Copilot](https://github.com/github/copilot.vim) autocomplete tool
+- [ChatCPT](https://github.com/jackmort/chatgpt.nvim)
 
 <br>
 
@@ -99,6 +99,17 @@ brew install prettier
 brew install node
 brew install yarn
 brew install glow
+```
+
+<br>
+<br>
+
+<b><u>OpenAI API Key</b></u>
+
+🔗 [OpenAI API Keys](https://platform.openai.com/account/api-keys)
+
+```bash
+export OPENAI_API_KEY="change me"
 ```
 
 <br>
