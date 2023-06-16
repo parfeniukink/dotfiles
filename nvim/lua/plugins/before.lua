@@ -43,14 +43,14 @@ lazy.setup({
     -- colorscheme
     "rebelot/kanagawa.nvim",
     {
-        'nvim-treesitter/nvim-treesitter',
-        build = ':TSUpdate'
+        "nvim-treesitter/nvim-treesitter",
+        build = ":TSUpdate"
     },
 
     -- previews
     {
-        'iamcco/markdown-preview.nvim',
-        build = 'cd app && yarn install'
+        "iamcco/markdown-preview.nvim",
+        build = "cd app && yarn install"
     },
     "chrisbra/csv.vim",
 
@@ -59,8 +59,8 @@ lazy.setup({
     "tpope/vim-commentary",
 
     -- git stuff
-    "airblade/vim-gitgutter",
     "tpope/vim-fugitive",
+    "lewis6991/gitsigns.nvim",
 
     -- tag bar
     "majutsushi/tagbar",
@@ -68,31 +68,24 @@ lazy.setup({
     -- lsp
     "neovim/nvim-lspconfig",
 
+    {
+        "glepnir/lspsaga.nvim",
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+            "nvim-treesitter/nvim-treesitter"
+        }
+    },
+
     -- autocomplete
     "hrsh7th/nvim-cmp",
+    "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-nvim-lsp",
     "saadparwaiz1/cmp_luasnip",
     "L3MON4D3/LuaSnip",
 
     -- autopairs
     "windwp/nvim-autopairs",
-    "windwp/nvim-ts-autotag",
 
     -- formatting
-    "jose-elias-alvarez/null-ls.nvim",
-
-    -- ChatGPT
-    {
-        "jackMort/ChatGPT.nvim",
-        event = "VeryLazy",
-        config = function()
-            require("chatgpt").setup()
-        end,
-        dependencies = {
-            "MunifTanjim/nui.nvim",
-            "nvim-lua/plenary.nvim",
-            "nvim-telescope/telescope.nvim"
-        }
-    }
-
+    "jose-elias-alvarez/null-ls.nvim"
 })

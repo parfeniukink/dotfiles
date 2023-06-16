@@ -31,21 +31,27 @@ This folder represent the NVIM configuration setup for working with:
 - [vim-commentary](https://github.com/tpope/vim-commentary)
 - [telescope](https://github.com/nvim-telescope/telescope.nvim) searching tool
 - Git tools
-  - [gitgutter](https://github.com/airblade/vim-gitgutter)
   - [fugitive](https://github.com/tpope/vim-fugitive)
+  - [gitsigns](https://github.com/lewis6991/gitsigns.nvim)
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) with all following adds for autocomplete:
   - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
   - [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
   - [cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)
   - [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
+  - [lsp_saga](https://github.com/nvimdev/lspsaga.nvim) enchancement plugin
 - [null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim) tool to extend formatting especially
-- [ChatCPT](https://github.com/jackmort/chatgpt.nvim)
 
 <br>
 
 ## ⬇️ Requirements
 
-<br>
+
+<b><u>Treesitter parsers</b></u>
+
+# Mandatory for lspsaga
+```
+:TSInstall markdown markdown_inline
+```
 
 <b><u>Language servers</b></u>
 
@@ -87,8 +93,11 @@ brew install lua-language-server
 <b><u>Formatters</b></u>
 
 ```bash
+# Python
 pip install black isort
-brew install prettier
+
+# Frontend
+brew install prettierd
 ```
 
 <br>
@@ -127,7 +136,7 @@ export OPENAI_API_KEY="change me"
 cp ~/Desktop/nvim ~/.config/
 ```
 
-## GitHub Copilot setup
+## GitHub Copilot setup [optional]
 
 ⚠️ Once you enter this command in NVIM editor you will receive the code you have to enter in the browser after pressing Enter
 
