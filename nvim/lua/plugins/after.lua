@@ -144,7 +144,15 @@ lspconfig.lua_ls.setup({
 -- python configuration
 -- -------------------------------------------------------------------
 lspconfig.pyright.setup({
-    capabilities = capabilities
+    capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        print("Attached to the LUA")
+        vim.keymap.set("n", "<C-L>", function()
+            vim.lsp.buf.format { async = true }
+            print("🧹 Formatting finished")
+        end, opts)
+    end,
+    filetypes = { "python" },
 })
 
 
@@ -164,28 +172,7 @@ lspconfig.tsserver.setup({
     cmd = { "typescript-language-server", "--stdio" }
 })
 
-
--- vim.api.nvim_create_autocmd("LspAttach", {
--- 	group = vim.api.nvim_create_augroup("UserLspConfig", {}),
--- 	callback = function(ev)
--- 		-- Buffer local mappings.
--- 		-- See `:help vim.lsp.*` for documentation on any of the below functions
--- 		local opts = { buffer = ev.buf }
--- 		vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
--- 		vim.keymap.set("n", "gs", function()
--- 			vim.cmd("vsplit")
--- 			vim.lsp.buf.definition()
--- 		end, opts)
--- 		vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
--- 		vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
--- 		vim.keymap.set("n", "<Leader>rn", vim.lsp.buf.rename, opts)
--- 		vim.keymap.set("n", "<C-L>", function()
--- 			vim.lsp.buf.format { async = true }
--- 			print("🧹 Formatting finished")
--- 		end, opts)
--- 	end,
--- })
-
+lspconfig.tailwindcss.setup {}
 
 -- Restart the lsp key binding
 nmap("<S-E>", ":LspRestart<CR>")
