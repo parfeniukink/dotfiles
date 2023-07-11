@@ -1,6 +1,13 @@
 # The minimal TMUX configuration file
 
+
+Copy the file into this folder
 ```bash
-~/.tmux.conf.local
+~/.tmux.conl
 ```
 
+To setup plugins
+```bash
+tmux
+<prefix> Shift + i
+```
