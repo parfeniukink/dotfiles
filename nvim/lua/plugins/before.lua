@@ -54,6 +54,8 @@ lazy.setup({
     },
     "chrisbra/csv.vim",
 
+    -- http client
+    { "rest-nvim/rest.nvim" },
 
     -- smart comments
     "tpope/vim-commentary",

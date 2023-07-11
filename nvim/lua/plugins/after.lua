@@ -111,7 +111,6 @@ map("n", "<C-I>", ":NeoTreeFloatToggle<CR>", {})
 
 
 
-
 -- auto-pairs setup
 -- require("nvim-autopairs").setup {
 --     disable_filetype = { "TelescopePrompt", "vim" },

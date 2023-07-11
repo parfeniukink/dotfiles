@@ -48,10 +48,16 @@ This folder represent the NVIM configuration setup for working with:
 
 <b><u>Treesitter parsers</b></u>
 
-# Mandatory for lspsaga
+for lspsaga
 ```
 :TSInstall markdown markdown_inline
 ```
+
+for http client
+```
+:TSInstall json http
+```
+
 
 <b><u>Language servers</b></u>
 
