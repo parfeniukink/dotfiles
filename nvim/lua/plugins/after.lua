@@ -33,8 +33,8 @@ vim.diagnostic.config({
 
 
 -- Treesitter configuration
-local status, ts = pcall(require, "nvim-treesitter.configs")
-if (not status) then return end
+local tssitter_status, ts = pcall(require, "nvim-treesitter.configs")
+if (not tssitter_status) then return end
 
 ts.setup {
     highlight = {
@@ -127,22 +127,22 @@ map("n", "<C-I>", ":NeoTreeFloatToggle<CR>", {})
 local harpoon_mark = require('harpoon.mark')
 local harpoon_ui = require('harpoon.ui')
 
-bind_lua_callback(
+vim.keymap.set(
     "n", "<Leader>a", function() harpoon_mark.add_file() end, {}
 )
-bind_lua_callback(
+vim.keymap.set(
     "n", "<Leader>r", function() harpoon_mark.rm_file() end, {}
 )
-bind_lua_callback(
+vim.keymap.set(
     "n", "<Leader>z", function() harpoon_mark.clear_all() end, {}
 )
-bind_lua_callback(
+vim.keymap.set(
     "n", "<Leader>w", function() harpoon_ui.toggle_quick_menu() end, {}
 )
-bind_lua_callback(
+vim.keymap.set(
     "n", "<Leader>q", function() harpoon_ui.nav_prev() end, {}
 )
-bind_lua_callback(
+vim.keymap.set(
     "n", "<Leader>e", function() harpoon_ui.nav_next() end, {}
 )
 
@@ -154,19 +154,16 @@ bind_lua_callback(
 local lspconfig = require("lspconfig")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-local function lsp_format()
-    vim.lsp.buf.format { async = true }
-    print("🧹 Formatting finished")
-end
-
 
 -- lua configuration
 -- -------------------------------------------------------------------
 lspconfig.lua_ls.setup({
     capabilities = capabilities,
     on_attach = function(client, bufnr)
-        print("✅ Lua is attached")
-        bind_lua_callback("n", "<C-L>", lsp_format)
+        vim.keymap.set("n", "<C-L>", function()
+            vim.lsp.buf.format { async = true }
+            print("🧹 Formatting finished")
+        end, opts)
     end,
     filetypes = { "lua" },
 })
@@ -177,8 +174,10 @@ lspconfig.lua_ls.setup({
 lspconfig.pyright.setup({
     capabilities = capabilities,
     on_attach = function(client, bufnr)
-        print("✅ Pyright is attached")
-        bind_lua_callback("n", "<C-L>", lsp_format)
+        vim.keymap.set("n", "<C-L>", function()
+            vim.lsp.buf.format { async = true }
+            print("🧹 Formatting finished")
+        end, opts)
     end,
     filetypes = { "python" },
 })
@@ -190,8 +189,10 @@ lspconfig.pyright.setup({
 lspconfig.tsserver.setup({
     capabilities = capabilities,
     on_attach = function(client, bufnr)
-        print("✅ TSserver is attached")
-        bind_lua_callback("n", "<C-L>", lsp_format)
+        vim.keymap.set("n", "<C-L>", function()
+            vim.lsp.buf.format { async = true }
+            print("🧹 Formatting finished")
+        end, opts)
     end,
     filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
     cmd = { "typescript-language-server", "--stdio" }
@@ -200,7 +201,8 @@ lspconfig.tsserver.setup({
 lspconfig.tailwindcss.setup {}
 
 -- Restart the lsp key binding
-nmap("<S-E>", ":LspRestart<CR>:LspStart<CR>")
+nmap("<S-E>", ":LspRestart<CR>")
+
 
 
 -- ===================================================================
@@ -209,8 +211,7 @@ nmap("<S-E>", ":LspRestart<CR>:LspStart<CR>")
 
 -- lsp saga
 -- -------------------------------------------------------------------
-local status, saga = pcall(require, "lspsaga")
-if (not status) then return end
+local saga = require("lspsaga")
 
 saga.setup({
     ui = {
@@ -227,14 +228,16 @@ saga.setup({
 
 
 local opts = { noremap = true, silent = true }
-map('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<CR>', opts)
-map('n', 'gl', '<Cmd>Lspsaga show_line_diagnostics<CR>', opts)
-map('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', opts)
-map('n', 'gd', '<Cmd>Lspsaga lsp_finder<CR>', opts)
-map('i', '<C-k>', '<Cmd>Lspsaga signature_help<CR>', opts)
-map('i', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-map('n', 'gp', '<Cmd>Lspsaga peek_definition<CR>', opts)
-map('n', 'gr', '<Cmd>Lspsaga rename<CR>', opts)
+vim.keymap.set('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<CR>', opts)
+vim.keymap.set('n', 'gl', '<Cmd>Lspsaga show_line_diagnostics<CR>', opts)
+vim.keymap.set('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', opts)
+vim.keymap.set('n', 'gd', '<Cmd>Lspsaga finder<CR>', opts)
+vim.keymap.set('n', '<leader>de', '<Cmd>Lspsaga goto_definition<CR>', opts)
+vim.keymap.set('n', '<leader>pe', '<Cmd>Lspsaga peek_definition<CR>', opts)
+vim.keymap.set('i', '<C-k>', '<Cmd>Lspsaga signature_help<CR>', opts)
+vim.keymap.set('i', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+vim.keymap.set('n', 'gp', '<Cmd>Lspsaga peek_definition<CR>', opts)
+vim.keymap.set('n', 'gr', '<Cmd>Lspsaga rename<CR>', opts)
 
 -- code action
 vim.keymap.set({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>")
