@@ -39,12 +39,24 @@ lazy.setup({
         tag = "0.1.1",
         dependencies = { "nvim-lua/plenary.nvim" }
     },
+    "ThePrimeagen/harpoon",
 
-    -- colorscheme
-    "rebelot/kanagawa.nvim",
+    -- colorschemes
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate"
+    },
+    "EdenEast/nightfox.nvim",
+
+    -- colorize:
+    -- TODO:
+    -- FIX:
+    -- HACK:
+    -- NOTE:
+    {
+        "folke/todo-comments.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
+
     },
 
     -- previews

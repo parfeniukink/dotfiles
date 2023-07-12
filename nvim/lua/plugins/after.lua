@@ -2,9 +2,9 @@
 -- colorscheme setup
 -- ===================================================================
 vim.cmd([[
-	colorscheme kanagawa-wave
+	colorscheme nightfox
 
-    hi DiagnosticError guifg=#DB4A6A
+    hi DiagnosticError guifg=#E47D75
     hi DiagnosticWarn  guifg=#DB794A
     hi DiagnosticInfo  guifg=#4AA7DB
     hi DiagnosticHint  guifg=#4ADBA0
@@ -67,6 +67,14 @@ local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
 parser_config.tsx.filetype_to_parsername = { "javascript", "typescript.tsx" }
 
 
+
+-- ===================================================================
+-- todo-comments setup
+-- ===================================================================
+require("todo-comments").setup()
+
+
+
 -- ===================================================================
 -- commentary setup
 -- ===================================================================
@@ -89,10 +97,12 @@ nmap("gdl", ":diffget //3<CR>")
 require('gitsigns').setup {}
 
 
+
 -- ===================================================================
 -- tagbar setup
 -- ===================================================================
 nmap("t", ":TagbarToggle<CR>")
+
 
 
 -- ===================================================================
@@ -111,10 +121,30 @@ map("n", "<C-I>", ":NeoTreeFloatToggle<CR>", {})
 
 
 
--- auto-pairs setup
--- require("nvim-autopairs").setup {
---     disable_filetype = { "TelescopePrompt", "vim" },
--- }
+-- ===================================================================
+-- harpoon setup
+-- ===================================================================
+local harpoon_mark = require('harpoon.mark')
+local harpoon_ui = require('harpoon.ui')
+
+bind_lua_callback(
+    "n", "<Leader>a", function() harpoon_mark.add_file() end, {}
+)
+bind_lua_callback(
+    "n", "<Leader>r", function() harpoon_mark.rm_file() end, {}
+)
+bind_lua_callback(
+    "n", "<Leader>z", function() harpoon_mark.clear_all() end, {}
+)
+bind_lua_callback(
+    "n", "<Leader>w", function() harpoon_ui.toggle_quick_menu() end, {}
+)
+bind_lua_callback(
+    "n", "<Leader>q", function() harpoon_ui.nav_prev() end, {}
+)
+bind_lua_callback(
+    "n", "<Leader>e", function() harpoon_ui.nav_next() end, {}
+)
 
 
 
@@ -124,17 +154,19 @@ map("n", "<C-I>", ":NeoTreeFloatToggle<CR>", {})
 local lspconfig = require("lspconfig")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+local function lsp_format()
+    vim.lsp.buf.format { async = true }
+    print("🧹 Formatting finished")
+end
+
 
 -- lua configuration
 -- -------------------------------------------------------------------
 lspconfig.lua_ls.setup({
     capabilities = capabilities,
     on_attach = function(client, bufnr)
-        print("Attached to the LUA")
-        vim.keymap.set("n", "<C-L>", function()
-            vim.lsp.buf.format { async = true }
-            print("🧹 Formatting finished")
-        end, opts)
+        print("✅ Lua is attached")
+        bind_lua_callback("n", "<C-L>", lsp_format)
     end,
     filetypes = { "lua" },
 })
@@ -145,11 +177,8 @@ lspconfig.lua_ls.setup({
 lspconfig.pyright.setup({
     capabilities = capabilities,
     on_attach = function(client, bufnr)
-        print("Attached to the LUA")
-        vim.keymap.set("n", "<C-L>", function()
-            vim.lsp.buf.format { async = true }
-            print("🧹 Formatting finished")
-        end, opts)
+        print("✅ Pyright is attached")
+        bind_lua_callback("n", "<C-L>", lsp_format)
     end,
     filetypes = { "python" },
 })
@@ -161,11 +190,8 @@ lspconfig.pyright.setup({
 lspconfig.tsserver.setup({
     capabilities = capabilities,
     on_attach = function(client, bufnr)
-        print("Attached to the LUA")
-        vim.keymap.set("n", "<C-L>", function()
-            vim.lsp.buf.format { async = true }
-            print("🧹 Formatting finished")
-        end, opts)
+        print("✅ TSserver is attached")
+        bind_lua_callback("n", "<C-L>", lsp_format)
     end,
     filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
     cmd = { "typescript-language-server", "--stdio" }
@@ -174,7 +200,7 @@ lspconfig.tsserver.setup({
 lspconfig.tailwindcss.setup {}
 
 -- Restart the lsp key binding
-nmap("<S-E>", ":LspRestart<CR>")
+nmap("<S-E>", ":LspRestart<CR>:LspStart<CR>")
 
 
 -- ===================================================================
@@ -201,14 +227,14 @@ saga.setup({
 
 
 local opts = { noremap = true, silent = true }
-vim.keymap.set('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<CR>', opts)
-vim.keymap.set('n', 'gl', '<Cmd>Lspsaga show_line_diagnostics<CR>', opts)
-vim.keymap.set('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', opts)
-vim.keymap.set('n', 'gd', '<Cmd>Lspsaga lsp_finder<CR>', opts)
-vim.keymap.set('i', '<C-k>', '<Cmd>Lspsaga signature_help<CR>', opts)
-vim.keymap.set('i', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-vim.keymap.set('n', 'gp', '<Cmd>Lspsaga peek_definition<CR>', opts)
-vim.keymap.set('n', 'gr', '<Cmd>Lspsaga rename<CR>', opts)
+map('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<CR>', opts)
+map('n', 'gl', '<Cmd>Lspsaga show_line_diagnostics<CR>', opts)
+map('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', opts)
+map('n', 'gd', '<Cmd>Lspsaga lsp_finder<CR>', opts)
+map('i', '<C-k>', '<Cmd>Lspsaga signature_help<CR>', opts)
+map('i', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+map('n', 'gp', '<Cmd>Lspsaga peek_definition<CR>', opts)
+map('n', 'gr', '<Cmd>Lspsaga rename<CR>', opts)
 
 -- code action
 vim.keymap.set({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>")
@@ -290,3 +316,9 @@ null_ls.setup({
         }),
     },
 })
+
+
+
+-- rest.nvim
+-- -------------------------------------------------------------------
+map("n", "<leader>re", "<cmd>lua require('rest-nvim').run()<CR>", {})
