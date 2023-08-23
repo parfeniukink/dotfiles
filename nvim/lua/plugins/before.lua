@@ -48,6 +48,9 @@ lazy.setup({
     },
     "EdenEast/nightfox.nvim",
 
+    -- better tabs
+    "nanozuki/tabby.nvim",
+
     -- colorize:
     -- TODO:
     -- FIX:

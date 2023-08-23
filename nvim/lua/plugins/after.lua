@@ -12,6 +12,8 @@ vim.cmd([[
     hi DiagnosticWarnSign  guifg=#DB794A
     hi DiagnosticInfoSign  guifg=#4AA7DB
     hi DiagnosticHintSign  guifg=#4ADBA0
+
+    autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
 ]])
 
 local signs = { Error = "🚨", Warn = "⚠️", Hint = "💡", Info = "ℹ️" }
@@ -31,6 +33,13 @@ vim.diagnostic.config({
     },
 })
 
+vim.cmd([[
+    if exists('+termguicolors')
+      let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+      let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+      set termguicolors
+    endif
+]])
 
 -- Treesitter configuration
 local tssitter_status, ts = pcall(require, "nvim-treesitter.configs")
@@ -65,6 +74,40 @@ ts.setup {
 
 local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
 parser_config.tsx.filetype_to_parsername = { "javascript", "typescript.tsx" }
+
+
+
+-- ===================================================================
+-- Tabby setup
+-- ===================================================================
+local theme = {
+    fill = 'TabLineFill',
+    -- Also you can do this: fill = { fg='#f2e9de', bg='#907aa9', style='italic' }
+    head = 'TabLine',
+    current_tab = 'TabLineSel',
+    tab = 'TabLine',
+    win = 'TabLine',
+    tail = 'TabLine',
+}
+require('tabby.tabline').set(function(line)
+    return {
+        line.tabs().foreach(function(tab)
+            local hl = tab.is_current() and theme.current_tab or theme.tab
+            return {
+                line.sep('', hl, theme.fill),
+                tab.is_current() and '' or '󰆣',
+                tab.number(),
+                tab.name(),
+                tab.close_btn(''),
+                line.sep('', hl, theme.fill),
+                hl = hl,
+                margin = ' ',
+            }
+        end),
+        line.spacer(),
+        hl = theme.fill,
+    }
+end)
 
 
 
@@ -231,13 +274,12 @@ local opts = { noremap = true, silent = true }
 vim.keymap.set('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<CR>', opts)
 vim.keymap.set('n', 'gl', '<Cmd>Lspsaga show_line_diagnostics<CR>', opts)
 vim.keymap.set('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', opts)
-vim.keymap.set('n', 'gd', '<Cmd>Lspsaga finder<CR>', opts)
-vim.keymap.set('n', '<leader>de', '<Cmd>Lspsaga goto_definition<CR>', opts)
+vim.keymap.set('n', 'de', '<Cmd>Lspsaga goto_definition<CR>', opts)
+vim.keymap.set('n', '<leader>de', '<Cmd>Lspsaga finder<CR>', opts)
 vim.keymap.set('n', '<leader>pe', '<Cmd>Lspsaga peek_definition<CR>', opts)
+vim.keymap.set('n', 'dr', '<Cmd>Lspsaga rename<CR>', opts)
 vim.keymap.set('i', '<C-k>', '<Cmd>Lspsaga signature_help<CR>', opts)
 vim.keymap.set('i', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-vim.keymap.set('n', 'gp', '<Cmd>Lspsaga peek_definition<CR>', opts)
-vim.keymap.set('n', 'gr', '<Cmd>Lspsaga rename<CR>', opts)
 
 -- code action
 vim.keymap.set({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>")
