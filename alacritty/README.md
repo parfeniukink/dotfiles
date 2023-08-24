@@ -5,6 +5,6 @@
 3. Copy the configuration folder to the `~/.config/`
 
 ```bash
-cp -r ~/Desktop/alacritty ~/.config/
+cp -r ./alacritty ~/.config/
 ```
 
