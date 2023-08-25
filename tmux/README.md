@@ -3,7 +3,7 @@
 
 Copy the file into this folder
 ```bash
-~/.tmux.conl
+~/.tmux.conf
 ```
 
 To setup plugins
