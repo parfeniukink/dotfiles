@@ -4,6 +4,7 @@
 vim.opt.rnu = true
 -- numbers width
 vim.opt.nuw = 2
+vim.cmd("set signcolumn=yes")
 
 
 -- when included, Vim will use the clipboard register "*"
