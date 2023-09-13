@@ -160,7 +160,7 @@ map("n", "<C-P>", ":Telescope find_files<CR>", {})
 map("n", "<C-F>", ":Telescope live_grep<CR>", {})
 map("n", "<Leader>tb", ":Telescope buffers<CR>", {})
 
-map("n", "<C-I>", ":NeoTreeFloatToggle<CR>", {})
+map("n", "<C-I>", ":Neotree position=float toggle<CR>", {})
 
 
 
