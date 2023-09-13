@@ -64,7 +64,7 @@ for http client
 Python
 
 ```bash
-brew instal pyright
+pip instal pyright
 ```
 
 Rust
@@ -90,6 +90,17 @@ npm install -g @tailwindcss/language-server
 Lua
 
 ```bash
+# Ubuntu
+sudo apt install lua5.3 ninja-build
+
+git clone https://github.com/LuaLS/lua-language-server
+cd lua-language-server
+./make.sh
+
+echo "export '/usr/local/bin/lua-language-server/bin:$PATH' >> ~/.zshrc"
+
+
+# MacOS
 brew install lua-language-server
 ```
 
@@ -99,11 +110,13 @@ brew install lua-language-server
 <b><u>Formatters</b></u>
 
 ```bash
-# Python
 pip install black isort
 
-# Frontend
+# MacOS
 brew install prettierd
+
+## Ubuntu
+npm install --save-dev --save-exact prettier
 ```
 
 <br>
@@ -111,7 +124,6 @@ brew install prettierd
 <b><u>Other tools</b></u>
 
 ```bash
-brew install node
 brew install yarn
 brew install glow
 ```
