@@ -100,8 +100,9 @@ lazy.setup({
     "saadparwaiz1/cmp_luasnip",
     "L3MON4D3/LuaSnip",
 
-    -- autopairs
-    "windwp/nvim-autopairs",
+    -- GitHub Copilot
+    -- "zbirenbaum/copilot.lua",
+    "github/copilot.vim",
 
     -- formatting
     "jose-elias-alvarez/null-ls.nvim"

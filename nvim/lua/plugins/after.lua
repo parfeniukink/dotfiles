@@ -364,6 +364,26 @@ null_ls.setup({
 
 
 
+-- GitHub Copilot
+-- -------------------------------------------------------------------
+vim.g.copilot_no_tab_map = true
+-- this line is mandatory
+vim.api.nvim_set_keymap("i", "<C-H>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+
+vim.g.copilot_filetypes = {
+    ["*"] = false,
+    ["javascript"] = true,
+    ["typescript"] = true,
+    ["typescriptreact"] = true,
+    ["c"] = true,
+    ["c++"] = true,
+    ["go"] = true,
+    ["rust"] = true,
+    ["python"] = true,
+}
+
+
+
 -- rest.nvim
 -- -------------------------------------------------------------------
 map("n", "<leader>re", "<cmd>lua require('rest-nvim').run()<CR>", {})
