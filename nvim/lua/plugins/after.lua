@@ -226,7 +226,30 @@ lspconfig.pyright.setup({
 })
 
 
--- javascript / typescript configuration
+-- golang configuration
+-- -------------------------------------------------------------------
+lspconfig.gopls.setup({
+    capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        vim.keymap.set("n", "<C-L>", function()
+            vim.lsp.buf.format { async = true }
+            print("🧹 Formatting finished")
+        end, opts)
+    end,
+    filetypes = { "go" },
+    settings = {
+        gopls = {
+            analyses = {
+                unusedparams = true,
+            },
+            staticcheck = true,
+            gofumpt = true,
+        },
+    },
+})
+
+
+-- frontend configuration
 -- -------------------------------------------------------------------
 
 lspconfig.tsserver.setup({
@@ -245,6 +268,7 @@ lspconfig.tailwindcss.setup {}
 
 -- Restart the lsp key binding
 nmap("<S-E>", ":LspRestart<CR>")
+
 
 
 

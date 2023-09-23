@@ -50,4 +50,6 @@ vim.cmd("set expandtab")
 -- bufflisted [testing]
 vim.cmd("set buflisted")
 
+
+-- ruler indention
 vim.cmd("set guitablabel=%t")
