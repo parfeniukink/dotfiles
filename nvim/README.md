@@ -72,10 +72,14 @@ Golang
 
 Install the 'Go please"
 ```bash
+# Linux
 go install golang.org/x/tools/gopls@latest
+
+# MacOS
+brew isntall gopls
 ```
 
-⚠️ add to the .zshrc
+⚠️ add to the `.zshrc` only on Linux:
 
 ```bash
 export GOROOT=/usr/local/go
