@@ -13,6 +13,7 @@ This folder represent the NVIM configuration setup for working with:
 
 - Python
 - Rust
+- Golang
 - Lua
 - JS/TS
 - HTML/CSS
@@ -65,6 +66,21 @@ Python
 
 ```bash
 pip instal pyright
+```
+
+Golang
+
+Install the 'Go please"
+```bash
+go install golang.org/x/tools/gopls@latest
+```
+
+⚠️ add to the .zshrc
+
+```bash
+export GOROOT=/usr/local/go
+export GOPATH=~/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 ```
 
 Rust
