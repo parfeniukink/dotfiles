@@ -27,11 +27,9 @@ end
 lazy.setup({
     -- files explore
     {
-        "nvim-neo-tree/neo-tree.nvim",
+        "nvim-tree/nvim-tree.lua",
         dependencies = {
             "nvim-tree/nvim-web-devicons",
-            "MunifTanjim/nui.nvim",
-            "nvim-lua/plenary.nvim"
         }
     },
     {

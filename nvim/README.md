@@ -24,41 +24,47 @@ This folder represent the NVIM configuration setup for working with:
 
 - [Lua](https://www.lua.org)
 - [lazy.nvim](https://github.com/folke/lazy.nvim) plugin manager
-- [neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim) files manager
-- [kanagawa](https://github.com/rebelot/kanagawa.nvim) colorscheme
-- [tagbar](https://github.com/preservim/tagbar)
-- [csv preview](https://github.com/chrisbra/csv.vim)
-- [Glow](https://github.com/ellisonleao/glow.nvim) markdown preview tool
-- [vim-commentary](https://github.com/tpope/vim-commentary)
-- [telescope](https://github.com/nvim-telescope/telescope.nvim) searching tool
+- Previews
+  - [nightfox](https://github.com/EdenEast/nightfox.nvim) colorscheme
+  - [nvim-tree](https://github.com/nvim-tree/nvim-tree.lua) files manager
+  - [csv preview](https://github.com/chrisbra/csv.vim)
+  - [markdown-preview](https://github.com/iamcco/markdown-preview.nvim) markdown preview tool
+  - [todo-comments](https://github.com/folke/todo-comments.nvim) colorize comments
+  - [tagbar](https://github.com/preservim/tagbar)
+  - [telescope](https://github.com/nvim-telescope/telescope.nvim) searching tool
+  - [harpoon](https://github.com/ThePrimeagen/harpoon) files explore tool -[tabby](https://github.com/nanozuki/tabby.nvim) better window tabs
 - Git tools
   - [fugitive](https://github.com/tpope/vim-fugitive)
   - [gitsigns](https://github.com/lewis6991/gitsigns.nvim)
-- [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) with all following adds for autocomplete:
-  - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
-  - [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
-  - [cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)
-  - [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
-  - [lsp_saga](https://github.com/nvimdev/lspsaga.nvim) enchancement plugin
-- [null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim) tool to extend formatting especially
+- Autocompletion & dev docs & suggestions \* code quality tools
+  - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) with all following adds for autocomplete:
+    - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+    - [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
+    - [cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)
+    - [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
+    - [lsp_saga](https://github.com/nvimdev/lspsaga.nvim) enchancement plugin
+  - [copilot](https://github.com/features/copilot) Microsoft code AI tool
+  - [null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim) extend LSP with formatting and other
+- [vim-commentary](https://github.com/tpope/vim-commentary) smart comments with shortcut
+- [rest](https://github.com/rest-nvim/rest.nvim) REST client via curl
 
 <br>
 
 ## ⬇️ Requirements
 
-
 <b><u>Treesitter parsers</b></u>
 
 for lspsaga
+
 ```
 :TSInstall markdown markdown_inline
 ```
 
 for http client
+
 ```
 :TSInstall json http
 ```
-
 
 <b><u>Language servers</b></u>
 
@@ -71,6 +77,7 @@ pip instal pyright
 Golang
 
 Install the 'Go please"
+
 ```bash
 # Linux
 go install golang.org/x/tools/gopls@latest
