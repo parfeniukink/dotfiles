@@ -26,7 +26,7 @@ This folder represent the NVIM configuration setup for working with:
 - [lazy.nvim](https://github.com/folke/lazy.nvim) plugin manager
 - Previews
   - [nightfox](https://github.com/EdenEast/nightfox.nvim) colorscheme
-  - [nvim-tree](https://github.com/nvim-tree/nvim-tree.lua) files manager
+  - [nvim-neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim) files manager
   - [csv preview](https://github.com/chrisbra/csv.vim)
   - [markdown-preview](https://github.com/iamcco/markdown-preview.nvim) markdown preview tool
   - [todo-comments](https://github.com/folke/todo-comments.nvim) colorize comments

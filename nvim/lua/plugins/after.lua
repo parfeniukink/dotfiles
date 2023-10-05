@@ -163,53 +163,10 @@ map("n", "<Leader>tb", ":Telescope buffers<CR>", {})
 
 
 -- ===================================================================
--- nvim-tree setup
+-- nvim-neo-tree setup
 -- ===================================================================
-local nvim_tree = require("nvim-tree")
-nvim_tree.setup({
-    sort_by = "case_sensitive",
-    view = {
-        side = "left",
-        width = {
-            min = 30,
-            max = 50
-        },
-        float = {
-            enable = true,
-            quit_on_focus_loss = true,
-            open_win_config = {
-                relative = "editor",
-                border = "rounded",
-                width = 30,
-                height = 50
-            }
-        }
-    },
-    renderer = {
-        group_empty = true,
-        root_folder_label = true,
-    },
-    filters = {
-        git_ignored = false,
-        dotfiles = false
-    },
-    git = {
-        enable = false
-    },
-    diagnostics = {
-        enable = false
-    },
-    actions = {
-        change_dir = {
-            enable = false
-        }
-    },
-    trash = {
-        cmd = "trash"
-    }
-})
 
-map("n", "<C-I>", ":NvimTreeToggle<CR>", {})
+map("n", "<C-I>", ":Neotree position=float toggle<CR>", {})
 
 
 
