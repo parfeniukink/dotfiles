@@ -157,7 +157,7 @@ alias tk="tmux kill-session -t"
 
 # [VIM]
 alias nv="nvim"
-alias nvim_config="nvim ~/.config/nvim/init.lua"
+alias nvim_config="cd ~/.config/nvim/ && nvim ./"
 
 # [Gtime]
 # Usage: time [-v] python script.py
@@ -166,13 +166,20 @@ alias time="gtime -v"
 # [GIT]
 alias pc="pre-commit"
 
-
-
 # ==================================
 # Databases
 # ==================================
 export PATH=/opt/homebrew/opt/postgresql@13/bin:$PATH
 export PATH=/opt/homebrew/opt/postgresql@14/bin:$PATH
+
+
+
+# ==================================
+# Golang
+# ==================================
+# export GOROOT=/opt/homebrew/opt/go
+# export GOPATH=~/go
+# export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 
 
@@ -185,35 +192,22 @@ RUST_BACKTRACE=full
 
 
 # ==================================
-# Golang
-# ==================================
-export GOROOT=/usr/local/go
-export GOPATH=~/go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
-
-
-
-# ==================================
 # Python
 # ==================================
-
-# [Debug / profiling]
 export PYTHONBREAKPOINT=pudb.set_trace
 # export PYTHONDEVMODE=0
 # export PYTHONMALLOC=malloc
 
-# export PATH="/opt/homebrew/opt/python@3.11/bin:$PATH"
-alias python="python3"
-alias pip="pip3"
-alias activate="source venv/bin/activate"
-alias venv="python -m venv venv && activate"
-
 # [Ctags]
 alias ctags_update="ctags -R --fields=+l --languages=python --python-kinds=-iv -f tags"
 
-# [Django]
-alias runserver="python manage.py runserver"
-alias pm="python src/manage.py"
+alias python="python3"
+alias pip="pip3"
+alias activate="source venv/bin/activate"
+alias venv3.9="virtualenv --python python3.9 venv && source venv/bin/activate && pip install pip-tools"
+alias venv3.10="virtualenv --python python3.10 venv && source venv/bin/activate && pip install pip-tools"
+alias venv3.11="virtualenv --python python3.11 venv && source venv/bin/activate && pip install pip-tools"
+alias venv3.12="virtualenv --python python3.12 venv && source venv/bin/activate && pip install pip-tools"
 
 # [Poetry]
 export PATH="$HOME/.local/bin:$PATH"
@@ -235,6 +229,14 @@ export PATH=$GEM_HOME/bin:$PATH
 
 
 # ==================================
+# Kafka
+# ==================================
+export PATH=/opt/homebrew/opt/kafka/bin:$PATH
+
+
+
+
+# ==================================
 # API Keys
 # ==================================
 
@@ -243,5 +245,3 @@ export PATH=$GEM_HOME/bin:$PATH
 # ==================================
 # TMP aliases
 # ==================================
-alias msfconsole="/opt/metasploit-framework/bin/msfconsole"
-
