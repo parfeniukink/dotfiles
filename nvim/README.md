@@ -44,7 +44,7 @@ This folder represent the NVIM configuration setup for working with:
     - [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
     - [lsp_saga](https://github.com/nvimdev/lspsaga.nvim) enchancement plugin
   - [copilot](https://github.com/features/copilot) Microsoft code AI tool
-  - [null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim) extend LSP with formatting and other
+  - [conform](https://github.com/stevearc/conform.nvim) formatting tool
 - [vim-commentary](https://github.com/tpope/vim-commentary) smart comments with shortcut
 - [rest](https://github.com/rest-nvim/rest.nvim) REST client via curl
 
