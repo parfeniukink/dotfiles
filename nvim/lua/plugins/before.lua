@@ -106,5 +106,9 @@ lazy.setup({
     "github/copilot.vim",
 
     -- formatting
-    "jose-elias-alvarez/null-ls.nvim"
+    {
+        'stevearc/conform.nvim',
+        event = { "BufReadPre", "BufNewFile" },
+        opts = {},
+    }
 })

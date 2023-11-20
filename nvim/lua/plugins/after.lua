@@ -359,38 +359,36 @@ cmp.setup {
 
 
 
--- null_ls
+-- conform
 -- -------------------------------------------------------------------
-local null_ls = require("null-ls")
-null_ls.setup({
-    debug = false,
-    sources = {
-        -- Python
-        null_ls.builtins.formatting.black.with(
-            {
-                filetypes = { "python" },
-                extra_args = { "--fast" }
-            }
-        ),
+local conform = require("conform")
+conform.setup({
+    formatters_by_ft = {
+        python = { "isort", "black" },
+        html = { "prettier" },
+        css = { "prettier" },
+        javascript = { "prettier" },
+        typescript = { "prettier" },
+        typescriptreact = { "prettier" },
+        json = { "prettier" },
+        yaml = { "prettier" },
+        markdown = { "prettier" }
 
-        null_ls.builtins.formatting.isort.with({ filetypes = { "python" } }),
-        -- frontend
-        null_ls.builtins.formatting.prettier.with({
-            filetypes = {
-                "html",
-                "css",
-                "javascript",
-                "javascriptreact",
-                "typescript",
-                "typescriptreact",
-                "json",
-                "yaml",
-                "markdown",
-            },
-            extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" }
-        }),
     },
+    format_on_save = {
+        async = false,
+        timeout_ms = 500
+    }
+
 })
+
+vim.keymap.set("n", "<C-L>", function()
+    print("🧹 Formatting finished")
+    conform.format({
+        async = false,
+        timeout_ms = 500
+    })
+end, {})
 
 
 
