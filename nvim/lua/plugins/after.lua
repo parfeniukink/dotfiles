@@ -1,9 +1,7 @@
 -- ===================================================================
 -- colorscheme setup
 -- ===================================================================
-vim.cmd([[
-	colorscheme nightfox
-
+vim.api.nvim_command([[
     hi DiagnosticError guifg=#E47D75
     hi DiagnosticWarn  guifg=#DB794A
     hi DiagnosticInfo  guifg=#4AA7DB
@@ -14,6 +12,8 @@ vim.cmd([[
     hi DiagnosticHintSign  guifg=#4ADBA0
 
     autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
+    autocmd ColorScheme * highlight NormalNC ctermbg=NONE guibg=NONE
+    autocmd ColorScheme * highlight NormalFloat ctermbg=NONE guibg=NONE
 ]])
 
 local signs = { Error = "🚨", Warn = "⚠️", Hint = "💡", Info = "ℹ️" }
@@ -415,3 +415,10 @@ vim.g.copilot_filetypes = {
 -- rest.nvim
 -- -------------------------------------------------------------------
 map("n", "<leader>re", "<cmd>lua require('rest-nvim').run()<CR>", {})
+
+
+
+-- ===================================================================
+-- Set a theme here in order to apply the transparency after all the plugins are loaded
+-- ===================================================================
+vim.api.nvim_command("colorscheme nightfox")
