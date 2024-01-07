@@ -55,17 +55,17 @@ ts.setup {
         disable = {},
     },
     ensure_installed = {
-        "tsx",
-        "toml",
-        "json",
-        "yaml",
-        "swift",
-        "css",
-        "html",
-        "lua",
-        "javascript",
-        "python",
-        "rust",
+        -- "tsx",
+        -- "toml",
+        -- "json",
+        -- "yaml",
+        -- "swift",
+        -- "css",
+        -- "html",
+        -- "lua",
+        -- "javascript",
+        -- "python",
+        -- "rust",
     },
     autotag = {
         enable = true,
@@ -138,6 +138,9 @@ nmap("gdl", ":diffget //3<CR>")
 
 -- git signs
 require('gitsigns').setup {}
+map("n", "gn", ":Gitsigns next_hunk<CR>", {})
+map("n", "gp", ":Gitsigns prev_hunk<CR>", {})
+map("n", "<Leader>pr", ":Gitsigns preview_hunk_inline<CR>", {})
 
 
 
@@ -153,20 +156,60 @@ nmap("t", ":TagbarToggle<CR>")
 -- ===================================================================
 require('telescope').setup {
     defaults = {
-        file_ignore_patterns = { "node_modules", "venv" }
+        file_ignore_patterns = { "node_modules", "venv", ".git" }
     }
 }
 map("n", "<C-P>", ":Telescope find_files<CR>", {})
 map("n", "<C-F>", ":Telescope live_grep<CR>", {})
-map("n", "<Leader>tb", ":Telescope buffers<CR>", {})
+map("n", "<C-D>", ":Telescope diagnostics<CR>", {})
 
 
 
 -- ===================================================================
--- nvim-neo-tree setup
+-- netrw setup
 -- ===================================================================
+-- disable netrw at the very start of your init.lua
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
-map("n", "<C-I>", ":Neotree position=float toggle<CR>", {})
+-- set termguicolors to enable highlight groups
+vim.opt.termguicolors = true
+
+
+local HEIGHT_RATIO = 0.8 -- You can change this
+local WIDTH_RATIO = 0.5  -- You can change this too
+
+require('nvim-tree').setup({
+    view = {
+        float = {
+            enable = true,
+            open_win_config = function()
+                local screen_w = vim.opt.columns:get()
+                local screen_h = vim.opt.lines:get() - vim.opt.cmdheight:get()
+                local window_w = screen_w * WIDTH_RATIO
+                local window_h = screen_h * HEIGHT_RATIO
+                local window_w_int = math.floor(window_w)
+                local window_h_int = math.floor(window_h)
+                local center_x = (screen_w - window_w) / 2
+                local center_y = ((vim.opt.lines:get() - window_h) / 2)
+                    - vim.opt.cmdheight:get()
+                return {
+                    border = 'rounded',
+                    relative = 'editor',
+                    row = center_y,
+                    col = center_x,
+                    width = window_w_int,
+                    height = window_h_int,
+                }
+            end,
+        },
+        width = function()
+            return math.floor(vim.opt.columns:get() * WIDTH_RATIO)
+        end,
+    },
+})
+
+map("n", "<C-I>", ":NvimTreeFindFileToggle<CR>", {})
 
 
 
@@ -217,6 +260,26 @@ lspconfig.lua_ls.setup({
     filetypes = { "lua" },
 })
 
+-- dart / flutter configuration
+-- -------------------------------------------------------------------
+lspconfig.dartls.setup({
+    capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        vim.keymap.set("n", "<C-L>", function()
+            vim.lsp.buf.format { async = true }
+            print("🧹 Formatting finished")
+        end, opts)
+        -- override default settings
+        nmap("t", ":FlutterOutlineToggle<CR>")
+        vim.cmd([[
+        autocmd FileType dart set tabstop=2 shiftwidth=2 expandtab
+    ]])
+    end,
+    filetypes = { "dart" },
+})
+
+require("flutter-tools").setup({})
+
 
 -- python configuration
 -- -------------------------------------------------------------------
@@ -255,9 +318,8 @@ lspconfig.gopls.setup({
 })
 
 
--- frontend configuration
+-- TypeScript / tailwind configuration
 -- -------------------------------------------------------------------
-
 lspconfig.tsserver.setup({
     capabilities = capabilities,
     on_attach = function(client, bufnr)
@@ -309,23 +371,16 @@ vim.keymap.set('n', '<leader>de', '<Cmd>Lspsaga finder<CR>', opts)
 vim.keymap.set('n', '<leader>pe', '<Cmd>Lspsaga peek_definition<CR>', opts)
 vim.keymap.set('n', 'dr', '<Cmd>Lspsaga rename<CR>', opts)
 vim.keymap.set('i', '<C-k>', '<Cmd>Lspsaga signature_help<CR>', opts)
-vim.keymap.set('i', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
 
 -- code action
 vim.keymap.set({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>")
 
 
--- lsp cmp / luasnip
+-- lsp cmp
 -- -------------------------------------------------------------------
-local luasnip = require("luasnip")
 local cmp = require("cmp")
 
 cmp.setup {
-    snippet = {
-        expand = function(args)
-            luasnip.lsp_expand(args.body)
-        end,
-    },
     mapping = cmp.mapping.preset.insert({
         ["<C-K>"] = cmp.mapping.complete(),
         ["<CR>"] = cmp.mapping.confirm {
@@ -335,8 +390,6 @@ cmp.setup {
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
-            elseif luasnip.expand_or_jumpable() then
-                luasnip.expand_or_jump()
             else
                 fallback()
             end
@@ -344,8 +397,6 @@ cmp.setup {
         ["<S-Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
-            elseif luasnip.jumpable(-1) then
-                luasnip.jump(-1)
             else
                 fallback()
             end
@@ -353,7 +404,6 @@ cmp.setup {
     }),
     sources = {
         { name = "nvim_lsp" },
-        { name = "luasnip" },
     },
 }
 
@@ -400,6 +450,7 @@ vim.api.nvim_set_keymap("i", "<C-H>", 'copilot#Accept("<CR>")', { silent = true,
 
 vim.g.copilot_filetypes = {
     ["*"] = false,
+    ["lua"] = true,
     ["javascript"] = true,
     ["typescript"] = true,
     ["typescriptreact"] = true,
@@ -407,7 +458,11 @@ vim.g.copilot_filetypes = {
     ["c++"] = true,
     ["go"] = true,
     ["rust"] = true,
+    ["swift"] = true,
+    ["dart"] = true,
     ["python"] = true,
+    ["dockerfile"] = true,
+    ["compose"] = true,
 }
 
 
@@ -417,8 +472,15 @@ vim.g.copilot_filetypes = {
 map("n", "<leader>re", "<cmd>lua require('rest-nvim').run()<CR>", {})
 
 
+-- todo-list.nvim
+-- -------------------------------------------------------------------
+map("n", "<leader>t", "<cmd>TodoTelescope<CR>", {})
+
 
 -- ===================================================================
 -- Set a theme here in order to apply the transparency after all the plugins are loaded
 -- ===================================================================
 vim.api.nvim_command("colorscheme nightfox")
+
+-- Change nvim active tab to green
+vim.api.nvim_command("hi TabLineSel guibg=#2d5748 guifg=#e5e5e5")

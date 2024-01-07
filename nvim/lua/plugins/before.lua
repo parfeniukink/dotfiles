@@ -27,19 +27,18 @@ end
 lazy.setup({
     -- files explore
     {
-        "nvim-neo-tree/neo-tree.nvim",
-        branch = "v3.x",
+        "nvim-tree/nvim-tree.lua",
         dependencies = {
-            "nvim-lua/plenary.nvim",
             "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-            "MunifTanjim/nui.nvim",
         }
     },
+
     {
         "nvim-telescope/telescope.nvim",
         tag = "0.1.1",
         dependencies = { "nvim-lua/plenary.nvim" }
     },
+
     "ThePrimeagen/harpoon",
 
     -- colorschemes
@@ -63,11 +62,20 @@ lazy.setup({
 
     },
 
-    -- previews
+    -- Markdown preview
     {
         "iamcco/markdown-preview.nvim",
-        build = "cd app && yarn install"
+        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+        build = "cd app && yarn install",
+        init = function()
+            vim.g.mkdp_filetypes = { "markdown", "mermaid" }
+        end,
+        ft = { "markdown", "mermaid" },
     },
+    -- mermaid syntax highlight
+    "craigmac/vim-mermaid",
+
+    -- CSV preview
     "chrisbra/csv.vim",
 
     -- http client
@@ -98,8 +106,6 @@ lazy.setup({
     "hrsh7th/nvim-cmp",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-nvim-lsp",
-    "saadparwaiz1/cmp_luasnip",
-    "L3MON4D3/LuaSnip",
 
     -- GitHub Copilot
     -- "zbirenbaum/copilot.lua",
@@ -107,8 +113,18 @@ lazy.setup({
 
     -- formatting
     {
-        'stevearc/conform.nvim',
+        "stevearc/conform.nvim",
         event = { "BufReadPre", "BufNewFile" },
         opts = {},
+    },
+
+    -- flutter
+    {
+        'akinsho/flutter-tools.nvim',
+        lazy = false,
+        dependencies = {
+            'nvim-lua/plenary.nvim'
+        },
+        config = true,
     }
 })
