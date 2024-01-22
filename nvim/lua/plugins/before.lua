@@ -72,11 +72,6 @@ lazy.setup({
         end,
         ft = { "markdown", "mermaid" },
     },
-    -- mermaid syntax highlight
-    "craigmac/vim-mermaid",
-
-    -- CSV preview
-    "chrisbra/csv.vim",
 
     -- http client
     { "rest-nvim/rest.nvim" },
@@ -91,21 +86,16 @@ lazy.setup({
     -- tag bar
     "majutsushi/tagbar",
 
-    -- lsp
+    -- LSP
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",
-
-    {
-        "glepnir/lspsaga.nvim",
-        dependencies = {
-            "nvim-tree/nvim-web-devicons",
-            "nvim-treesitter/nvim-treesitter"
-        }
-    },
-
-    -- autocomplete
+    -- completion
     "hrsh7th/nvim-cmp",
-    "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-nvim-lsp",
+    "L3MON4D3/LuaSnip",
+    "saadparwaiz1/cmp_luasnip",
+    "rafamadriz/friendly-snippets",
 
     -- GitHub Copilot
     -- "zbirenbaum/copilot.lua",
@@ -118,7 +108,7 @@ lazy.setup({
         opts = {},
     },
 
-    -- flutter
+    -- flutter tools
     {
         'akinsho/flutter-tools.nvim',
         lazy = false,

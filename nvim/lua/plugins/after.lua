@@ -1,7 +1,7 @@
 -- ===================================================================
 -- colorscheme setup
 -- ===================================================================
-vim.api.nvim_command([[
+vim.cmd([[
     hi DiagnosticError guifg=#E47D75
     hi DiagnosticWarn  guifg=#DB794A
     hi DiagnosticInfo  guifg=#4AA7DB
@@ -14,24 +14,9 @@ vim.api.nvim_command([[
     autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
     autocmd ColorScheme * highlight NormalNC ctermbg=NONE guibg=NONE
     autocmd ColorScheme * highlight NormalFloat ctermbg=NONE guibg=NONE
+    colorscheme nightfox
 ]])
 
-local signs = { Error = "🚨", Warn = "⚠️", Hint = "💡", Info = "ℹ️" }
-for type, icon in pairs(signs) do
-    local hl = "DiagnosticSign" .. type
-    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-end
-
-vim.diagnostic.config({
-    virtual_text = {
-        source = "always",
-        prefix = '●',
-    },
-    severity_sort = true,
-    float = {
-        source = "always",
-    },
-})
 
 vim.cmd([[
     if exists('+termguicolors')
@@ -54,19 +39,7 @@ ts.setup {
         enable = true,
         disable = {},
     },
-    ensure_installed = {
-        -- "tsx",
-        -- "toml",
-        -- "json",
-        -- "yaml",
-        -- "swift",
-        -- "css",
-        -- "html",
-        -- "lua",
-        -- "javascript",
-        -- "python",
-        -- "rust",
-    },
+    ensure_installed = {},
     autotag = {
         enable = true,
     },
@@ -94,12 +67,14 @@ require('tabby.tabline').set(function(line)
         line.tabs().foreach(function(tab)
             local hl = tab.is_current() and theme.current_tab or theme.tab
             return {
-                line.sep('', hl, theme.fill),
+                -- line.sep('', hl, theme.fill),
+                line.sep('', hl, theme.fill),
                 tab.is_current() and '' or '󰆣',
                 tab.number(),
                 tab.name(),
                 tab.close_btn(''),
-                line.sep('', hl, theme.fill),
+                -- line.sep('', hl, theme.fill),
+                line.sep('', hl, theme.fill),
                 hl = hl,
                 margin = ' ',
             }
@@ -156,12 +131,13 @@ nmap("t", ":TagbarToggle<CR>")
 -- ===================================================================
 require('telescope').setup {
     defaults = {
-        file_ignore_patterns = { "node_modules", "venv", ".git" }
+        file_ignore_patterns = { "node_modules", "venv", ".git", "build", "ios", "macos" }
     }
 }
 map("n", "<C-P>", ":Telescope find_files<CR>", {})
 map("n", "<C-F>", ":Telescope live_grep<CR>", {})
 map("n", "<C-D>", ":Telescope diagnostics<CR>", {})
+
 
 
 
@@ -213,6 +189,8 @@ map("n", "<C-I>", ":NvimTreeFindFileToggle<CR>", {})
 
 
 
+
+
 -- ===================================================================
 -- harpoon setup
 -- ===================================================================
@@ -221,12 +199,6 @@ local harpoon_ui = require('harpoon.ui')
 
 vim.keymap.set(
     "n", "<Leader>a", function() harpoon_mark.add_file() end, {}
-)
-vim.keymap.set(
-    "n", "<Leader>r", function() harpoon_mark.rm_file() end, {}
-)
-vim.keymap.set(
-    "n", "<Leader>z", function() harpoon_mark.clear_all() end, {}
 )
 vim.keymap.set(
     "n", "<Leader>w", function() harpoon_ui.toggle_quick_menu() end, {}
@@ -238,176 +210,84 @@ vim.keymap.set(
     "n", "<Leader>e", function() harpoon_ui.nav_next() end, {}
 )
 
-
-
 -- ===================================================================
 -- LSP setup
 -- ===================================================================
-local lspconfig = require("lspconfig")
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
-
--- lua configuration
--- -------------------------------------------------------------------
-lspconfig.lua_ls.setup({
-    capabilities = capabilities,
-    on_attach = function(client, bufnr)
-        vim.keymap.set("n", "<C-L>", function()
-            vim.lsp.buf.format { async = true }
-            print("🧹 Formatting finished")
-        end, opts)
-    end,
-    filetypes = { "lua" },
+require("mason").setup()
+require("mason-lspconfig").setup({
+  ensure_installed = { "lua_ls", "solargraph", "tsserver" }
 })
 
--- dart / flutter configuration
--- -------------------------------------------------------------------
-lspconfig.dartls.setup({
-    capabilities = capabilities,
-    on_attach = function(client, bufnr)
-        vim.keymap.set("n", "<C-L>", function()
-            vim.lsp.buf.format { async = true }
-            print("🧹 Formatting finished")
-        end, opts)
-        -- override default settings
-        nmap("t", ":FlutterOutlineToggle<CR>")
-        vim.cmd([[
-        autocmd FileType dart set tabstop=2 shiftwidth=2 expandtab
-    ]])
-    end,
-    filetypes = { "dart" },
-})
+local lspconfig = require('lspconfig')
 
-require("flutter-tools").setup({})
+local lsp_defaults = lspconfig.util.default_config
 
+lsp_defaults.capabilities = vim.tbl_deep_extend(
+  'force',
+  lsp_defaults.capabilities,
+  require('cmp_nvim_lsp').default_capabilities()
+)
 
--- python configuration
--- -------------------------------------------------------------------
-lspconfig.pyright.setup({
-    capabilities = capabilities,
-    on_attach = function(client, bufnr)
-        vim.keymap.set("n", "<C-L>", function()
-            vim.lsp.buf.format { async = true }
-            print("🧹 Formatting finished")
-        end, opts)
-    end,
-    filetypes = { "python" },
-})
-
-
--- golang configuration
--- -------------------------------------------------------------------
-lspconfig.gopls.setup({
-    capabilities = capabilities,
-    on_attach = function(client, bufnr)
-        vim.keymap.set("n", "<C-L>", function()
-            vim.lsp.buf.format { async = true }
-            print("🧹 Formatting finished")
-        end, opts)
-    end,
-    filetypes = { "go" },
-    settings = {
-        gopls = {
-            analyses = {
-                unusedparams = true,
-            },
-            staticcheck = true,
-            gofumpt = true,
+require("lspconfig").lua_ls.setup {
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { "vim" },
+      },
+      workspace = {
+        library = {
+          [vim.fn.expand "$VIMRUNTIME/lua"] = true,
+          [vim.fn.stdpath "config" .. "/lua"] = true,
         },
+      },
     },
-})
-
-
--- TypeScript / tailwind configuration
--- -------------------------------------------------------------------
-lspconfig.tsserver.setup({
-    capabilities = capabilities,
-    on_attach = function(client, bufnr)
-        vim.keymap.set("n", "<C-L>", function()
-            vim.lsp.buf.format { async = true }
-            print("🧹 Formatting finished")
-        end, opts)
-    end,
-    filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
-    cmd = { "typescript-language-server", "--stdio" }
-})
-
-lspconfig.tailwindcss.setup {}
-
--- Restart the lsp key binding
-nmap("<S-E>", ":LspRestart<CR>")
-
-
-
-
--- ===================================================================
--- Additional LSP enhancement tools
--- ===================================================================
-
--- lsp saga
--- -------------------------------------------------------------------
-local saga = require("lspsaga")
-
-saga.setup({
-    ui = {
-        winblend = 10,
-        border = 'rounded',
-        colors = {
-            normal_bg = '#002b36'
-        }
-    },
-    symbol_in_winbar = {
-        enable = true
-    }
-})
-
-
-local opts = { noremap = true, silent = true }
-vim.keymap.set('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<CR>', opts)
-vim.keymap.set('n', 'gl', '<Cmd>Lspsaga show_line_diagnostics<CR>', opts)
-vim.keymap.set('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', opts)
-vim.keymap.set('n', 'de', '<Cmd>Lspsaga goto_definition<CR>', opts)
-vim.keymap.set('n', '<leader>de', '<Cmd>Lspsaga finder<CR>', opts)
-vim.keymap.set('n', '<leader>pe', '<Cmd>Lspsaga peek_definition<CR>', opts)
-vim.keymap.set('n', 'dr', '<Cmd>Lspsaga rename<CR>', opts)
-vim.keymap.set('i', '<C-k>', '<Cmd>Lspsaga signature_help<CR>', opts)
-
--- code action
-vim.keymap.set({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>")
-
-
--- lsp cmp
--- -------------------------------------------------------------------
-local cmp = require("cmp")
-
-cmp.setup {
-    mapping = cmp.mapping.preset.insert({
-        ["<C-K>"] = cmp.mapping.complete(),
-        ["<CR>"] = cmp.mapping.confirm {
-            behavior = cmp.ConfirmBehavior.Replace,
-            select = true,
-        },
-        ["<Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-                cmp.select_next_item()
-            else
-                fallback()
-            end
-        end, { "i", "s" }),
-        ["<S-Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-                cmp.select_prev_item()
-            else
-                fallback()
-            end
-        end, { "i", "s" }),
-    }),
-    sources = {
-        { name = "nvim_lsp" },
-    },
+  }
 }
+require("lspconfig").pyright.setup({})
+require("lspconfig").gopls.setup({})
+require("lspconfig").tsserver.setup({})
+require("lspconfig").tailwindcss.setup({})
+
+vim.api.nvim_create_autocmd('LspAttach', {
+  group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+  callback = function(ev)
+    -- Enable completion triggered by <c-x><c-o>
+    vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+
+    -- Buffer local mappings.
+    -- See `:help vim.lsp.*` for documentation on any of the below functions
+    local opts = { buffer = ev.buf }
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+    vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, opts)
+    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
+  end,
+})
 
 
+
+local cmp = require("cmp")
+require("luasnip.loaders.from_vscode").lazy_load()
+
+cmp.setup({
+  mapping = cmp.mapping.preset.insert({
+      ['<C-j>'] = cmp.mapping.complete(),
+      ['<C-e>'] = cmp.mapping.abort(),
+      ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    }),
+  snippet = {
+    expand = function(args)
+      require('luasnip').lsp_expand(args.body)
+    end,
+  },
+  sources = cmp.config.sources({
+    { name = 'nvim_lsp' },
+    { name = 'luasnip' },
+  }, {
+    { name = 'buffer' },
+  }),
+})
 
 -- conform
 -- -------------------------------------------------------------------
@@ -439,6 +319,8 @@ vim.keymap.set("n", "<C-L>", function()
         timeout_ms = 500
     })
 end, {})
+
+
 
 
 
@@ -477,10 +359,7 @@ map("n", "<leader>re", "<cmd>lua require('rest-nvim').run()<CR>", {})
 map("n", "<leader>t", "<cmd>TodoTelescope<CR>", {})
 
 
--- ===================================================================
--- Set a theme here in order to apply the transparency after all the plugins are loaded
--- ===================================================================
-vim.api.nvim_command("colorscheme nightfox")
 
--- Change nvim active tab to green
-vim.api.nvim_command("hi TabLineSel guibg=#2d5748 guifg=#e5e5e5")
+-- flutter tools
+-- -------------------------------------------------------------------
+require("flutter-tools").setup({})
