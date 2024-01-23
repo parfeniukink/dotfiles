@@ -1,0 +1,13 @@
+[keyboard]
+bindings = [
+  { key = "P",       mods = "Control|Shift",  action = "Paste" },
+  { key = "Y",       mods = "Control|Shift",  action = "Copy" },
+  { key = "Key0",    mods = "Control",        action = "ResetFontSize" },
+  { key = "Equals",  mods = "Control",        action = "IncreaseFontSize" },
+  { key = "N",       mods = "Control",        action = "SpawnNewInstance" },
+  { key = "H",       mods = "Alt",            chars = "x1bb" },
+  { key = "L",       mods = "Alt",            chars = "x1bf" },
+  { key = "Left",    mods = "Alt",            chars = "x1bb" },
+  { key = "Right",   mods = "Alt",            chars = "x1bf" },
+]
+

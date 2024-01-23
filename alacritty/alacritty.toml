@@ -1,0 +1,36 @@
+import = [
+    "~/.config/alacritty/keybindings.toml",
+    "~/.config/alacritty/catppuccin-macchiato.toml",
+]
+
+
+[env]
+TERM = "xterm-256color"
+
+
+[font]
+size= 13.5
+normal = { family = "FiraCode Nerd Font Mono", style = "Light" }
+bold = { family = "FiraCode Nerd Font Mono", style = "Retina" }
+italic = { family = "FiraCode Nerd Font Mono", style = "Retina" }
+
+
+[window]
+decorations = "buttonless"
+dynamic_padding = false
+opacity = 1
+title = "Alacritty"
+startup_mode = "Windowed"
+padding = { x = 4, y = 2 }
+dimensions  = { columns = 165, lines = 50 }
+position = { x = 350, y = 150}
+
+
+[scrolling]
+history = 5000
+multiplier = 3
+
+
+[selection]
+save_to_clipboard = true
+
