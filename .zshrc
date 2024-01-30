@@ -23,6 +23,9 @@ ZSH_THEME="robbyrussell"
 export EDITOR=nvim
 export VISUAL="$EDITOR"
 
+bindkey "^[[1;3C" forward-word
+bindkey "^[[1;3D" backward-word
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
