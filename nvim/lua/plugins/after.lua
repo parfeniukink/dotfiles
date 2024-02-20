@@ -11,10 +11,10 @@ vim.cmd([[
     hi DiagnosticInfoSign  guifg=#4AA7DB
     hi DiagnosticHintSign  guifg=#4ADBA0
 
-    autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
-    autocmd ColorScheme * highlight NormalNC ctermbg=NONE guibg=NONE
-    autocmd ColorScheme * highlight NormalFloat ctermbg=NONE guibg=NONE
-    colorscheme nightfox
+    hi NormalFloat ctermbg=NONE guibg=NONE
+    hi NormalNC ctermbg=NONE guibg=NONE
+    hi Normal ctermbg=NONE guibg=NONE
+
 ]])
 
 
@@ -136,7 +136,6 @@ require('telescope').setup {
 }
 map("n", "<C-P>", ":Telescope find_files<CR>", {})
 map("n", "<C-F>", ":Telescope live_grep<CR>", {})
-map("n", "<C-D>", ":Telescope diagnostics<CR>", {})
 
 
 
@@ -215,7 +214,7 @@ vim.keymap.set(
 -- ===================================================================
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = { "lua_ls", "solargraph", "tsserver" }
+    ensure_installed = { "lua_ls", "tsserver", "pyright" }
 })
 
 local lspconfig = require('lspconfig')
@@ -223,71 +222,126 @@ local lspconfig = require('lspconfig')
 local lsp_defaults = lspconfig.util.default_config
 
 lsp_defaults.capabilities = vim.tbl_deep_extend(
-  'force',
-  lsp_defaults.capabilities,
-  require('cmp_nvim_lsp').default_capabilities()
+    'force',
+    lsp_defaults.capabilities,
+    require('cmp_nvim_lsp').default_capabilities()
 )
 
-require("lspconfig").lua_ls.setup {
-  settings = {
-    Lua = {
-      diagnostics = {
-        globals = { "vim" },
-      },
-      workspace = {
-        library = {
-          [vim.fn.expand "$VIMRUNTIME/lua"] = true,
-          [vim.fn.stdpath "config" .. "/lua"] = true,
-        },
-      },
-    },
-  }
-}
-require("lspconfig").pyright.setup({})
-require("lspconfig").gopls.setup({})
-require("lspconfig").tsserver.setup({})
-require("lspconfig").tailwindcss.setup({})
-
-vim.api.nvim_create_autocmd('LspAttach', {
-  group = vim.api.nvim_create_augroup('UserLspConfig', {}),
-  callback = function(ev)
-    -- Enable completion triggered by <c-x><c-o>
-    vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
-
-    -- Buffer local mappings.
-    -- See `:help vim.lsp.*` for documentation on any of the below functions
-    local opts = { buffer = ev.buf }
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-    vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, opts)
-    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
-  end,
+vim.diagnostic.config({
+    virtual_text = false,
+    signs = false,
+    severity_sort = true,
 })
 
+local lsp_on_attach = function(_, _)
+    local opts = {}
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+    vim.keymap.set('n', 'de', vim.lsp.buf.type_definition, opts)
+    vim.keymap.set('n', 'gr', require("telescope.builtin").lsp_references, opts)
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+    vim.keymap.set('n', '<C-j>', vim.diagnostic.goto_next, opts)
 
+    vim.keymap.set('n', '<leader>rn', function()
+            vim.lsp.buf.rename()
+            -- save all buffers
+            vim.cmd("silent! wa")
+        end,
+        opts)
+end
+
+vim.keymap.set('n', '<S-e>', ":LspRestart<CR>", {})
+
+require("lspconfig").lua_ls.setup {
+    on_attach = lsp_on_attach,
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { "vim" },
+            },
+            workspace = {
+                library = {
+                    [vim.fn.expand "$VIMRUNTIME/lua"] = true,
+                    [vim.fn.stdpath "config" .. "/lua"] = true,
+                },
+            },
+        },
+    }
+}
+
+require("lspconfig").pyright.setup({
+    on_attach = lsp_on_attach,
+    filetypes = { "python" },
+})
+require("lspconfig").gopls.setup({
+    on_attach = lsp_on_attach,
+    filetypes = { "go", "gomod" },
+})
+require("lspconfig").tsserver.setup({
+    on_attach = lsp_on_attach,
+    filetypes = { "javascript", "typescript", "typescriptreact" },
+})
+require("lspconfig").tailwindcss.setup({
+    on_attach = lsp_on_attach,
+    filetypes = { "html", "css", "javascript", "typescript", "typescriptreact" },
+})
 
 local cmp = require("cmp")
-require("luasnip.loaders.from_vscode").lazy_load()
 
 cmp.setup({
-  mapping = cmp.mapping.preset.insert({
-      ['<C-j>'] = cmp.mapping.complete(),
-      ['<C-e>'] = cmp.mapping.abort(),
-      ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    mapping = cmp.mapping.preset.insert({
+        ['<C-j>'] = cmp.mapping.complete(),
+        ['<C-e>'] = cmp.mapping.abort(),
+        ['<C-p>'] = cmp.mapping.select_next_item(),
+        ['<C-o>'] = cmp.mapping.select_prev_item(),
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
     }),
-  snippet = {
-    expand = function(args)
-      require('luasnip').lsp_expand(args.body)
-    end,
-  },
-  sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-    { name = 'luasnip' },
-  }, {
-    { name = 'buffer' },
-  }),
+    snippet = {
+        expand = function(args)
+            require('luasnip').lsp_expand(args.body)
+        end,
+    },
+    sources = cmp.config.sources({
+        { name = 'nvim_lsp' },
+        { name = 'luasnip' },
+    }, {
+        { name = 'buffer' },
+    }),
 })
+
+
+-- Diagnostic
+-- -------------------------------------------------------------------
+function PrintDiagnostics(opts, bufnr, line_nr, client_id)
+    bufnr = bufnr or 0
+    line_nr = line_nr or (vim.api.nvim_win_get_cursor(0)[1] - 1)
+    opts = opts or { ['lnum'] = line_nr }
+
+    local line_diagnostics = vim.diagnostic.get(bufnr, opts)
+    if vim.tbl_isempty(line_diagnostics) then return end
+
+    local diagnostic_message = ""
+    for i, diagnostic in ipairs(line_diagnostics) do
+        diagnostic_message = diagnostic_message .. string.format("%d: %s", i, diagnostic.message or "")
+        -- print(diagnostic_message)
+        if i ~= #line_diagnostics then
+            diagnostic_message = diagnostic_message .. "\n"
+        end
+    end
+    -- display after the delay
+    -- vim.api.nvim_echo({{diagnostic_message, "Normal"}}, false, {})
+end
+
+vim.cmd [[ autocmd! CursorHold * lua PrintDiagnostics() ]]
+vim.diagnostic.config({
+    virtual_text = false,
+    severity_sort = true,
+    float = {
+        source = "always", -- Or "if_many"
+    },
+})
+
+
+
 
 -- conform
 -- -------------------------------------------------------------------
@@ -306,17 +360,19 @@ conform.setup({
 
     },
     format_on_save = {
-        async = false,
-        timeout_ms = 500
-    }
+        async = true,
+        timeout_ms = 200,
+        lsp_fallback = true
+    },
+    notify_on_error = true,
 
 })
 
 vim.keymap.set("n", "<C-L>", function()
-    print("🧹 Formatting finished")
     conform.format({
-        async = false,
-        timeout_ms = 500
+        async = true,
+        timeout_ms = 200,
+        lsp_fallback = true,
     })
 end, {})
 
@@ -363,3 +419,57 @@ map("n", "<leader>t", "<cmd>TodoTelescope<CR>", {})
 -- flutter tools
 -- -------------------------------------------------------------------
 require("flutter-tools").setup({})
+
+
+
+-- Setup colorscheme
+-- -------------------------------------------------------------------
+require("catppuccin").setup({
+    flavour = "macchiato",
+    integrations = {
+        cmp = true,
+        gitsigns = true,
+        nvimtree = true,
+        treesitter = true,
+        native_lsp = {
+            enabled = true,
+            virtual_text = {
+                errors = { "italic" },
+                hints = { "italic" },
+                warnings = { "italic" },
+                information = { "italic" },
+            },
+            underlines = {
+                errors = { "underline" },
+                hints = { "underline" },
+                warnings = { "underline" },
+                information = { "underline" },
+            },
+            inlay_hints = {
+                background = false,
+            },
+        },
+    },
+    show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
+    term_colors = false,        -- sets terminal colors (e.g. `g:terminal_color_0`)
+    dim_inactive = {
+        enabled = false,        -- dims the background color of inactive window
+        shade = "dark",
+        percentage = 0.15,      -- percentage of the shade to apply to the inactive window
+    },
+    no_italic = false,          -- Force no italic
+    no_bold = true,             -- Force no bold
+    no_underline = false,       -- Force no underline
+    custom_highlights = function(colors)
+        return {
+            NormalFloat = { fg = colors.text, bg = colors.grey },
+            Comment = { bg = colors.none, fg = colors.grey },
+            TabLineSel = { bg = colors.surface2, fg = colors.text },
+            CmpBorder = { fg = colors.surface2 },
+            Pmenu = { bg = colors.none },
+        }
+    end
+
+})
+
+vim.cmd.colorscheme "catppuccin"

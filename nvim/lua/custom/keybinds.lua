@@ -1,9 +1,5 @@
 -- Setup basic mappings
 -- ======================================================
-function bind_lua_callback(mode, shortcut, callback)
-    vim.keymap.set(mode, shortcut, callback, {})
-end
-
 function map(mode, shortcut, command, options)
     vim.api.nvim_set_keymap(mode, shortcut, command, options)
 end

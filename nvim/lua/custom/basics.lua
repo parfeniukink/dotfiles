@@ -8,9 +8,6 @@ vim.cmd("set signcolumn=yes")
 -- when included, Vim will use the clipboard register "*"
 -- for all yank, delete, change and put operations which
 -- would normally go to the unnamed register
--- Linux clipboard does not provide the access to the NVIM for its system clipboard,
--- so the xclip or xsel should be installed: apt install -y xclip xsel
--- For Linux this value has to be `unnamedplus`. Here is the MacOS configuration
 vim.opt.clipboard = "unnamed"
 
 -- Disable highlight after search
@@ -50,6 +47,4 @@ vim.cmd("set expandtab")
 -- bufflisted [testing]
 vim.cmd("set buflisted")
 
-
--- ruler indention
 vim.cmd("set guitablabel=%t")
