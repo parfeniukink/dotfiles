@@ -214,7 +214,7 @@ vim.keymap.set(
 -- ===================================================================
 require("mason").setup()
 require("mason-lspconfig").setup({
-    ensure_installed = { "lua_ls", "tsserver", "pyright" }
+    ensure_installed = { "lua_ls", "tsserver", "ruff_lsp", "jedi_language_server", "gopls" }
 })
 
 local lspconfig = require('lspconfig')
@@ -268,10 +268,32 @@ require("lspconfig").lua_ls.setup {
     }
 }
 
-require("lspconfig").pyright.setup({
+-- require("lspconfig").pyright.setup({
+--     on_attach = lsp_on_attach,
+--     filetypes = { "python" },
+-- })
+
+require("lspconfig").jedi_language_server.setup({
     on_attach = lsp_on_attach,
-    filetypes = { "python" },
+    init_options = {
+        completion = {
+            disableSnippets = true,
+        },
+    }
 })
+
+require("lspconfig").ruff_lsp.setup({
+    on_attach = lsp_on_attach,
+    init_options = {
+        settings = {
+            args = {
+                "--extend-select=W,COM,ICN",
+                "--ignore=E501,E722,COM812",
+            },
+        },
+    },
+})
+
 require("lspconfig").gopls.setup({
     on_attach = lsp_on_attach,
     filetypes = { "go", "gomod" },
