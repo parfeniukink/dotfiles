@@ -327,7 +327,16 @@ cmp.setup({
         { name = 'luasnip' },
     }, {
         { name = 'buffer' },
+        { name = 'path' },
     }),
+})
+
+
+cmp.setup.filetype({ "sql" }, {
+    sources = {
+        { name = "vim-dadbod-completion" },
+        { name = "buffer" },
+    },
 })
 
 
@@ -378,8 +387,8 @@ conform.setup({
         typescriptreact = { "prettier" },
         json = { "prettier" },
         yaml = { "prettier" },
-        markdown = { "prettier" }
-
+        markdown = { "prettier" },
+        sql = { "sqlfmt" }
     },
     format_on_save = {
         async = true,
