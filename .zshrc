@@ -147,9 +147,9 @@ alias dcerase="docker-compose rm -v -f"
 
 # [Files]
 alias ls="ls -lFh"
-alias l="exa -l --icons --time-style iso --header --no-user --sort type"
-alias la="exa -l --icons --time-style iso --header --no-user --sort type -a"
-alias llg="exa -l --icons --time-style iso --header --no-user --sort type -a --git-ignore"
+alias l="eza -l --icons --time-style iso --header --no-user --sort type"
+alias la="eza -l --icons --time-style iso --header --no-user --sort type -a"
+alias llg="eza -l --icons --time-style iso --header --no-user --sort type -a --git-ignore"
 alias t="tree -L"
 
 # [TMUX]
