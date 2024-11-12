@@ -193,21 +193,14 @@ map("n", "<C-I>", ":NvimTreeFindFileToggle<CR>", {})
 -- ===================================================================
 -- harpoon setup
 -- ===================================================================
-local harpoon_mark = require('harpoon.mark')
-local harpoon_ui = require('harpoon.ui')
+local harpoon = require('harpoon')
+harpoon:setup()
 
-vim.keymap.set(
-    "n", "<Leader>a", function() harpoon_mark.add_file() end, {}
-)
-vim.keymap.set(
-    "n", "<Leader>w", function() harpoon_ui.toggle_quick_menu() end, {}
-)
-vim.keymap.set(
-    "n", "<Leader>q", function() harpoon_ui.nav_prev() end, {}
-)
-vim.keymap.set(
-    "n", "<Leader>e", function() harpoon_ui.nav_next() end, {}
-)
+vim.keymap.set("n", "<Leader>a", function() harpoon:list():add() end)
+vim.keymap.set("n", "<Leader>w", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+vim.keymap.set("n", "<Leader>q", function() harpoon:list():prev() end)
+vim.keymap.set("n", "<Leader>e", function() harpoon:list():next() end)
+
 
 -- ===================================================================
 -- LSP setup

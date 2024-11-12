@@ -38,8 +38,11 @@ lazy.setup({
         tag = "0.1.1",
         dependencies = { "nvim-lua/plenary.nvim" }
     },
-
-    "ThePrimeagen/harpoon",
+    {
+        "ThePrimeagen/harpoon",
+        branch = "harpoon2",
+        dependencies = { "nvim-lua/plenary.nvim" }
+    },
 
     -- colorschemes
     {
