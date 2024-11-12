@@ -1,0 +1,670 @@
+{
+  "folders": [
+    {
+      "name": "",
+      "relativePath": "/"
+    },
+    {
+      "name": "_excalidraw",
+      "relativePath": "_excalidraw"
+    },
+    {
+      "name": "_templates",
+      "relativePath": "_templates"
+    },
+    {
+      "name": "👨‍🎓 education",
+      "relativePath": "👨‍🎓 education"
+    },
+    {
+      "name": "👨‍🏫 teaching",
+      "relativePath": "👨‍🏫 teaching"
+    },
+    {
+      "name": "👨‍🍳 cooking",
+      "relativePath": "👨‍🍳 cooking"
+    },
+    {
+      "name": "👨‍💻 projects",
+      "relativePath": "👨‍💻 projects"
+    },
+    {
+      "name": "📝 blolg",
+      "relativePath": "📝 blolg"
+    },
+    {
+      "name": "🛠️ tech notes",
+      "relativePath": "🛠️ tech notes"
+    },
+    {
+      "name": "🪖 dsz",
+      "relativePath": "🪖 dsz"
+    },
+    {
+      "name": "Backend introduction for PMs",
+      "relativePath": "👨‍🏫 teaching/Backend introduction for PMs"
+    },
+    {
+      "name": "_explains",
+      "relativePath": "👨‍🏫 teaching/_explains"
+    },
+    {
+      "name": "📚 books",
+      "relativePath": "👨‍🎓 education/📚 books"
+    },
+    {
+      "name": "_attachments",
+      "relativePath": "📝 blolg/_attachments"
+    },
+    {
+      "name": "BMAT",
+      "relativePath": "👨‍💻 projects/BMAT"
+    },
+    {
+      "name": "Leakage Detection",
+      "relativePath": "👨‍💻 projects/Leakage Detection"
+    },
+    {
+      "name": "NeuralMagic",
+      "relativePath": "👨‍💻 projects/NeuralMagic"
+    },
+    {
+      "name": "Notion Automation",
+      "relativePath": "👨‍💻 projects/Notion Automation"
+    },
+    {
+      "name": "OutreachAI",
+      "relativePath": "👨‍💻 projects/OutreachAI"
+    },
+    {
+      "name": "Phantomlabs",
+      "relativePath": "👨‍💻 projects/Phantomlabs"
+    },
+    {
+      "name": "Quandri",
+      "relativePath": "👨‍💻 projects/Quandri"
+    },
+    {
+      "name": "🚜 Hello Tractor",
+      "relativePath": "👨‍💻 projects/🚜 Hello Tractor"
+    },
+    {
+      "name": "✔️ checklists",
+      "relativePath": "🛠️ tech notes/✔️ checklists"
+    },
+    {
+      "name": "🌱 seed files",
+      "relativePath": "🛠️ tech notes/🌱 seed files"
+    },
+    {
+      "name": "🐛 issues",
+      "relativePath": "🛠️ tech notes/🐛 issues"
+    },
+    {
+      "name": "📔 wiki",
+      "relativePath": "🛠️ tech notes/📔 wiki"
+    },
+    {
+      "name": "📖 documents",
+      "relativePath": "🛠️ tech notes/📖 documents"
+    },
+    {
+      "name": "🔨 cli tools",
+      "relativePath": "🛠️ tech notes/🔨 cli tools"
+    },
+    {
+      "name": "🔬 research",
+      "relativePath": "🛠️ tech notes/🔬 research"
+    },
+    {
+      "name": "_attachments",
+      "relativePath": "👨‍💻 projects/BMAT/_attachments"
+    },
+    {
+      "name": "_attachments",
+      "relativePath": "👨‍💻 projects/Notion Automation/_attachments"
+    },
+    {
+      "name": "_attachments",
+      "relativePath": "👨‍💻 projects/Quandri/_attachments"
+    },
+    {
+      "name": "_attachments",
+      "relativePath": "👨‍💻 projects/OutreachAI/_attachments"
+    },
+    {
+      "name": "_attachments",
+      "relativePath": "🛠️ tech notes/🌱 seed files/_attachments"
+    },
+    {
+      "name": "test tasks",
+      "relativePath": "🛠️ tech notes/🌱 seed files/test tasks"
+    },
+    {
+      "name": "_attachments",
+      "relativePath": "👨‍💻 projects/🚜 Hello Tractor/_attachments"
+    },
+    {
+      "name": "rfc",
+      "relativePath": "🛠️ tech notes/📖 documents/rfc"
+    },
+    {
+      "name": "_attachments",
+      "relativePath": "🛠️ tech notes/🔬 research/_attachments"
+    },
+    {
+      "name": "_attachments",
+      "relativePath": "🛠️ tech notes/📔 wiki/_attachments"
+    },
+    {
+      "name": "🐍 Python",
+      "relativePath": "🛠️ tech notes/📔 wiki/🐍 Python"
+    },
+    {
+      "name": "3rd-party packages",
+      "relativePath": "🛠️ tech notes/📔 wiki/🐍 Python/3rd-party packages"
+    }
+  ],
+  "nonMdFiles": [
+    {
+      "name": "string cheatsheet coloured.pdf",
+      "basename": "string cheatsheet coloured",
+      "relativePath": "👨‍🏫 teaching/string cheatsheet coloured.pdf"
+    },
+    {
+      "name": "Шпаргалка Python.pdf",
+      "basename": "Шпаргалка Python",
+      "relativePath": "👨‍🏫 teaching/Шпаргалка Python.pdf"
+    },
+    {
+      "name": "presentation.key",
+      "basename": "presentation",
+      "relativePath": "👨‍🏫 teaching/Backend introduction for PMs/presentation.key"
+    },
+    {
+      "name": "Alhebra-7-klas-Merzlyak.pdf",
+      "basename": "Alhebra-7-klas-Merzlyak",
+      "relativePath": "👨‍🎓 education/📚 books/Alhebra-7-klas-Merzlyak.pdf"
+    },
+    {
+      "name": "Biolohiya-7-klas-Ostapchenko.pdf",
+      "basename": "Biolohiya-7-klas-Ostapchenko",
+      "relativePath": "👨‍🎓 education/📚 books/Biolohiya-7-klas-Ostapchenko.pdf"
+    },
+    {
+      "name": "Hemetriya-7-klas-Merzlyak.pdf",
+      "basename": "Hemetriya-7-klas-Merzlyak",
+      "relativePath": "👨‍🎓 education/📚 books/Hemetriya-7-klas-Merzlyak.pdf"
+    },
+    {
+      "name": "Jearl Walker-Fundamentals of Physics 10th ed Halliday.pdf",
+      "basename": "Jearl Walker-Fundamentals of Physics 10th ed Halliday",
+      "relativePath": "👨‍🎓 education/📚 books/Jearl Walker-Fundamentals of Physics 10th ed Halliday.pdf"
+    },
+    {
+      "name": "phisics_7_2020.pdf",
+      "basename": "phisics_7_2020",
+      "relativePath": "👨‍🎓 education/📚 books/phisics_7_2020.pdf"
+    },
+    {
+      "name": "Pasted image 20241111095812.png",
+      "basename": "Pasted image 20241111095812",
+      "relativePath": "📝 blolg/_attachments/Pasted image 20241111095812.png"
+    },
+    {
+      "name": "concurrency_and_parallelism_1.png",
+      "basename": "concurrency_and_parallelism_1",
+      "relativePath": "📝 blolg/_attachments/concurrency_and_parallelism_1.png"
+    },
+    {
+      "name": "concurrency_and_parallelism_2.png",
+      "basename": "concurrency_and_parallelism_2",
+      "relativePath": "📝 blolg/_attachments/concurrency_and_parallelism_2.png"
+    },
+    {
+      "name": "concurrency_and_parallelism_4.png",
+      "basename": "concurrency_and_parallelism_4",
+      "relativePath": "📝 blolg/_attachments/concurrency_and_parallelism_4.png"
+    },
+    {
+      "name": "concurrency_and_parallelism_3.png",
+      "basename": "concurrency_and_parallelism_3",
+      "relativePath": "📝 blolg/_attachments/concurrency_and_parallelism_3.png"
+    },
+    {
+      "name": "concurrency_and_parallelism_5.png",
+      "basename": "concurrency_and_parallelism_5",
+      "relativePath": "📝 blolg/_attachments/concurrency_and_parallelism_5.png"
+    },
+    {
+      "name": "concurrency_and_parallelism_7.png",
+      "basename": "concurrency_and_parallelism_7",
+      "relativePath": "📝 blolg/_attachments/concurrency_and_parallelism_7.png"
+    },
+    {
+      "name": "concurrency_and_parallelism_8.gif",
+      "basename": "concurrency_and_parallelism_8",
+      "relativePath": "📝 blolg/_attachments/concurrency_and_parallelism_8.gif"
+    },
+    {
+      "name": "concurrency_and_parallelism_6.png",
+      "basename": "concurrency_and_parallelism_6",
+      "relativePath": "📝 blolg/_attachments/concurrency_and_parallelism_6.png"
+    },
+    {
+      "name": "concurrency_and_parallelism_9.gif",
+      "basename": "concurrency_and_parallelism_9",
+      "relativePath": "📝 blolg/_attachments/concurrency_and_parallelism_9.gif"
+    },
+    {
+      "name": "notion_setup_1.png",
+      "basename": "notion_setup_1",
+      "relativePath": "📝 blolg/_attachments/notion_setup_1.png"
+    },
+    {
+      "name": "notion_setup_10.png",
+      "basename": "notion_setup_10",
+      "relativePath": "📝 blolg/_attachments/notion_setup_10.png"
+    },
+    {
+      "name": "notion_setup_11.png",
+      "basename": "notion_setup_11",
+      "relativePath": "📝 blolg/_attachments/notion_setup_11.png"
+    },
+    {
+      "name": "notion_setup_12.png",
+      "basename": "notion_setup_12",
+      "relativePath": "📝 blolg/_attachments/notion_setup_12.png"
+    },
+    {
+      "name": "fbb_for_telegram_users_1.png",
+      "basename": "fbb_for_telegram_users_1",
+      "relativePath": "📝 blolg/_attachments/fbb_for_telegram_users_1.png"
+    },
+    {
+      "name": "notion_setup_13.png",
+      "basename": "notion_setup_13",
+      "relativePath": "📝 blolg/_attachments/notion_setup_13.png"
+    },
+    {
+      "name": "notion_setup_14.png",
+      "basename": "notion_setup_14",
+      "relativePath": "📝 blolg/_attachments/notion_setup_14.png"
+    },
+    {
+      "name": "notion_setup_2.png",
+      "basename": "notion_setup_2",
+      "relativePath": "📝 blolg/_attachments/notion_setup_2.png"
+    },
+    {
+      "name": "notion_setup_4.png",
+      "basename": "notion_setup_4",
+      "relativePath": "📝 blolg/_attachments/notion_setup_4.png"
+    },
+    {
+      "name": "notion_setup_5.png",
+      "basename": "notion_setup_5",
+      "relativePath": "📝 blolg/_attachments/notion_setup_5.png"
+    },
+    {
+      "name": "notion_setup_3.png",
+      "basename": "notion_setup_3",
+      "relativePath": "📝 blolg/_attachments/notion_setup_3.png"
+    },
+    {
+      "name": "notion_setup_6.png",
+      "basename": "notion_setup_6",
+      "relativePath": "📝 blolg/_attachments/notion_setup_6.png"
+    },
+    {
+      "name": "notion_setup_8.png",
+      "basename": "notion_setup_8",
+      "relativePath": "📝 blolg/_attachments/notion_setup_8.png"
+    },
+    {
+      "name": "notion_setup_7.png",
+      "basename": "notion_setup_7",
+      "relativePath": "📝 blolg/_attachments/notion_setup_7.png"
+    },
+    {
+      "name": "7-klas-himiia-popel-2020.pdf",
+      "basename": "7-klas-himiia-popel-2020",
+      "relativePath": "👨‍🎓 education/📚 books/7-klas-himiia-popel-2020.pdf"
+    },
+    {
+      "name": "notion_setup_9.png",
+      "basename": "notion_setup_9",
+      "relativePath": "📝 blolg/_attachments/notion_setup_9.png"
+    },
+    {
+      "name": "Equinor architecture.pdf",
+      "basename": "Equinor architecture",
+      "relativePath": "👨‍💻 projects/Leakage Detection/Equinor architecture.pdf"
+    },
+    {
+      "name": "Microsoft Word - JEMC Signal Response Memo Revised.pdf",
+      "basename": "Microsoft Word - JEMC Signal Response Memo Revised",
+      "relativePath": "👨‍💻 projects/Leakage Detection/Microsoft Word - JEMC Signal Response Memo Revised.pdf"
+    },
+    {
+      "name": "Report_Franatech.pdf",
+      "basename": "Report_Franatech",
+      "relativePath": "👨‍💻 projects/Leakage Detection/Report_Franatech.pdf"
+    },
+    {
+      "name": "Topside – Project Requirements.pdf",
+      "basename": "Topside – Project Requirements",
+      "relativePath": "👨‍💻 projects/Leakage Detection/Topside – Project Requirements.pdf"
+    },
+    {
+      "name": "Project requirements example.pdf",
+      "basename": "Project requirements example",
+      "relativePath": "🛠️ tech notes/🌱 seed files/Project requirements example.pdf"
+    },
+    {
+      "name": "Advanced Python Development.pdf",
+      "basename": "Advanced Python Development",
+      "relativePath": "🛠️ tech notes/📖 documents/Advanced Python Development.pdf"
+    },
+    {
+      "name": "DRF free e-book.pdf",
+      "basename": "DRF free e-book",
+      "relativePath": "🛠️ tech notes/📖 documents/DRF free e-book.pdf"
+    },
+    {
+      "name": "Data science and Big Data basics.pdf",
+      "basename": "Data science and Big Data basics",
+      "relativePath": "🛠️ tech notes/📖 documents/Data science and Big Data basics.pdf"
+    },
+    {
+      "name": "Deep learning on Python.pdf",
+      "basename": "Deep learning on Python",
+      "relativePath": "🛠️ tech notes/📖 documents/Deep learning on Python.pdf"
+    },
+    {
+      "name": "Designing Data Intensive Applications.pdf",
+      "basename": "Designing Data Intensive Applications",
+      "relativePath": "🛠️ tech notes/📖 documents/Designing Data Intensive Applications.pdf"
+    },
+    {
+      "name": "Django free e-book.pdf",
+      "basename": "Django free e-book",
+      "relativePath": "🛠️ tech notes/📖 documents/Django free e-book.pdf"
+    },
+    {
+      "name": "Docker Guide.pdf",
+      "basename": "Docker Guide",
+      "relativePath": "🛠️ tech notes/📖 documents/Docker Guide.pdf"
+    },
+    {
+      "name": "Eric Evans DDD.pdf",
+      "basename": "Eric Evans DDD",
+      "relativePath": "🛠️ tech notes/📖 documents/Eric Evans DDD.pdf"
+    },
+    {
+      "name": "Flutter basics.pdf",
+      "basename": "Flutter basics",
+      "relativePath": "🛠️ tech notes/📖 documents/Flutter basics.pdf"
+    },
+    {
+      "name": "Git Better with Vim.pdf",
+      "basename": "Git Better with Vim",
+      "relativePath": "🛠️ tech notes/📖 documents/Git Better with Vim.pdf"
+    },
+    {
+      "name": "K8S in action.pdf",
+      "basename": "K8S in action",
+      "relativePath": "🛠️ tech notes/📖 documents/K8S in action.pdf"
+    },
+    {
+      "name": "Learning From Data.pdf",
+      "basename": "Learning From Data",
+      "relativePath": "🛠️ tech notes/📖 documents/Learning From Data.pdf"
+    },
+    {
+      "name": "PostgreSQL.pdf",
+      "basename": "PostgreSQL",
+      "relativePath": "🛠️ tech notes/📖 documents/PostgreSQL.pdf"
+    },
+    {
+      "name": "Python-Cookbook-3rd-Edition.pdf",
+      "basename": "Python-Cookbook-3rd-Edition",
+      "relativePath": "🛠️ tech notes/📖 documents/Python-Cookbook-3rd-Edition.pdf"
+    },
+    {
+      "name": "Rust in Action.pdf",
+      "basename": "Rust in Action",
+      "relativePath": "🛠️ tech notes/📖 documents/Rust in Action.pdf"
+    },
+    {
+      "name": "Mastering Python - Luciano Ramalho.pdf",
+      "basename": "Mastering Python - Luciano Ramalho",
+      "relativePath": "🛠️ tech notes/📖 documents/Mastering Python - Luciano Ramalho.pdf"
+    },
+    {
+      "name": "Starting_IT_Company_WORKBOOK.pdf",
+      "basename": "Starting_IT_Company_WORKBOOK",
+      "relativePath": "🛠️ tech notes/📖 documents/Starting_IT_Company_WORKBOOK.pdf"
+    },
+    {
+      "name": "System Design Inteview by Alex Xu.pdf",
+      "basename": "System Design Inteview by Alex Xu",
+      "relativePath": "🛠️ tech notes/📖 documents/System Design Inteview by Alex Xu.pdf"
+    },
+    {
+      "name": "Two scoops of Django3.x.pdf",
+      "basename": "Two scoops of Django3.x",
+      "relativePath": "🛠️ tech notes/📖 documents/Two scoops of Django3.x.pdf"
+    },
+    {
+      "name": "William S Vincent - Django for APIs 2.pdf",
+      "basename": "William S Vincent - Django for APIs 2",
+      "relativePath": "🛠️ tech notes/📖 documents/William S Vincent - Django for APIs 2.pdf"
+    },
+    {
+      "name": "William S Vincent - Django for beginners 3.pdf",
+      "basename": "William S Vincent - Django for beginners 3",
+      "relativePath": "🛠️ tech notes/📖 documents/William S Vincent - Django for beginners 3.pdf"
+    },
+    {
+      "name": "Zero to production in RUST.pdf",
+      "basename": "Zero to production in RUST",
+      "relativePath": "🛠️ tech notes/📖 documents/Zero to production in RUST.pdf"
+    },
+    {
+      "name": "Spark the definitive guide.pdf",
+      "basename": "Spark the definitive guide",
+      "relativePath": "🛠️ tech notes/📖 documents/Spark the definitive guide.pdf"
+    },
+    {
+      "name": "project_pronto_architecture_ccid_generation.png",
+      "basename": "project_pronto_architecture_ccid_generation",
+      "relativePath": "👨‍💻 projects/BMAT/_attachments/project_pronto_architecture_ccid_generation.png"
+    },
+    {
+      "name": "project_outreachai.png",
+      "basename": "project_outreachai",
+      "relativePath": "👨‍💻 projects/OutreachAI/_attachments/project_outreachai.png"
+    },
+    {
+      "name": "Preview.2024-11-06.png",
+      "basename": "Preview.2024-11-06",
+      "relativePath": "🛠️ tech notes/🌱 seed files/_attachments/Preview.2024-11-06.png"
+    },
+    {
+      "name": "Obsidian.2024-11-08.png",
+      "basename": "Obsidian.2024-11-08",
+      "relativePath": "🛠️ tech notes/🌱 seed files/_attachments/Obsidian.2024-11-08.png"
+    },
+    {
+      "name": "Test_Task.pdf",
+      "basename": "Test_Task",
+      "relativePath": "🛠️ tech notes/🌱 seed files/test tasks/Test_Task.pdf"
+    },
+    {
+      "name": "DataOx.pdf",
+      "basename": "DataOx",
+      "relativePath": "🛠️ tech notes/🌱 seed files/test tasks/DataOx.pdf"
+    },
+    {
+      "name": "workshop.pdf",
+      "basename": "workshop",
+      "relativePath": "🛠️ tech notes/🌱 seed files/test tasks/workshop.pdf"
+    },
+    {
+      "name": "toys.pdf",
+      "basename": "toys",
+      "relativePath": "🛠️ tech notes/🌱 seed files/test tasks/toys.pdf"
+    },
+    {
+      "name": "aws_developer.pdf",
+      "basename": "aws_developer",
+      "relativePath": "🛠️ tech notes/🌱 seed files/test tasks/aws_developer.pdf"
+    },
+    {
+      "name": "project_notion_automation_tool.png",
+      "basename": "project_notion_automation_tool",
+      "relativePath": "👨‍💻 projects/Notion Automation/_attachments/project_notion_automation_tool.png"
+    },
+    {
+      "name": "project_hello_tractor_lambdas_architecture.png",
+      "basename": "project_hello_tractor_lambdas_architecture",
+      "relativePath": "👨‍💻 projects/🚜 Hello Tractor/_attachments/project_hello_tractor_lambdas_architecture.png"
+    },
+    {
+      "name": "project_quandri_architecture_2.png",
+      "basename": "project_quandri_architecture_2",
+      "relativePath": "👨‍💻 projects/Quandri/_attachments/project_quandri_architecture_2.png"
+    },
+    {
+      "name": "project_quandri_architecture_3.png",
+      "basename": "project_quandri_architecture_3",
+      "relativePath": "👨‍💻 projects/Quandri/_attachments/project_quandri_architecture_3.png"
+    },
+    {
+      "name": "rfc_http.pdf",
+      "basename": "rfc_http",
+      "relativePath": "🛠️ tech notes/📖 documents/rfc/rfc_http.pdf"
+    },
+    {
+      "name": "rfc_http_semantic.pdf",
+      "basename": "rfc_http_semantic",
+      "relativePath": "🛠️ tech notes/📖 documents/rfc/rfc_http_semantic.pdf"
+    },
+    {
+      "name": "project_quandri_architecture_1.png",
+      "basename": "project_quandri_architecture_1",
+      "relativePath": "👨‍💻 projects/Quandri/_attachments/project_quandri_architecture_1.png"
+    },
+    {
+      "name": "rfc_tls_1.2.pdf",
+      "basename": "rfc_tls_1.2",
+      "relativePath": "🛠️ tech notes/📖 documents/rfc/rfc_tls_1.2.pdf"
+    },
+    {
+      "name": "json_vs_xml_article.pdf",
+      "basename": "json_vs_xml_article",
+      "relativePath": "🛠️ tech notes/🔬 research/_attachments/json_vs_xml_article.pdf"
+    },
+    {
+      "name": "kafka_vs_queue_1.png",
+      "basename": "kafka_vs_queue_1",
+      "relativePath": "🛠️ tech notes/🔬 research/_attachments/kafka_vs_queue_1.png"
+    },
+    {
+      "name": "kafka_vs_queue_2.png",
+      "basename": "kafka_vs_queue_2",
+      "relativePath": "🛠️ tech notes/🔬 research/_attachments/kafka_vs_queue_2.png"
+    },
+    {
+      "name": "kafka_vs_queue_4.png",
+      "basename": "kafka_vs_queue_4",
+      "relativePath": "🛠️ tech notes/🔬 research/_attachments/kafka_vs_queue_4.png"
+    },
+    {
+      "name": "kafka_vs_queue_5.png",
+      "basename": "kafka_vs_queue_5",
+      "relativePath": "🛠️ tech notes/🔬 research/_attachments/kafka_vs_queue_5.png"
+    },
+    {
+      "name": "offset_vs_cursor_pagination_1.png",
+      "basename": "offset_vs_cursor_pagination_1",
+      "relativePath": "🛠️ tech notes/🔬 research/_attachments/offset_vs_cursor_pagination_1.png"
+    },
+    {
+      "name": "offset_vs_cursor_pagination_2.png",
+      "basename": "offset_vs_cursor_pagination_2",
+      "relativePath": "🛠️ tech notes/🔬 research/_attachments/offset_vs_cursor_pagination_2.png"
+    },
+    {
+      "name": "offset_vs_cursor_pagination_3.png",
+      "basename": "offset_vs_cursor_pagination_3",
+      "relativePath": "🛠️ tech notes/🔬 research/_attachments/offset_vs_cursor_pagination_3.png"
+    },
+    {
+      "name": "offset_vs_cursor_pagination_4.png",
+      "basename": "offset_vs_cursor_pagination_4",
+      "relativePath": "🛠️ tech notes/🔬 research/_attachments/offset_vs_cursor_pagination_4.png"
+    },
+    {
+      "name": "offset_vs_cursor_pagination_5.png",
+      "basename": "offset_vs_cursor_pagination_5",
+      "relativePath": "🛠️ tech notes/🔬 research/_attachments/offset_vs_cursor_pagination_5.png"
+    },
+    {
+      "name": "offset_vs_cursor_pagination_6.png",
+      "basename": "offset_vs_cursor_pagination_6",
+      "relativePath": "🛠️ tech notes/🔬 research/_attachments/offset_vs_cursor_pagination_6.png"
+    },
+    {
+      "name": "api_testing_types.png",
+      "basename": "api_testing_types",
+      "relativePath": "🛠️ tech notes/📔 wiki/_attachments/api_testing_types.png"
+    },
+    {
+      "name": "cloud_service_comparison.png",
+      "basename": "cloud_service_comparison",
+      "relativePath": "🛠️ tech notes/📔 wiki/_attachments/cloud_service_comparison.png"
+    },
+    {
+      "name": "kafka_vs_queue_3.png",
+      "basename": "kafka_vs_queue_3",
+      "relativePath": "🛠️ tech notes/🔬 research/_attachments/kafka_vs_queue_3.png"
+    },
+    {
+      "name": "gcp_01.png",
+      "basename": "gcp_01",
+      "relativePath": "🛠️ tech notes/📔 wiki/_attachments/gcp_01.png"
+    },
+    {
+      "name": "gcp_02.png",
+      "basename": "gcp_02",
+      "relativePath": "🛠️ tech notes/📔 wiki/_attachments/gcp_02.png"
+    },
+    {
+      "name": "kafka_1.png",
+      "basename": "kafka_1",
+      "relativePath": "🛠️ tech notes/📔 wiki/_attachments/kafka_1.png"
+    },
+    {
+      "name": "gcp_03.png",
+      "basename": "gcp_03",
+      "relativePath": "🛠️ tech notes/📔 wiki/_attachments/gcp_03.png"
+    },
+    {
+      "name": "rest_api_design.png",
+      "basename": "rest_api_design",
+      "relativePath": "🛠️ tech notes/📔 wiki/_attachments/rest_api_design.png"
+    },
+    {
+      "name": "rfc_websocket.pdf",
+      "basename": "rfc_websocket",
+      "relativePath": "🛠️ tech notes/📖 documents/rfc/rfc_websocket.pdf"
+    },
+    {
+      "name": "system_design_blueprint.png",
+      "basename": "system_design_blueprint",
+      "relativePath": "🛠️ tech notes/📔 wiki/_attachments/system_design_blueprint.png"
+    }
+  ]
+}

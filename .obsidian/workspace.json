@@ -1,0 +1,248 @@
+{
+  "main": {
+    "id": "c1705927849ef541",
+    "type": "split",
+    "children": [
+      {
+        "id": "d99e9fe29a6c863b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "bf26e198ad2c118e",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "🛠️ tech notes/📔 wiki/Svelte.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              },
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "Svelte"
+            }
+          },
+          {
+            "id": "e37804e4ff8a90ed",
+            "type": "leaf",
+            "state": {
+              "type": "kanban",
+              "state": {
+                "file": "☑️ Reminder.md",
+                "kanbanViewState": {
+                  "kanban-plugin": "board",
+                  "list-collapse": [
+                    false,
+                    false,
+                    false
+                  ]
+                }
+              },
+              "icon": "lucide-trello",
+              "title": "☑️ Reminder"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "e9ff62a950fbfa2e",
+    "type": "split",
+    "children": [
+      {
+        "id": "eef81f4d907fad29",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "edaf367ff5cebe05",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "b2726af017d4d1a8",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          },
+          {
+            "id": "971e91759dc27718",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "cloud services comparison",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 421.5
+  },
+  "right": {
+    "id": "cd11e7864cef7bd8",
+    "type": "split",
+    "children": [
+      {
+        "id": "ae2adc1499276f20",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "eb70785301b8d0c7",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "☑️ Reminder.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of ☑️ Reminder"
+            }
+          },
+          {
+            "id": "16741dfb03ebf17d",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "b613796b355319ed",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "f325e0b0b5bf3a3c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "383d50a86690a3f7",
+            "type": "leaf",
+            "state": {
+              "type": "reminder-list",
+              "state": {},
+              "icon": "clock",
+              "title": "Reminders"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "markdown-importer:Open format converter": false,
+      "obsidian-kanban:Create new board": false,
+      "audio-recorder:Start/stop recording": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false
+    }
+  },
+  "active": "edaf367ff5cebe05",
+  "lastOpenFiles": [
+    "🛠️ tech notes/📔 wiki/Svelte.md",
+    "☑️ Reminder.md",
+    "🥅 annually goals.md",
+    "📝 blolg/Python Backend Project Advanced Setup (FastAPI Example).md",
+    "📝 blolg/_attachments/Pasted image 20241111095847.png",
+    "📝 blolg/_attachments/Pasted image 20241111095840.png",
+    "📝 blolg/_attachments/Pasted image 20241111095812.png",
+    "📝 blolg/Python Concurrency and Parallelism.md",
+    "📝 blolg/_attachments/concurrency_and_parallelism_9.gif",
+    "📝 blolg/_attachments/concurrency_and_parallelism_8.gif",
+    "📝 blolg/_attachments/concurrency_and_parallelism_7.png",
+    "📝 blolg/_attachments/concurrency_and_parallelism_6.png",
+    "📝 blolg/_attachments/concurrency_and_parallelism_5.png",
+    "📝 blolg/_attachments/concurrency_and_parallelism_4.png",
+    "📝 blolg/_attachments/concurrency_and_parallelism_3.png",
+    "👨‍🏫 teaching/_explains/🎨 Python Multithreading & Multiprocessing.md",
+    "📝 blolg/Exceptions vs if else statements.md",
+    "🛠️ tech notes/📔 wiki/JavaScript.md",
+    "📝 blolg/Python hash()’s secret you probably didn't know about.md",
+    "📝 blolg/Reduce the number of nested loops in Python.md",
+    "📝 blolg/Python Generators. When to use?.md",
+    "📝 blolg/Family Budget Bot for Telegram users.md",
+    "📝 blolg/Notion setup.md",
+    "📝 blolg/_attachments",
+    "📝 blolg/_todo.md",
+    "🦫 self tracking/📝 Medium articles ideas.md",
+    "📝 blolg",
+    "🛠️ tech notes/📖 documents/PostgreSQL.pdf",
+    "🛠️ tech notes/📖 documents/Spark the definitive guide.pdf",
+    "🛠️ tech notes/📖 documents/Docker Guide.pdf",
+    "🛠️ tech notes/📖 documents/Mastering Python - Luciano Ramalho.pdf",
+    "🛠️ tech notes/📖 documents/Django free e-book.pdf",
+    "🛠️ tech notes/📖 documents/DRF free e-book.pdf",
+    "🛠️ tech notes/📖 documents/Data science and Big Data basics.pdf",
+    "🛠️ tech notes/📖 documents/Two scoops of Django3.x.pdf",
+    "🪖 dsz/🧻 DSZ report.md",
+    "🪖 dsz/🎨 Pentest Service Idea.md",
+    "♻️ temporary.md",
+    "👨‍🏫 teaching/_explains/`import asyncio`.md",
+    "🛠️ tech notes/🔨 cli tools/ab.md",
+    "🛠️ tech notes/🌱 seed files/test tasks/support_for_mobile_devices.excalidraw.md",
+    "🛠️ tech notes/🌱 seed files/test tasks/Analyze Log file.md",
+    "🛠️ tech notes/🌱 seed files/Agile Meetings.md",
+    "🛠️ tech notes/📔 wiki/🐍 Python/Python.md",
+    "👨‍💻 projects/NeuralMagic/🧠 Control Plane.md",
+    "👨‍💻 projects/Phantomlabs/🎨 Lead Autopilot Backend Architecture.md",
+    "Untitled.canvas"
+  ]
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "tag": "excalidraw",
+    "tagCount": 15,
+    "relativePaths": [
+      "🪖 dsz/🎨 Pentest Service Idea.md",
+      "🛠️ tech notes/🌱 seed files/test tasks/support_for_mobile_devices.excalidraw.md",
+      "🛠️ tech notes/🌱 seed files/jira_workflow.excalidraw.md",
+      "👨‍💻 projects/Phantomlabs/🎨 LitLaw Architecture.md",
+      "👨‍💻 projects/Phantomlabs/🎨 Lead Autopilot Backend Architecture.md",
+      "👨‍💻 projects/NeuralMagic/🎨 Guidellm Backend Architecture.md",
+      "👨‍🏫 teaching/🎨 [archived] support for Junior Support Hillel.md",
+      "👨‍🏫 teaching/_explains/🎨 Python for loop.md",
+      "👨‍🏫 teaching/_explains/🎨 Python while loop.md",
+      "👨‍🏫 teaching/_explains/🎨 Python Multithreading & Multiprocessing.md",
+      "👨‍🏫 teaching/_explains/🎨 Operating System.md",
+      "👨‍🏫 teaching/_explains/🎨 Network Requests.md",
+      "👨‍🏫 teaching/_explains/🎨 Functions in Python.md",
+      "👨‍🏫 teaching/_explains/🎨 File System.md",
+      "_templates/template.excalidraw.md"
+    ]
+  },
+  {
+    "tag": "computools",
+    "tagCount": 7,
+    "relativePaths": [
+      "☑️ Reminder.md"
+    ]
+  }
+]

@@ -1,0 +1,3938 @@
+[
+  {
+    "fileName": "🥅 annually goals",
+    "relativePath": "🥅 annually goals.md",
+    "frontmatter": {
+      "kanban-plugin": "board"
+    },
+    "headings": [
+      {
+        "heading": "Backlog",
+        "level": 2
+      },
+      {
+        "heading": "2025",
+        "level": 2
+      },
+      {
+        "heading": "2024",
+        "level": 2
+      },
+      {
+        "heading": "2023",
+        "level": 2
+      },
+      {
+        "heading": "2022",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "🧻 DSZ report",
+    "relativePath": "🪖 dsz/🧻 DSZ report.md",
+    "headings": [
+      {
+        "heading": "Приклад АС",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "🎨 Pentest Service Idea",
+    "relativePath": "🪖 dsz/🎨 Pentest Service Idea.md",
+    "tags": [
+      "excalidraw"
+    ],
+    "frontmatter": {
+      "excalidraw-plugin": "parsed"
+    },
+    "headings": [
+      {
+        "heading": "Excalidraw Data",
+        "level": 1
+      },
+      {
+        "heading": "Text Elements",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "Web Servers (Apache vs NginX)",
+    "relativePath": "🛠️ tech notes/🔬 research/Web Servers (Apache vs NginX).md"
+  },
+  {
+    "fileName": "Top ML Models",
+    "relativePath": "🛠️ tech notes/🔬 research/Top ML Models.md",
+    "headings": [
+      {
+        "heading": "Computer Vision",
+        "level": 2
+      },
+      {
+        "heading": "Natural Language Processing (NLP)",
+        "level": 2
+      },
+      {
+        "heading": "Time Series Forecasting",
+        "level": 2
+      },
+      {
+        "heading": "Recommendation Systems",
+        "level": 2
+      },
+      {
+        "heading": "Anomaly Detection",
+        "level": 2
+      },
+      {
+        "heading": "Reinforcement Learning",
+        "level": 2
+      },
+      {
+        "heading": "General-Purpose Models",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "Software Licences",
+    "relativePath": "🛠️ tech notes/🔬 research/Software Licences.md",
+    "headings": [
+      {
+        "heading": "Computools Q&A",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "Security Standards",
+    "relativePath": "🛠️ tech notes/🔬 research/Security Standards.md",
+    "backlinks": [
+      {
+        "fileName": "Developer Manifest",
+        "link": "Security Standards",
+        "relativePath": "🛠️ tech notes/📔 wiki/Developer Manifest.md"
+      }
+    ]
+  },
+  {
+    "fileName": "Scaling & Normalization of the Data",
+    "relativePath": "🛠️ tech notes/🔬 research/Scaling & Normalization of the Data.md"
+  },
+  {
+    "fileName": "Sampling the data",
+    "relativePath": "🛠️ tech notes/🔬 research/Sampling the data.md",
+    "headings": [
+      {
+        "heading": "About",
+        "level": 1
+      },
+      {
+        "heading": "When Not to Balance Classes?",
+        "level": 1
+      },
+      {
+        "heading": "Types of sampling:",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "RQ vs Celery",
+    "relativePath": "🛠️ tech notes/🔬 research/RQ vs Celery.md",
+    "headings": [
+      {
+        "heading": "Somebody's opinion",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "Offset vs Cursor SQL pagination",
+    "relativePath": "🛠️ tech notes/🔬 research/Offset vs Cursor SQL pagination.md",
+    "headings": [
+      {
+        "heading": "Offset pagination",
+        "level": 2
+      },
+      {
+        "heading": "Cursor-based pagination",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "Kafka vs traditional Queue",
+    "relativePath": "🛠️ tech notes/🔬 research/Kafka vs traditional Queue.md"
+  },
+  {
+    "fileName": "JSON vs XML",
+    "relativePath": "🛠️ tech notes/🔬 research/JSON vs XML.md"
+  },
+  {
+    "fileName": "HIPAA",
+    "relativePath": "🛠️ tech notes/🔬 research/HIPAA.md",
+    "headings": [
+      {
+        "heading": "📚 Glossary",
+        "level": 1
+      },
+      {
+        "heading": "ePHI",
+        "level": 2
+      },
+      {
+        "heading": "About Encryption",
+        "level": 2
+      },
+      {
+        "heading": "Security Policy & NIST references",
+        "level": 1
+      },
+      {
+        "heading": "Коротко из документа NIST SP 800-53",
+        "level": 2
+      },
+      {
+        "heading": "А теперь Summary",
+        "level": 2
+      }
+    ],
+    "backlinks": [
+      {
+        "fileName": "Developer Manifest",
+        "link": "HIPAA",
+        "relativePath": "🛠️ tech notes/📔 wiki/Developer Manifest.md"
+      }
+    ]
+  },
+  {
+    "fileName": "FastAPI Background tasks vs Celery",
+    "relativePath": "🛠️ tech notes/🔬 research/FastAPI Background tasks vs Celery.md"
+  },
+  {
+    "fileName": "Becoming a Software Architect by Ebehard Wolff",
+    "relativePath": "🛠️ tech notes/🔬 research/Becoming a Software Architect by Ebehard Wolff.md",
+    "headings": [
+      {
+        "heading": "How do we actually understand the problem? ISO 25010",
+        "level": 3
+      },
+      {
+        "heading": "Traditional vs Modern segmentation",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "zsh",
+    "relativePath": "🛠️ tech notes/🔨 cli tools/zsh.md",
+    "headings": [
+      {
+        "heading": "🛠️ OhMyZSH Setup",
+        "level": 1
+      },
+      {
+        "heading": "Set default shell",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "zip",
+    "relativePath": "🛠️ tech notes/🔨 cli tools/zip.md",
+    "headings": [
+      {
+        "heading": "Compress",
+        "level": 1
+      },
+      {
+        "heading": "Decompress archive",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "wc",
+    "relativePath": "🛠️ tech notes/🔨 cli tools/wc.md"
+  },
+  {
+    "fileName": "tmuxinator",
+    "relativePath": "🛠️ tech notes/🔨 cli tools/tmuxinator.md",
+    "headings": [
+      {
+        "heading": "Install",
+        "level": 2
+      },
+      {
+        "heading": "Manage projects",
+        "level": 2
+      },
+      {
+        "heading": "Configure",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "systemctl",
+    "relativePath": "🛠️ tech notes/🔨 cli tools/systemctl.md",
+    "headings": [
+      {
+        "heading": "Usage",
+        "level": 1
+      },
+      {
+        "heading": "Management commands",
+        "level": 2
+      },
+      {
+        "heading": "Logs",
+        "level": 2
+      },
+      {
+        "heading": "Create a new service",
+        "level": 1
+      },
+      {
+        "heading": "Description of a Unit file",
+        "level": 2
+      }
+    ],
+    "backlinks": [
+      {
+        "fileName": "MailHog",
+        "link": "systemctl",
+        "relativePath": "🛠️ tech notes/📔 wiki/MailHog.md"
+      }
+    ]
+  },
+  {
+    "fileName": "rsync",
+    "relativePath": "🛠️ tech notes/🔨 cli tools/rsync.md"
+  },
+  {
+    "fileName": "gzip",
+    "relativePath": "🛠️ tech notes/🔨 cli tools/gzip.md",
+    "headings": [
+      {
+        "heading": "Compressing",
+        "level": 1
+      },
+      {
+        "heading": "Decompressing",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "grep",
+    "relativePath": "🛠️ tech notes/🔨 cli tools/grep.md",
+    "headings": [
+      {
+        "heading": "Commands",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "ffmpeg",
+    "relativePath": "🛠️ tech notes/🔨 cli tools/ffmpeg.md",
+    "headings": [
+      {
+        "heading": "Convert to MP4",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "ab",
+    "relativePath": "🛠️ tech notes/🔨 cli tools/ab.md",
+    "headings": [
+      {
+        "heading": "🛠️ Setup",
+        "level": 1
+      },
+      {
+        "heading": "🏃 Usage",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "🐳 Docker",
+    "relativePath": "🛠️ tech notes/📔 wiki/🐳 Docker.md",
+    "headings": [
+      {
+        "heading": "Basic commands",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "Python",
+    "relativePath": "🛠️ tech notes/📔 wiki/🐍 Python/Python.md",
+    "headings": [
+      {
+        "heading": "🛠️ Setup",
+        "level": 1
+      },
+      {
+        "heading": "MacOS",
+        "level": 2
+      },
+      {
+        "heading": "Ubuntu",
+        "level": 2
+      },
+      {
+        "heading": "From sources",
+        "level": 2
+      },
+      {
+        "heading": "📑 PEPs List",
+        "level": 1
+      },
+      {
+        "heading": "🔨 Build backends",
+        "level": 1
+      },
+      {
+        "heading": "📝 Code Snippets",
+        "level": 1
+      },
+      {
+        "heading": "Mutable arguments as default value in function (spirit bus example)",
+        "level": 2
+      },
+      {
+        "heading": "Should I use `typing.TYPE_CHECKING` runtime constant",
+        "level": 2
+      },
+      {
+        "heading": "Using `AsyncGeneraor` in abstract classes",
+        "level": 2
+      },
+      {
+        "heading": "multiprocessing `fork()` vs `spawn()`\\_",
+        "level": 2
+      },
+      {
+        "heading": "`cProfile`",
+        "level": 2
+      },
+      {
+        "heading": "Get by chunks from `Generator` object",
+        "level": 2
+      },
+      {
+        "heading": "Using `Ellypsis` to filter nested dicts",
+        "level": 2
+      },
+      {
+        "heading": "`sys.intern` to optimize strings access",
+        "level": 2
+      },
+      {
+        "heading": "Floating point arithmetic issues and limitations",
+        "level": 2
+      },
+      {
+        "heading": "Testing decorated function",
+        "level": 2
+      },
+      {
+        "heading": "Dictionary fields deep removal",
+        "level": 2
+      },
+      {
+        "heading": "`collections.abc.Mapping`",
+        "level": 2
+      },
+      {
+        "heading": "`decimal` rounding options",
+        "level": 2
+      },
+      {
+        "heading": "`__orig_bases__` vs `__orig_class__` on typing",
+        "level": 2
+      },
+      {
+        "heading": "Compiled Python",
+        "level": 2
+      },
+      {
+        "heading": "Do we really need the `__init__.py` file?",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "sqlalchemy",
+    "relativePath": "🛠️ tech notes/📔 wiki/🐍 Python/3rd-party packages/sqlalchemy.md",
+    "headings": [
+      {
+        "heading": "CASCADE delete on database level",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "sentry_sdk",
+    "relativePath": "🛠️ tech notes/📔 wiki/🐍 Python/3rd-party packages/sentry_sdk.md"
+  },
+  {
+    "fileName": "requests",
+    "relativePath": "🛠️ tech notes/📔 wiki/🐍 Python/3rd-party packages/requests.md",
+    "headings": [
+      {
+        "heading": "How to implement the \"retry\" policy?",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "pyotpif",
+    "relativePath": "🛠️ tech notes/📔 wiki/🐍 Python/3rd-party packages/pyotpif.md",
+    "links": [
+      {
+        "link": "Authentication",
+        "relativePath": "🛠️ tech notes/📔 wiki/Authentication.md"
+      }
+    ]
+  },
+  {
+    "fileName": "poetry",
+    "relativePath": "🛠️ tech notes/📔 wiki/🐍 Python/3rd-party packages/poetry.md",
+    "headings": [
+      {
+        "heading": "🛠️ Setup",
+        "level": 1
+      },
+      {
+        "heading": "Uninstall",
+        "level": 2
+      },
+      {
+        "heading": "Commands",
+        "level": 2
+      },
+      {
+        "heading": "Publish the package to the GitLab",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "boto3_lambda",
+    "relativePath": "🛠️ tech notes/📔 wiki/🐍 Python/3rd-party packages/boto3_lambda.md",
+    "headings": [
+      {
+        "heading": "AWS Lambda FastAPI handler",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "piptools",
+    "relativePath": "🛠️ tech notes/📔 wiki/🐍 Python/3rd-party packages/piptools.md",
+    "headings": [
+      {
+        "heading": "🛠️ Setup",
+        "level": 1
+      },
+      {
+        "heading": "Usage",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "passlib",
+    "relativePath": "🛠️ tech notes/📔 wiki/🐍 Python/3rd-party packages/passlib.md"
+  },
+  {
+    "fileName": "locust",
+    "relativePath": "🛠️ tech notes/📔 wiki/🐍 Python/3rd-party packages/locust.md",
+    "headings": [
+      {
+        "heading": "Setup",
+        "level": 1
+      },
+      {
+        "heading": "Using Docker",
+        "level": 2
+      },
+      {
+        "heading": "Locust files",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "hypothesis (property-based testing)",
+    "relativePath": "🛠️ tech notes/📔 wiki/🐍 Python/3rd-party packages/hypothesis (property-based testing).md",
+    "headings": [
+      {
+        "heading": "Basic Usage",
+        "level": 1
+      },
+      {
+        "heading": "Custom strategy implementation",
+        "level": 1
+      },
+      {
+        "heading": "Custom parametrized Strategy",
+        "level": 1
+      },
+      {
+        "heading": "Stateful test",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "boto3_s3",
+    "relativePath": "🛠️ tech notes/📔 wiki/🐍 Python/3rd-party packages/boto3_s3.md"
+  },
+  {
+    "fileName": "Conda package manager",
+    "relativePath": "🛠️ tech notes/📔 wiki/🐍 Python/3rd-party packages/Conda package manager.md",
+    "headings": [
+      {
+        "heading": "🛠️ Setup",
+        "level": 1
+      },
+      {
+        "heading": "MacOS ARM",
+        "level": 2
+      },
+      {
+        "heading": "Usage",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "☸️ K8S",
+    "relativePath": "🛠️ tech notes/📔 wiki/☸️ K8S.md",
+    "headings": [
+      {
+        "heading": "About",
+        "level": 1
+      },
+      {
+        "heading": "Basic commands",
+        "level": 1
+      },
+      {
+        "heading": "Creating ingress component",
+        "level": 2
+      },
+      {
+        "heading": "Setup a new project guide",
+        "level": 1
+      },
+      {
+        "heading": "🐳 Creating Container Registry",
+        "level": 2
+      },
+      {
+        "heading": "🛂 Adding credentials",
+        "level": 2
+      },
+      {
+        "heading": "Creating K8S Deployment configuration",
+        "level": 2
+      },
+      {
+        "heading": "Minikube Setup",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "llama_cpp",
+    "relativePath": "🛠️ tech notes/📔 wiki/llama_cpp.md",
+    "headings": [
+      {
+        "heading": "Installation guide",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "gRPC",
+    "relativePath": "🛠️ tech notes/📔 wiki/gRPC.md",
+    "backlinks": [
+      {
+        "fileName": "Developer Manifest",
+        "link": "gRPC",
+        "relativePath": "🛠️ tech notes/📔 wiki/Developer Manifest.md"
+      }
+    ]
+  },
+  {
+    "fileName": "WireGuard VPN Setup",
+    "relativePath": "🛠️ tech notes/📔 wiki/WireGuard VPN Setup.md",
+    "headings": [
+      {
+        "heading": "**Configure the Ubuntu Server**",
+        "level": 2
+      },
+      {
+        "heading": "create a configuration",
+        "level": 3
+      }
+    ],
+    "backlinks": [
+      {
+        "fileName": "Home Server Setup",
+        "link": "WireGuard VPN Setup",
+        "relativePath": "🛠️ tech notes/📔 wiki/Home Server Setup.md"
+      }
+    ]
+  },
+  {
+    "fileName": "Windows",
+    "relativePath": "🛠️ tech notes/📔 wiki/Windows.md",
+    "headings": [
+      {
+        "heading": "`OhMyPosh` Installation",
+        "level": 1
+      },
+      {
+        "heading": "Kali Linux Installation",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "Ubuntu Host setup",
+    "relativePath": "🛠️ tech notes/📔 wiki/Ubuntu Host setup.md",
+    "headings": [
+      {
+        "heading": "Initial Setup",
+        "level": 1
+      },
+      {
+        "heading": "Albert installation",
+        "level": 1
+      },
+      {
+        "heading": "Metasploit setup",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "Svelte",
+    "relativePath": "🛠️ tech notes/📔 wiki/Svelte.md",
+    "headings": [
+      {
+        "heading": "Setup",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "Sendgrid",
+    "relativePath": "🛠️ tech notes/📔 wiki/Sendgrid.md",
+    "headings": [
+      {
+        "heading": "Backend integration",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "SSH",
+    "relativePath": "🛠️ tech notes/📔 wiki/SSH.md",
+    "headings": [
+      {
+        "heading": "OpenSSH Setup",
+        "level": 1
+      },
+      {
+        "heading": "Configure server",
+        "level": 2
+      }
+    ],
+    "backlinks": [
+      {
+        "fileName": "Home Server Setup",
+        "link": "SSH",
+        "relativePath": "🛠️ tech notes/📔 wiki/Home Server Setup.md"
+      }
+    ]
+  },
+  {
+    "fileName": "SQLite",
+    "relativePath": "🛠️ tech notes/📔 wiki/SQLite.md",
+    "headings": [
+      {
+        "heading": "Enable Foreign Key feature",
+        "level": 1
+      },
+      {
+        "heading": "Enable WAL (Write-ahead-logging)",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "SQL",
+    "relativePath": "🛠️ tech notes/📔 wiki/SQL.md",
+    "headings": [
+      {
+        "heading": "Snippets",
+        "level": 1
+      },
+      {
+        "heading": "Delete duplicates and leave with a minimal id",
+        "level": 2
+      },
+      {
+        "heading": "Avoid duplication based on contraing",
+        "level": 2
+      },
+      {
+        "heading": "PostgreSQL Deviation based on the previous result",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "Redis",
+    "relativePath": "🛠️ tech notes/📔 wiki/Redis.md"
+  },
+  {
+    "fileName": "RabbitMQ",
+    "relativePath": "🛠️ tech notes/📔 wiki/RabbitMQ.md",
+    "headings": [
+      {
+        "heading": "🛠️ Installation",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "PostgreSQL",
+    "relativePath": "🛠️ tech notes/📔 wiki/PostgreSQL.md",
+    "headings": [
+      {
+        "heading": "Installation",
+        "level": 1
+      },
+      {
+        "heading": "MacOS",
+        "level": 2
+      },
+      {
+        "heading": "Ubuntu",
+        "level": 2
+      },
+      {
+        "heading": "Configuration",
+        "level": 1
+      },
+      {
+        "heading": "Dumps",
+        "level": 1
+      },
+      {
+        "heading": "Create dump",
+        "level": 2
+      },
+      {
+        "heading": "Queries",
+        "level": 1
+      },
+      {
+        "heading": "Strings pattern matching with `ILIKE`",
+        "level": 2
+      },
+      {
+        "heading": "Display values in a row instead of a column using `string_agg`",
+        "level": 2
+      },
+      {
+        "heading": "For numeric fields",
+        "level": 2
+      },
+      {
+        "heading": "Extensions",
+        "level": 1
+      },
+      {
+        "heading": "PostGIS",
+        "level": 2
+      },
+      {
+        "heading": "Setup system requirements",
+        "level": 3
+      },
+      {
+        "heading": "Docker Setup",
+        "level": 3
+      },
+      {
+        "heading": "uuid-ossp",
+        "level": 2
+      },
+      {
+        "heading": "hstore",
+        "level": 2
+      },
+      {
+        "heading": "pgcrypto",
+        "level": 2
+      },
+      {
+        "heading": "citext",
+        "level": 2
+      },
+      {
+        "heading": "intarray",
+        "level": 2
+      },
+      {
+        "heading": "pg_trgm",
+        "level": 2
+      },
+      {
+        "heading": "unaccent",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "NginX",
+    "relativePath": "🛠️ tech notes/📔 wiki/NginX.md",
+    "headings": [
+      {
+        "heading": "Snippets",
+        "level": 1
+      },
+      {
+        "heading": "`0` downtime reload",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "MySQL",
+    "relativePath": "🛠️ tech notes/📔 wiki/MySQL.md",
+    "headings": [
+      {
+        "heading": "🛠️ Setup",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "MongoDB",
+    "relativePath": "🛠️ tech notes/📔 wiki/MongoDB.md",
+    "headings": [
+      {
+        "heading": "🛠️ MacOS installation",
+        "level": 1
+      },
+      {
+        "heading": "Base commands",
+        "level": 1
+      },
+      {
+        "heading": "Queries",
+        "level": 1
+      },
+      {
+        "heading": "Filtering",
+        "level": 2
+      },
+      {
+        "heading": "Dumps",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "Minio Server setup",
+    "relativePath": "🛠️ tech notes/📔 wiki/Minio Server setup.md",
+    "headings": [
+      {
+        "heading": "🏃‍♂️ Run service",
+        "level": 2
+      },
+      {
+        "heading": "🪣 Create a bucket",
+        "level": 2
+      }
+    ],
+    "links": [
+      {
+        "link": "Azurite setup",
+        "relativePath": "🛠️ tech notes/📔 wiki/Azurite setup.md"
+      }
+    ],
+    "backlinks": [
+      {
+        "fileName": "Azurite setup",
+        "link": "Minio Server setup",
+        "relativePath": "🛠️ tech notes/📔 wiki/Azurite setup.md"
+      }
+    ]
+  },
+  {
+    "fileName": "Microsoft Azure",
+    "relativePath": "🛠️ tech notes/📔 wiki/Microsoft Azure.md",
+    "headings": [
+      {
+        "heading": "OAuth",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "MailHog",
+    "relativePath": "🛠️ tech notes/📔 wiki/MailHog.md",
+    "headings": [
+      {
+        "heading": "Setup",
+        "level": 1
+      }
+    ],
+    "links": [
+      {
+        "link": "systemctl",
+        "relativePath": "🛠️ tech notes/🔨 cli tools/systemctl.md"
+      }
+    ]
+  },
+  {
+    "fileName": "Kafka",
+    "relativePath": "🛠️ tech notes/📔 wiki/Kafka.md",
+    "headings": [
+      {
+        "heading": "📚 Glossary",
+        "level": 1
+      },
+      {
+        "heading": "Usage",
+        "level": 1
+      },
+      {
+        "heading": "Docker setup",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "JavaScript",
+    "relativePath": "🛠️ tech notes/📔 wiki/JavaScript.md",
+    "headings": [
+      {
+        "heading": "3-rd party",
+        "level": 1
+      },
+      {
+        "heading": "React.js + TS Vite Setup",
+        "level": 2
+      },
+      {
+        "heading": "Start the application",
+        "level": 3
+      },
+      {
+        "heading": "Install base dependencies",
+        "level": 3
+      },
+      {
+        "heading": "Add configuration files:",
+        "level": 3
+      },
+      {
+        "heading": "Install Tailwind CSS",
+        "level": 3
+      },
+      {
+        "heading": "Install prettier and tailwind prettier",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "Home Server Setup",
+    "relativePath": "🛠️ tech notes/📔 wiki/Home Server Setup.md",
+    "headings": [
+      {
+        "heading": "Setup UFW basic policy",
+        "level": 1
+      },
+      {
+        "heading": "🔐 Setup OpenSSH",
+        "level": 1
+      },
+      {
+        "heading": "🔄 Create a VPN service",
+        "level": 1
+      },
+      {
+        "heading": "🖼️ Setup Jellyfin media server",
+        "level": 1
+      }
+    ],
+    "links": [
+      {
+        "link": "SSH",
+        "relativePath": "🛠️ tech notes/📔 wiki/SSH.md"
+      },
+      {
+        "link": "WireGuard VPN Setup",
+        "relativePath": "🛠️ tech notes/📔 wiki/WireGuard VPN Setup.md"
+      }
+    ]
+  },
+  {
+    "fileName": "GraphQL",
+    "relativePath": "🛠️ tech notes/📔 wiki/GraphQL.md",
+    "headings": [
+      {
+        "heading": "TL;DR",
+        "level": 1
+      }
+    ],
+    "backlinks": [
+      {
+        "fileName": "Developer Manifest",
+        "link": "GraphQL",
+        "relativePath": "🛠️ tech notes/📔 wiki/Developer Manifest.md"
+      }
+    ]
+  },
+  {
+    "fileName": "Google Cloud Platform",
+    "relativePath": "🛠️ tech notes/📔 wiki/Google Cloud Platform.md",
+    "headings": [
+      {
+        "heading": "🛠️ EC2 Instance",
+        "level": 1
+      },
+      {
+        "heading": "Setup a new user",
+        "level": 2
+      },
+      {
+        "heading": "Expose port to Compute instance",
+        "level": 2
+      },
+      {
+        "heading": "OAuth",
+        "level": 1
+      },
+      {
+        "heading": "Google Maps API (Places API)",
+        "level": 1
+      },
+      {
+        "heading": "Google Sheets",
+        "level": 1
+      },
+      {
+        "heading": "Project Setup",
+        "level": 2
+      },
+      {
+        "heading": "Google My Business API",
+        "level": 1
+      },
+      {
+        "heading": "Account/accounts management",
+        "level": 2
+      },
+      {
+        "heading": "Location management",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "Golang",
+    "relativePath": "🛠️ tech notes/📔 wiki/Golang.md",
+    "headings": [
+      {
+        "heading": "🛠️ Setup",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "GitHub self-hosted Runner Deployment Setup",
+    "relativePath": "🛠️ tech notes/📔 wiki/GitHub self-hosted Runner Deployment Setup.md",
+    "headings": [
+      {
+        "heading": "SSH Keys Setup",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "Git",
+    "relativePath": "🛠️ tech notes/📔 wiki/Git.md",
+    "headings": [
+      {
+        "heading": "Basic commands",
+        "level": 1
+      },
+      {
+        "heading": "Git Flows",
+        "level": 1
+      },
+      {
+        "heading": "Merge strategies",
+        "level": 1
+      },
+      {
+        "heading": "Final Thoughts and Recommendations by Martin Fowler",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "Flutter",
+    "relativePath": "🛠️ tech notes/📔 wiki/Flutter.md",
+    "headings": [
+      {
+        "heading": "🛠️ Setup",
+        "level": 2
+      },
+      {
+        "heading": "Adjust the operating system",
+        "level": 3
+      },
+      {
+        "heading": "Uninstall",
+        "level": 3
+      },
+      {
+        "heading": "🏃‍♂️ Usage",
+        "level": 2
+      },
+      {
+        "heading": "Install Dart define package for configuring",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "fileName": "Facebook",
+    "relativePath": "🛠️ tech notes/📔 wiki/Facebook.md",
+    "headings": [
+      {
+        "heading": "OAuth Setup",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "Developer Manifest",
+    "relativePath": "🛠️ tech notes/📔 wiki/Developer Manifest.md",
+    "headings": [
+      {
+        "heading": "Define Regulations",
+        "level": 2
+      },
+      {
+        "heading": "Select Cloud Provider",
+        "level": 2
+      },
+      {
+        "heading": "Define the Development process",
+        "level": 2
+      },
+      {
+        "heading": "Provide System Design Document",
+        "level": 2
+      },
+      {
+        "heading": "Define General Architecture Patterns",
+        "level": 2
+      },
+      {
+        "heading": "Define General Conventions",
+        "level": 2
+      },
+      {
+        "heading": "Define Communication protocols",
+        "level": 2
+      },
+      {
+        "heading": "Define Security and Authentication protocols",
+        "level": 2
+      },
+      {
+        "heading": "Define the data management",
+        "level": 2
+      }
+    ],
+    "links": [
+      {
+        "link": "HIPAA",
+        "relativePath": "🛠️ tech notes/🔬 research/HIPAA.md"
+      },
+      {
+        "link": "Agile Meetings",
+        "relativePath": "🛠️ tech notes/🌱 seed files/Agile Meetings.md"
+      },
+      {
+        "link": "User stories explaination",
+        "relativePath": "🛠️ tech notes/🌱 seed files/User stories explaination.md"
+      },
+      {
+        "link": "Estimation in story points",
+        "relativePath": "🛠️ tech notes/🌱 seed files/Estimation in story points.md"
+      },
+      {
+        "link": "jira_workflow.excalidraw",
+        "relativePath": "🛠️ tech notes/🌱 seed files/jira_workflow.excalidraw.md"
+      },
+      {
+        "link": "The Git usage policy",
+        "relativePath": "🛠️ tech notes/🌱 seed files/The Git usage policy.md"
+      },
+      {
+        "link": "GraphQL",
+        "relativePath": "🛠️ tech notes/📔 wiki/GraphQL.md"
+      },
+      {
+        "link": "gRPC",
+        "relativePath": "🛠️ tech notes/📔 wiki/gRPC.md"
+      },
+      {
+        "link": "Security Standards",
+        "relativePath": "🛠️ tech notes/🔬 research/Security Standards.md"
+      },
+      {
+        "link": "Authentication",
+        "relativePath": "🛠️ tech notes/📔 wiki/Authentication.md"
+      }
+    ]
+  },
+  {
+    "fileName": "Azurite setup",
+    "relativePath": "🛠️ tech notes/📔 wiki/Azurite setup.md",
+    "headings": [
+      {
+        "heading": "🛠️ **Setup**",
+        "level": 2
+      },
+      {
+        "heading": "🏃‍♂️ Run the service",
+        "level": 2
+      }
+    ],
+    "links": [
+      {
+        "link": "Minio Server setup",
+        "relativePath": "🛠️ tech notes/📔 wiki/Minio Server setup.md"
+      }
+    ],
+    "backlinks": [
+      {
+        "fileName": "Minio Server setup",
+        "link": "Azurite setup",
+        "relativePath": "🛠️ tech notes/📔 wiki/Minio Server setup.md"
+      }
+    ]
+  },
+  {
+    "fileName": "Authentication",
+    "relativePath": "🛠️ tech notes/📔 wiki/Authentication.md",
+    "headings": [
+      {
+        "heading": "OAuth & OIDC",
+        "level": 1
+      },
+      {
+        "heading": "OTP (One-time-password)",
+        "level": 1
+      },
+      {
+        "heading": "Session-based Auth",
+        "level": 1
+      }
+    ],
+    "backlinks": [
+      {
+        "fileName": "pyotpif",
+        "link": "Authentication",
+        "relativePath": "🛠️ tech notes/📔 wiki/🐍 Python/3rd-party packages/pyotpif.md"
+      },
+      {
+        "fileName": "Developer Manifest",
+        "link": "Authentication",
+        "relativePath": "🛠️ tech notes/📔 wiki/Developer Manifest.md"
+      }
+    ]
+  },
+  {
+    "fileName": "Apple Hosts Setup",
+    "relativePath": "🛠️ tech notes/📔 wiki/Apple Hosts Setup.md",
+    "headings": [
+      {
+        "heading": "Mac CLI tools setup",
+        "level": 1
+      },
+      {
+        "heading": "Homebrew",
+        "level": 2
+      },
+      {
+        "heading": " XCode",
+        "level": 2
+      },
+      {
+        "heading": "🎨 Update display settings",
+        "level": 2
+      },
+      {
+        "heading": "🔨 Install other console utils",
+        "level": 2
+      },
+      {
+        "heading": "Insatll Metasploit",
+        "level": 2
+      },
+      {
+        "heading": "Mac GUI apps",
+        "level": 1
+      },
+      {
+        "heading": "iPad setup",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "Ansible",
+    "relativePath": "🛠️ tech notes/📔 wiki/Ansible.md",
+    "headings": [
+      {
+        "heading": "Vault Encryption",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "AWS",
+    "relativePath": "🛠️ tech notes/📔 wiki/AWS.md",
+    "headings": [
+      {
+        "heading": "How to setup a CloudFront distribution on S3",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "psql no PostgreSQL user name specified in startup packet",
+    "relativePath": "🛠️ tech notes/🐛 issues/psql no PostgreSQL user name specified in startup packet.md"
+  },
+  {
+    "fileName": "pipenv lock python-future package metadata generation failed",
+    "relativePath": "🛠️ tech notes/🐛 issues/pipenv lock python-future package metadata generation failed.md"
+  },
+  {
+    "fileName": "XCode License CLI error",
+    "relativePath": "🛠️ tech notes/🐛 issues/XCode License CLI error.md"
+  },
+  {
+    "fileName": "Ubuntu 22.04 screen sharing does not work",
+    "relativePath": "🛠️ tech notes/🐛 issues/Ubuntu 22.04 screen sharing does not work.md"
+  },
+  {
+    "fileName": "SQLite 3.35 RETURNING does not work",
+    "relativePath": "🛠️ tech notes/🐛 issues/SQLite 3.35 RETURNING does not work.md"
+  },
+  {
+    "fileName": "PostgreSQL macos service restart error",
+    "relativePath": "🛠️ tech notes/🐛 issues/PostgreSQL macos service restart error.md"
+  },
+  {
+    "fileName": "Python Celery worker Linux kernel inotify error",
+    "relativePath": "🛠️ tech notes/🐛 issues/Python Celery worker Linux kernel inotify error.md"
+  },
+  {
+    "fileName": "Poetry slow dependencies resolving",
+    "relativePath": "🛠️ tech notes/🐛 issues/Poetry slow dependencies resolving.md",
+    "headings": [
+      {
+        "heading": "Poetry slow dependencies resolving",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "OBS virtual camera plugin remove",
+    "relativePath": "🛠️ tech notes/🐛 issues/OBS virtual camera plugin remove.md"
+  },
+  {
+    "fileName": "MacOS psqycopg2-binary Error",
+    "relativePath": "🛠️ tech notes/🐛 issues/MacOS psqycopg2-binary Error.md"
+  },
+  {
+    "fileName": "MacOS PostgreSQL homebrew.mxcl.postgresql.plist error",
+    "relativePath": "🛠️ tech notes/🐛 issues/MacOS PostgreSQL homebrew.mxcl.postgresql.plist error.md",
+    "headings": [
+      {
+        "heading": "Solution",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "Docker daemon conflict error",
+    "relativePath": "🛠️ tech notes/🐛 issues/Docker daemon conflict error.md"
+  },
+  {
+    "fileName": "Celery pycurl error",
+    "relativePath": "🛠️ tech notes/🐛 issues/Celery pycurl error.md"
+  },
+  {
+    "fileName": "support_for_mobile_devices.excalidraw",
+    "relativePath": "🛠️ tech notes/🌱 seed files/test tasks/support_for_mobile_devices.excalidraw.md",
+    "tags": [
+      "excalidraw"
+    ],
+    "frontmatter": {
+      "excalidraw-plugin": "parsed"
+    },
+    "headings": [
+      {
+        "heading": "Excalidraw Data",
+        "level": 1
+      },
+      {
+        "heading": "Text Elements",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "Becoming a Software Architect by Ebehard Wolff",
+    "relativePath": "🛠️ tech notes/🌱 seed files/test tasks/Becoming a Software Architect by Ebehard Wolff.md"
+  },
+  {
+    "fileName": "FastAPI Application",
+    "relativePath": "🛠️ tech notes/🌱 seed files/test tasks/FastAPI Application.md"
+  },
+  {
+    "fileName": "Analyze Log file",
+    "relativePath": "🛠️ tech notes/🌱 seed files/test tasks/Analyze Log file.md"
+  },
+  {
+    "fileName": "jira_workflow.excalidraw",
+    "relativePath": "🛠️ tech notes/🌱 seed files/jira_workflow.excalidraw.md",
+    "tags": [
+      "excalidraw"
+    ],
+    "frontmatter": {
+      "excalidraw-plugin": "parsed"
+    },
+    "headings": [
+      {
+        "heading": "Excalidraw Data",
+        "level": 1
+      },
+      {
+        "heading": "Text Elements",
+        "level": 2
+      },
+      {
+        "heading": "Embedded Files",
+        "level": 2
+      }
+    ],
+    "backlinks": [
+      {
+        "fileName": "Developer Manifest",
+        "link": "jira_workflow.excalidraw",
+        "relativePath": "🛠️ tech notes/📔 wiki/Developer Manifest.md"
+      }
+    ]
+  },
+  {
+    "fileName": "User stories explaination",
+    "relativePath": "🛠️ tech notes/🌱 seed files/User stories explaination.md",
+    "backlinks": [
+      {
+        "fileName": "Developer Manifest",
+        "link": "User stories explaination",
+        "relativePath": "🛠️ tech notes/📔 wiki/Developer Manifest.md"
+      }
+    ]
+  },
+  {
+    "fileName": "The Git usage policy",
+    "relativePath": "🛠️ tech notes/🌱 seed files/The Git usage policy.md",
+    "backlinks": [
+      {
+        "fileName": "Developer Manifest",
+        "link": "The Git usage policy",
+        "relativePath": "🛠️ tech notes/📔 wiki/Developer Manifest.md"
+      }
+    ]
+  },
+  {
+    "fileName": "Project passport",
+    "relativePath": "🛠️ tech notes/🌱 seed files/Project passport.md"
+  },
+  {
+    "fileName": "Interview feedback to a candidate",
+    "relativePath": "🛠️ tech notes/🌱 seed files/Interview feedback to a candidate.md"
+  },
+  {
+    "fileName": "Project estimation example",
+    "relativePath": "🛠️ tech notes/🌱 seed files/Project estimation example.md"
+  },
+  {
+    "fileName": "Agile Meetings",
+    "relativePath": "🛠️ tech notes/🌱 seed files/Agile Meetings.md",
+    "backlinks": [
+      {
+        "fileName": "Developer Manifest",
+        "link": "Agile Meetings",
+        "relativePath": "🛠️ tech notes/📔 wiki/Developer Manifest.md"
+      }
+    ]
+  },
+  {
+    "fileName": "Estimation in story points",
+    "relativePath": "🛠️ tech notes/🌱 seed files/Estimation in story points.md",
+    "headings": [
+      {
+        "heading": "Estimation Scenarious",
+        "level": 2
+      }
+    ],
+    "backlinks": [
+      {
+        "fileName": "Developer Manifest",
+        "link": "Estimation in story points",
+        "relativePath": "🛠️ tech notes/📔 wiki/Developer Manifest.md"
+      }
+    ]
+  },
+  {
+    "fileName": "Project definition of Done",
+    "relativePath": "🛠️ tech notes/✔️ checklists/Project definition of Done.md"
+  },
+  {
+    "fileName": "Presale requirements",
+    "relativePath": "🛠️ tech notes/✔️ checklists/Presale requirements.md"
+  },
+  {
+    "fileName": "New company is hiring me?",
+    "relativePath": "🛠️ tech notes/✔️ checklists/New company is hiring me?.md"
+  },
+  {
+    "fileName": "Reduce the number of nested loops in Python",
+    "relativePath": "📝 blolg/Reduce the number of nested loops in Python.md",
+    "headings": [
+      {
+        "heading": "👉🏻 So, in terms of using functions we may have:",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "Python Generators. When to use?",
+    "relativePath": "📝 blolg/Python Generators. When to use?.md",
+    "headings": [
+      {
+        "heading": "You have any sequence you’d like go through",
+        "level": 1
+      },
+      {
+        "heading": "You have to go through a filtered sequence",
+        "level": 1
+      },
+      {
+        "heading": "Files opening",
+        "level": 1
+      },
+      {
+        "heading": "Generating random uniq values",
+        "level": 1
+      },
+      {
+        "heading": "You need to check a batch of ordered urls with the same placeholder",
+        "level": 1
+      },
+      {
+        "heading": "Using generators as a Coroutine. Advanced",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "Notion setup",
+    "relativePath": "📝 blolg/Notion setup.md",
+    "headings": [
+      {
+        "heading": "⏩ Skip this part if you familiar with Notion",
+        "level": 1
+      },
+      {
+        "heading": "Introduction",
+        "level": 1
+      },
+      {
+        "heading": "👇 My Notion view 👇",
+        "level": 2
+      },
+      {
+        "heading": "💡 Each element explanation",
+        "level": 2
+      },
+      {
+        "heading": "🕵🏻‍♂️ How it looks inside",
+        "level": 2
+      },
+      {
+        "heading": "👨🏻‍💻 Technical setup",
+        "level": 1
+      },
+      {
+        "heading": "🏷 What tags give us?",
+        "level": 3
+      },
+      {
+        "heading": "🤔 But why I need different views for my setup?",
+        "level": 2
+      },
+      {
+        "heading": "➕ Additionally think about 🤔",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "_todo",
+    "relativePath": "📝 blolg/_todo.md"
+  },
+  {
+    "fileName": "Python hash()’s secret you probably didn't know about",
+    "relativePath": "📝 blolg/Python hash()’s secret you probably didn't know about.md"
+  },
+  {
+    "fileName": "Python Concurrency and Parallelism",
+    "relativePath": "📝 blolg/Python Concurrency and Parallelism.md",
+    "headings": [
+      {
+        "heading": "Let’s start with foundations",
+        "level": 2
+      },
+      {
+        "heading": "What about the GIL?",
+        "level": 2
+      },
+      {
+        "heading": "What could we solve using threads?",
+        "level": 2
+      },
+      {
+        "heading": "🎨 Real file example?",
+        "level": 2
+      },
+      {
+        "heading": "🥗 Let’s cook some salad",
+        "level": 2
+      },
+      {
+        "heading": "<Let’s do some coding?/>",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "Python Backend Project Advanced Setup (FastAPI Example)",
+    "relativePath": "📝 blolg/Python Backend Project Advanced Setup (FastAPI Example).md",
+    "headings": [
+      {
+        "heading": "**🐛 Issues**",
+        "level": 1
+      },
+      {
+        "heading": "**🔨 Real-world example**",
+        "level": 1
+      },
+      {
+        "heading": "</> Let’s dig into the application factory",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "Family Budget Bot for Telegram users",
+    "relativePath": "📝 blolg/Family Budget Bot for Telegram users.md",
+    "headings": [
+      {
+        "heading": "Disclaimer",
+        "level": 1
+      },
+      {
+        "heading": "Why is it necessary to note money changes?",
+        "level": 1
+      },
+      {
+        "heading": "📝 Paper",
+        "level": 1
+      },
+      {
+        "heading": "💻 Local documents",
+        "level": 1
+      },
+      {
+        "heading": "☁️ Google sheets",
+        "level": 1
+      },
+      {
+        "heading": "📱 Special money notes add",
+        "level": 1
+      },
+      {
+        "heading": "🏦 Bank application",
+        "level": 1
+      },
+      {
+        "heading": "🤖 Telegram bot",
+        "level": 1
+      },
+      {
+        "heading": "🌆 GIFs that show the interaction with the bot",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "Exceptions vs if else statements",
+    "relativePath": "📝 blolg/Exceptions vs if else statements.md",
+    "headings": [
+      {
+        "heading": "EAFP vs LBYL",
+        "level": 1
+      },
+      {
+        "heading": "🤔 BTW, why this is a dilemma?",
+        "level": 1
+      },
+      {
+        "heading": "🏋️ Using a little bit of “more complicated stuff”",
+        "level": 1
+      },
+      {
+        "heading": "🏁 Summary",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "🚜 Hello Tractor",
+    "relativePath": "👨‍💻 projects/🚜 Hello Tractor/🚜 Hello Tractor.md",
+    "headings": [
+      {
+        "heading": "✏️ About",
+        "level": 4
+      },
+      {
+        "heading": "🔗 Links",
+        "level": 4
+      },
+      {
+        "heading": "🏗️ Technologies stack",
+        "level": 4
+      },
+      {
+        "heading": "🌶️ Current state",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "fileName": "💰 Family Budget Bot",
+    "relativePath": "👨‍💻 projects/💰 Family Budget Bot.md",
+    "headings": [
+      {
+        "heading": "✏️ About",
+        "level": 2
+      },
+      {
+        "heading": "🔗 Links",
+        "level": 4
+      },
+      {
+        "heading": "🏗️ Technologies stack",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "fileName": "👨‍🔬 Modern Vivo",
+    "relativePath": "👨‍💻 projects/👨‍🔬 Modern Vivo.md",
+    "headings": [
+      {
+        "heading": "✏️ About",
+        "level": 3
+      },
+      {
+        "heading": "🔨 Solutions",
+        "level": 3
+      },
+      {
+        "heading": "🏗️ Technologies stack",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "🌴 Beyond rooms (iTravel)",
+    "relativePath": "👨‍💻 projects/🌴 Beyond rooms (iTravel).md",
+    "headings": [
+      {
+        "heading": "✏️ About",
+        "level": 3
+      },
+      {
+        "heading": "🔨 Solutions",
+        "level": 3
+      },
+      {
+        "heading": "🔗 Links",
+        "level": 3
+      },
+      {
+        "heading": "🏗️ Technologies stack",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "🇸🇦 Infinite Reach",
+    "relativePath": "👨‍💻 projects/🇸🇦 Infinite Reach.md",
+    "headings": [
+      {
+        "heading": "✏️ About",
+        "level": 3
+      },
+      {
+        "heading": "🔨 Solutions",
+        "level": 3
+      },
+      {
+        "heading": "🔗 Links",
+        "level": 3
+      },
+      {
+        "heading": "🏗️ Technologies stack",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "🇨🇭 Ecatch",
+    "relativePath": "👨‍💻 projects/🇨🇭 Ecatch.md",
+    "headings": [
+      {
+        "heading": "✏️ About",
+        "level": 3
+      },
+      {
+        "heading": "🔨 Solutions",
+        "level": 3
+      },
+      {
+        "heading": "🔗 Links",
+        "level": 3
+      },
+      {
+        "heading": "🏗️ Technologies stack",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "Share4you",
+    "relativePath": "👨‍💻 projects/Share4you.md",
+    "headings": [
+      {
+        "heading": "✏️ About",
+        "level": 3
+      },
+      {
+        "heading": "🏗️ Technologies stack",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "🤖 Quandri",
+    "relativePath": "👨‍💻 projects/Quandri/🤖 Quandri.md",
+    "headings": [
+      {
+        "heading": "✏️ About",
+        "level": 3
+      },
+      {
+        "heading": "🏗️ Technologies stack",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "🗣️ Lead Autopilot",
+    "relativePath": "👨‍💻 projects/Phantomlabs/🗣️ Lead Autopilot.md",
+    "headings": [
+      {
+        "heading": "✏️ About",
+        "level": 3
+      },
+      {
+        "heading": "🔨 Solutions",
+        "level": 3
+      },
+      {
+        "heading": "🏗️ Technologies stack",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "🧑‍⚖️ Lit Law",
+    "relativePath": "👨‍💻 projects/Phantomlabs/🧑‍⚖️ Lit Law.md",
+    "headings": [
+      {
+        "heading": "✏️ About",
+        "level": 3
+      },
+      {
+        "heading": "🔨 Solutions",
+        "level": 3
+      },
+      {
+        "heading": "🏗️ Technologies stack",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "🎨 LitLaw Architecture",
+    "relativePath": "👨‍💻 projects/Phantomlabs/🎨 LitLaw Architecture.md",
+    "tags": [
+      "excalidraw"
+    ],
+    "frontmatter": {
+      "excalidraw-plugin": "parsed"
+    },
+    "headings": [
+      {
+        "heading": "Excalidraw Data",
+        "level": 1
+      },
+      {
+        "heading": "Text Elements",
+        "level": 2
+      },
+      {
+        "heading": "Embedded Files",
+        "level": 2
+      }
+    ],
+    "links": [
+      {
+        "link": "Pasted Image 20241108102241_762.png"
+      },
+      {
+        "link": "Pasted Image 20241108102241_779.png"
+      },
+      {
+        "link": "Pasted Image 20241108102241_780.png"
+      },
+      {
+        "link": "Pasted Image 20241108102241_781.png"
+      },
+      {
+        "link": "Pasted Image 20241108102241_784.png"
+      }
+    ]
+  },
+  {
+    "fileName": "🎨 Lead Autopilot Backend Architecture",
+    "relativePath": "👨‍💻 projects/Phantomlabs/🎨 Lead Autopilot Backend Architecture.md",
+    "tags": [
+      "excalidraw"
+    ],
+    "frontmatter": {
+      "excalidraw-plugin": "parsed"
+    },
+    "headings": [
+      {
+        "heading": "Excalidraw Data",
+        "level": 1
+      },
+      {
+        "heading": "Text Elements",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "OutreachAI",
+    "relativePath": "👨‍💻 projects/OutreachAI/OutreachAI.md",
+    "headings": [
+      {
+        "heading": "✏️ About",
+        "level": 3
+      },
+      {
+        "heading": "🏗️ Technologies stack",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "📝 Notion automation tool",
+    "relativePath": "👨‍💻 projects/Notion Automation/📝 Notion automation tool.md",
+    "headings": [
+      {
+        "heading": "✏️ About",
+        "level": 3
+      },
+      {
+        "heading": "🔨 Solutions",
+        "level": 3
+      },
+      {
+        "heading": "🏗️ Technologies stack",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "🧠 GuideLLM",
+    "relativePath": "👨‍💻 projects/NeuralMagic/🧠 GuideLLM.md",
+    "headings": [
+      {
+        "heading": "✏️ About",
+        "level": 3
+      },
+      {
+        "heading": "🔨 Solutions",
+        "level": 3
+      },
+      {
+        "heading": "🔗 Links",
+        "level": 3
+      },
+      {
+        "heading": "🏗️ Technologies stack",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "🧠 Control Plane",
+    "relativePath": "👨‍💻 projects/NeuralMagic/🧠 Control Plane.md",
+    "headings": [
+      {
+        "heading": "✏️ About",
+        "level": 4
+      },
+      {
+        "heading": "🔗 Links",
+        "level": 4
+      },
+      {
+        "heading": "🏗️ Technologies stack",
+        "level": 4
+      },
+      {
+        "heading": "🌶️ Current State",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "fileName": "🎨 Guidellm Backend Architecture",
+    "relativePath": "👨‍💻 projects/NeuralMagic/🎨 Guidellm Backend Architecture.md",
+    "tags": [
+      "excalidraw"
+    ],
+    "frontmatter": {
+      "excalidraw-plugin": "parsed"
+    },
+    "headings": [
+      {
+        "heading": "Excalidraw Data",
+        "level": 1
+      },
+      {
+        "heading": "Text Elements",
+        "level": 2
+      },
+      {
+        "heading": "🔨 Core Technical Stack",
+        "level": 2
+      },
+      {
+        "heading": "✅ Code Quality Stack",
+        "level": 2
+      },
+      {
+        "heading": "🧪 Testing Framework",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "README",
+    "relativePath": "👨‍💻 projects/Leakage Detection/README.md",
+    "headings": [
+      {
+        "heading": "✏️ About",
+        "level": 3
+      },
+      {
+        "heading": "🔨 Solutions",
+        "level": 3
+      },
+      {
+        "heading": "🔗 Links",
+        "level": 3
+      },
+      {
+        "heading": "🏗️ Technologies stack",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "Leadforce",
+    "relativePath": "👨‍💻 projects/Leadforce.md",
+    "headings": [
+      {
+        "heading": "✏️ About",
+        "level": 3
+      },
+      {
+        "heading": "🏗️ Technologies stack",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "Lablaco",
+    "relativePath": "👨‍💻 projects/Lablaco.md",
+    "headings": [
+      {
+        "heading": "✏️ About",
+        "level": 3
+      },
+      {
+        "heading": "🏗️ Technologies stack",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "First Class Data",
+    "relativePath": "👨‍💻 projects/First Class Data.md",
+    "headings": [
+      {
+        "heading": "✏️ About",
+        "level": 3
+      },
+      {
+        "heading": "🏗️ Technologies stack",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "Childmind",
+    "relativePath": "👨‍💻 projects/Childmind.md",
+    "headings": [
+      {
+        "heading": "✏️ About",
+        "level": 3
+      },
+      {
+        "heading": "🔨 Solutions",
+        "level": 3
+      },
+      {
+        "heading": "🔗 Links",
+        "level": 3
+      },
+      {
+        "heading": "🏗️ Technologies stack",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "PRONTO",
+    "relativePath": "👨‍💻 projects/BMAT/PRONTO.md",
+    "headings": [
+      {
+        "heading": "✏️ About",
+        "level": 3
+      },
+      {
+        "heading": "🔨 Solutions",
+        "level": 3
+      },
+      {
+        "heading": "🔗 Links",
+        "level": 3
+      },
+      {
+        "heading": "🏗️ Technologies stack",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "fileName": "Meal",
+    "relativePath": "👨‍🍳 cooking/Meal.md"
+  },
+  {
+    "fileName": "Deserts",
+    "relativePath": "👨‍🍳 cooking/Deserts.md",
+    "headings": [
+      {
+        "heading": "Pancakes",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "🎨 [archived] support for Junior Support Hillel",
+    "relativePath": "👨‍🏫 teaching/🎨 [archived] support for Junior Support Hillel.md",
+    "tags": [
+      "excalidraw"
+    ],
+    "frontmatter": {
+      "excalidraw-plugin": "parsed"
+    },
+    "headings": [
+      {
+        "heading": "Excalidraw Data",
+        "level": 1
+      },
+      {
+        "heading": "Text Elements",
+        "level": 2
+      },
+      {
+        "heading": "Embedded Files",
+        "level": 2
+      }
+    ],
+    "links": [
+      {
+        "link": "Pasted Image 20241108100331_996.png"
+      },
+      {
+        "link": "Pasted Image 20241108100332_013.jpg"
+      }
+    ]
+  },
+  {
+    "fileName": "🎨 Python for loop",
+    "relativePath": "👨‍🏫 teaching/_explains/🎨 Python for loop.md",
+    "tags": [
+      "excalidraw"
+    ],
+    "frontmatter": {
+      "excalidraw-plugin": "parsed"
+    },
+    "headings": [
+      {
+        "heading": "Excalidraw Data",
+        "level": 1
+      },
+      {
+        "heading": "Text Elements",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "🎨 Python while loop",
+    "relativePath": "👨‍🏫 teaching/_explains/🎨 Python while loop.md",
+    "tags": [
+      "excalidraw"
+    ],
+    "frontmatter": {
+      "excalidraw-plugin": "parsed"
+    },
+    "headings": [
+      {
+        "heading": "Excalidraw Data",
+        "level": 1
+      },
+      {
+        "heading": "Text Elements",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "🎨 Python Multithreading & Multiprocessing",
+    "relativePath": "👨‍🏫 teaching/_explains/🎨 Python Multithreading & Multiprocessing.md",
+    "tags": [
+      "excalidraw"
+    ],
+    "frontmatter": {
+      "excalidraw-plugin": "parsed"
+    },
+    "headings": [
+      {
+        "heading": "Excalidraw Data",
+        "level": 1
+      },
+      {
+        "heading": "Text Elements",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "🎨 Operating System",
+    "relativePath": "👨‍🏫 teaching/_explains/🎨 Operating System.md",
+    "tags": [
+      "excalidraw"
+    ],
+    "frontmatter": {
+      "excalidraw-plugin": "parsed"
+    },
+    "headings": [
+      {
+        "heading": "Excalidraw Data",
+        "level": 1
+      },
+      {
+        "heading": "Text Elements",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "🎨 Network Requests",
+    "relativePath": "👨‍🏫 teaching/_explains/🎨 Network Requests.md",
+    "tags": [
+      "excalidraw"
+    ],
+    "frontmatter": {
+      "excalidraw-plugin": "parsed"
+    },
+    "headings": [
+      {
+        "heading": "Excalidraw Data",
+        "level": 1
+      },
+      {
+        "heading": "Text Elements",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "🎨 Functions in Python",
+    "relativePath": "👨‍🏫 teaching/_explains/🎨 Functions in Python.md",
+    "tags": [
+      "excalidraw"
+    ],
+    "frontmatter": {
+      "excalidraw-plugin": "parsed"
+    },
+    "headings": [
+      {
+        "heading": "Excalidraw Data",
+        "level": 1
+      },
+      {
+        "heading": "Text Elements",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "🎨 File System",
+    "relativePath": "👨‍🏫 teaching/_explains/🎨 File System.md",
+    "tags": [
+      "excalidraw"
+    ],
+    "frontmatter": {
+      "excalidraw-plugin": "parsed"
+    },
+    "headings": [
+      {
+        "heading": "Excalidraw Data",
+        "level": 1
+      },
+      {
+        "heading": "Text Elements",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "`import asyncio`",
+    "relativePath": "👨‍🏫 teaching/_explains/`import asyncio`.md",
+    "headings": [
+      {
+        "heading": "Links",
+        "level": 1
+      },
+      {
+        "heading": "Level of abstraction we take",
+        "level": 1
+      },
+      {
+        "heading": "Setup the environment",
+        "level": 1
+      },
+      {
+        "heading": "Our fundamental example",
+        "level": 1
+      },
+      {
+        "heading": "Python API",
+        "level": 1
+      },
+      {
+        "heading": "`import asyncio`",
+        "level": 2
+      },
+      {
+        "heading": "`selector_events.BaseEventLoop`",
+        "level": 2
+      },
+      {
+        "heading": "2 solutions: `SelectorEventLoop`s and `ProactorEventLoop`:",
+        "level": 2
+      },
+      {
+        "heading": "`unix_events.SelectorEventLoop`",
+        "level": 2
+      },
+      {
+        "heading": "Task implementation",
+        "level": 2
+      },
+      {
+        "heading": "Let's run some examples",
+        "level": 1
+      },
+      {
+        "heading": "How to cancel task from the outside in Python 3.11+",
+        "level": 2
+      },
+      {
+        "heading": "How do we cancel multiple tasks from the outside?",
+        "level": 2
+      },
+      {
+        "heading": "Async web crawler implementation",
+        "level": 2
+      },
+      {
+        "heading": "Implementing the base example (not-working)",
+        "level": 3
+      },
+      {
+        "heading": "Fixing with `loop.call_soon_threadsafe`",
+        "level": 3
+      },
+      {
+        "heading": "Updating with `run forever` loop to simplify the actual example**",
+        "level": 3
+      },
+      {
+        "heading": "Limiting concurrent tasks with `asyncio.Semaphore`",
+        "level": 1
+      },
+      {
+        "heading": "Specifically  for Sasha's team",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "Python Pro Course",
+    "relativePath": "👨‍🏫 teaching/Python Pro Course.md"
+  },
+  {
+    "fileName": "Python Basic Course",
+    "relativePath": "👨‍🏫 teaching/Python Basic Course.md",
+    "headings": [
+      {
+        "heading": "Chapter 0. Introduction. What I am going to share with you?",
+        "level": 1
+      },
+      {
+        "heading": "Яка моя ціль?",
+        "level": 2
+      },
+      {
+        "heading": "Чому ціль така проста?",
+        "level": 3
+      },
+      {
+        "heading": "На що ми будемо тримати орієнтир?",
+        "level": 2
+      },
+      {
+        "heading": "Приклад",
+        "level": 2
+      },
+      {
+        "heading": "Висновок",
+        "level": 2
+      },
+      {
+        "heading": "Chapter 1. Python? Application. Operating System",
+        "level": 1
+      },
+      {
+        "heading": "Python TLDR",
+        "level": 2
+      },
+      {
+        "heading": "Slide 1 🖼️",
+        "level": 4
+      },
+      {
+        "heading": "Chapter 2. Python programming language. How does it work?",
+        "level": 1
+      },
+      {
+        "heading": "Що це означає?",
+        "level": 2
+      },
+      {
+        "heading": "Тож, де у всій цій історії Python?",
+        "level": 2
+      },
+      {
+        "heading": "Встановлення Python",
+        "level": 2
+      },
+      {
+        "heading": "Редактор коду",
+        "level": 2
+      },
+      {
+        "heading": "Chapter 3. Python first steps. Data types",
+        "level": 1
+      },
+      {
+        "heading": "When to use and what. some summaries",
+        "level": 2
+      },
+      {
+        "heading": "Chapter 4. Основні операції зі змінними.",
+        "level": 1
+      },
+      {
+        "heading": "Приклади операцій над примітивними типами даних",
+        "level": 2
+      },
+      {
+        "heading": "Chapter 5. Algorythm",
+        "level": 1
+      },
+      {
+        "heading": "Level 1 algorythm example",
+        "level": 2
+      },
+      {
+        "heading": "Level 2 algorythm example",
+        "level": 2
+      },
+      {
+        "heading": "Code example",
+        "level": 2
+      },
+      {
+        "heading": "Chapter 6. Flows? Conditions? Algory",
+        "level": 1
+      },
+      {
+        "heading": "Chapter 6. Loops",
+        "level": 1
+      },
+      {
+        "heading": "Chapter 7. Functions. LEGB",
+        "level": 1
+      },
+      {
+        "heading": "Chapter . Files",
+        "level": 1
+      },
+      {
+        "heading": "Chapter . Classes. OOP",
+        "level": 1
+      },
+      {
+        "heading": "Chapter . Meta programming? Decorators",
+        "level": 1
+      },
+      {
+        "heading": "Chapter . Iterators. Generators",
+        "level": 1
+      },
+      {
+        "heading": "Chapter . Exceptions handling",
+        "level": 1
+      },
+      {
+        "heading": "Chapter . Modulea and packages",
+        "level": 1
+      },
+      {
+        "heading": "Chapter . Exceptions handling",
+        "level": 1
+      },
+      {
+        "heading": "Chapter . Parsing education website",
+        "level": 1
+      },
+      {
+        "heading": "Chapter . GIT. Last recommendations",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "fileName": "Old Python Pro Course",
+    "relativePath": "👨‍🏫 teaching/Old Python Pro Course.md",
+    "headings": [
+      {
+        "heading": "<span style=\"color:white\">Course program</span>",
+        "level": 1
+      },
+      {
+        "heading": "<span style=\"color:#8E3900\">Lesson 1. Introduction. Python basics remind</span>",
+        "level": 1
+      },
+      {
+        "heading": "<span style=\"color:green\">Agenda</span>",
+        "level": 2
+      },
+      {
+        "heading": "<span style=\"color:green\">Materials</span>",
+        "level": 2
+      },
+      {
+        "heading": "<span style=\"color:green\">Homework</span>",
+        "level": 2
+      },
+      {
+        "heading": "EN:",
+        "level": 3
+      },
+      {
+        "heading": "UA:",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:#8E3900\">Lesson 2. CVS. Setup code quality tools. Dependency management. CI/CD</span>",
+        "level": 1
+      },
+      {
+        "heading": "<span style=\"color:green\">Agenda</span>",
+        "level": 2
+      },
+      {
+        "heading": "<span style=\"color:green\">Materials</span>",
+        "level": 2
+      },
+      {
+        "heading": "<span style=\"color:green\">Homework</span>",
+        "level": 2
+      },
+      {
+        "heading": "EN:",
+        "level": 3
+      },
+      {
+        "heading": "UA:",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:#8E3900\">Lesson 3. Setup code quality tools. Dependency management. CI/CD</span>",
+        "level": 1
+      },
+      {
+        "heading": "<span style=\"color:green\">Materials</span>",
+        "level": 2
+      },
+      {
+        "heading": "<span style=\"color:green\">Homework</span>",
+        "level": 2
+      },
+      {
+        "heading": "EN:",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:#8E3900\">Lesson 4. Iterators and Generators. Code debugging</span>",
+        "level": 1
+      },
+      {
+        "heading": "<span style=\"color:green\">Agenda</span>",
+        "level": 2
+      },
+      {
+        "heading": "Code debugging",
+        "level": 3
+      },
+      {
+        "heading": "Iterator",
+        "level": 3
+      },
+      {
+        "heading": "Generator",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:green\">Materials</span>",
+        "level": 2
+      },
+      {
+        "heading": "<span style=\"color:green\">Homework</span>",
+        "level": 2
+      },
+      {
+        "heading": "EN:",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:#8E3900\">Lesson 5. Functions.</span>",
+        "level": 1
+      },
+      {
+        "heading": "Agenda",
+        "level": 2
+      },
+      {
+        "heading": "<span style=\"color:green\">Materials</span>",
+        "level": 2
+      },
+      {
+        "heading": "<span style=\"color:green\">Homework</span>",
+        "level": 2
+      },
+      {
+        "heading": "EN:",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:#8E3900\">Lesson 6. Decorators</span>",
+        "level": 1
+      },
+      {
+        "heading": "<span style=\"color:green\">Agenda</span>",
+        "level": 2
+      },
+      {
+        "heading": "Decorator",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:green\">Materials</span>",
+        "level": 2
+      },
+      {
+        "heading": "<span style=\"color:green\">Homework</span>",
+        "level": 2
+      },
+      {
+        "heading": "EN:",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:#8E3900\">Lesson 7. Q&A. Context manager. OOP. Dunder methods</span>",
+        "level": 1
+      },
+      {
+        "heading": "<span style=\"color:green\">Agenda</span>",
+        "level": 2
+      },
+      {
+        "heading": "Context manager",
+        "level": 3
+      },
+      {
+        "heading": "Intro in classs data structures",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:green\">Materials</span>",
+        "level": 2
+      },
+      {
+        "heading": "<span style=\"color:green\">Homework</span>",
+        "level": 2
+      },
+      {
+        "heading": "EN:",
+        "level": 3
+      },
+      {
+        "heading": "UA:",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:#8E3900\">Lesson 8. OOP. Abstract classes</span>",
+        "level": 1
+      },
+      {
+        "heading": "Classes",
+        "level": 2
+      },
+      {
+        "heading": "Players example",
+        "level": 3
+      },
+      {
+        "heading": "Singleton",
+        "level": 3
+      },
+      {
+        "heading": "Checkout with Stripe and PayPal",
+        "level": 3
+      },
+      {
+        "heading": "Example with game units",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:green\">Materials</span>",
+        "level": 2
+      },
+      {
+        "heading": "<span style=\"color:green\">Homework</span>",
+        "level": 2
+      },
+      {
+        "heading": "<span style=\"color:#8E3900\">Lesson 9. OOP. Dunder methods</span>",
+        "level": 1
+      },
+      {
+        "heading": "Vectors example (<i>`__add__` & `__sub__` & `__mul__` & `__truediv__`</i>)",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:green\">Materials</span>",
+        "level": 2
+      },
+      {
+        "heading": "<span style=\"color:green\">Homework</span>",
+        "level": 2
+      },
+      {
+        "heading": "EN:",
+        "level": 3
+      },
+      {
+        "heading": "UA:",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:#8E3900\">Lesson 10. Q&A. Threads</span>",
+        "level": 1
+      },
+      {
+        "heading": "<span style=\"color:green\">Agenda</span>",
+        "level": 2
+      },
+      {
+        "heading": "<span style=\"color:green\">Materials</span>",
+        "level": 2
+      },
+      {
+        "heading": "<span style=\"color:#8E3900\">Lesson 11. Threads. Asynchronous</span>",
+        "level": 1
+      },
+      {
+        "heading": "<span style=\"color:green\">Agenda</span>",
+        "level": 2
+      },
+      {
+        "heading": "With threads",
+        "level": 3
+      },
+      {
+        "heading": "Async on yields",
+        "level": 3
+      },
+      {
+        "heading": "Async await",
+        "level": 2
+      },
+      {
+        "heading": "<span style=\"color:green\">Materials</span>",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:green\">Homework</span>",
+        "level": 2
+      },
+      {
+        "heading": "EN",
+        "level": 3
+      },
+      {
+        "heading": "UA",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:#8E3900\">Lesson 12. Introduction into the web development</span>",
+        "level": 1
+      },
+      {
+        "heading": "<span style=\"color:green\">Agenda</span>",
+        "level": 2
+      },
+      {
+        "heading": "<span style=\"color:green\">Materials</span>",
+        "level": 2
+      },
+      {
+        "heading": "<span style=\"color:#8E3900\">Lesson 13. Async with API</span>",
+        "level": 1
+      },
+      {
+        "heading": "<span style=\"color:green\">Agenda</span>",
+        "level": 2
+      },
+      {
+        "heading": "Pokemons API example",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:green\">Materials</span>",
+        "level": 2
+      },
+      {
+        "heading": "<span style=\"color:green\">Homework</span>",
+        "level": 2
+      },
+      {
+        "heading": "EN:",
+        "level": 3
+      },
+      {
+        "heading": "UA:",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:#8E3900\">Lesson 14. Web development with Django</span>",
+        "level": 1
+      },
+      {
+        "heading": "<span style=\"color:green\">Agenda</span>",
+        "level": 2
+      },
+      {
+        "heading": "<span style=\"color:green\">Materials</span>",
+        "level": 2
+      },
+      {
+        "heading": "<span style=\"color:green\">Homework</span>",
+        "level": 2
+      },
+      {
+        "heading": "EN:",
+        "level": 3
+      },
+      {
+        "heading": "UA:",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:#8E3900\">Lesson 15. Django: start</span>",
+        "level": 1
+      },
+      {
+        "heading": "<span style=\"color:green\">Agenda</span>",
+        "level": 2
+      },
+      {
+        "heading": "<span style=\"color:green\">Materials</span>",
+        "level": 2
+      },
+      {
+        "heading": "<span style=\"color:green\">Homework</span>",
+        "level": 2
+      },
+      {
+        "heading": "EN:",
+        "level": 3
+      },
+      {
+        "heading": "UA:",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:#8E3900\">Lesson 16. Django. ExchangeRates small application.</span>",
+        "level": 1
+      },
+      {
+        "heading": "<span style=\"color:green\">Agenda</span>",
+        "level": 2
+      },
+      {
+        "heading": "Create a simple introduction into the application",
+        "level": 4
+      },
+      {
+        "heading": "Show the difference between HttpResponse and JsonResponse",
+        "level": 4
+      },
+      {
+        "heading": "Create a slamm exchange rates application that communicates with alfavantage API",
+        "level": 4
+      },
+      {
+        "heading": "Next, add one more limitation: _If the last dict with data is the same as new requested we don't save it into the list_",
+        "level": 4
+      },
+      {
+        "heading": "Next, let's talk about problems we have (database benefits on variables)",
+        "level": 4
+      },
+      {
+        "heading": "Developer does't know about the data structure of the response. Let's create a class",
+        "level": 4
+      },
+      {
+        "heading": "Next instead of the list let's create a class for the history \\*\\*",
+        "level": 4
+      },
+      {
+        "heading": "Show the dataclasses example",
+        "level": 4
+      },
+      {
+        "heading": "<span style=\"color:green\">Materials</span>",
+        "level": 2
+      },
+      {
+        "heading": "Django",
+        "level": 4
+      },
+      {
+        "heading": "Dataclasses",
+        "level": 4
+      },
+      {
+        "heading": "<span style=\"color:green\">Homework</span>",
+        "level": 2
+      },
+      {
+        "heading": "EN:",
+        "level": 3
+      },
+      {
+        "heading": "UA:",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:#8E3900\">Lesson 17. Django. Database architecture.</span>",
+        "level": 1
+      },
+      {
+        "heading": "<span style=\"color:green\">Agenda</span>",
+        "level": 2
+      },
+      {
+        "heading": "Normalize database",
+        "level": 3
+      },
+      {
+        "heading": "Первая нормальная форма",
+        "level": 3
+      },
+      {
+        "heading": "Вторая нормальная форма",
+        "level": 3
+      },
+      {
+        "heading": "Третья нормальная форма",
+        "level": 3
+      },
+      {
+        "heading": "Another example",
+        "level": 2
+      },
+      {
+        "heading": "Таблица до нормализации:",
+        "level": 3
+      },
+      {
+        "heading": "Первая нормальная форма: нет повторяющихся групп",
+        "level": 3
+      },
+      {
+        "heading": "Вторая нормальная форма: устранение избыточных данных",
+        "level": 3
+      },
+      {
+        "heading": "Третья нормальная форма: устранение данных, не зависящих от ключа",
+        "level": 3
+      },
+      {
+        "heading": "Additional",
+        "level": 2
+      },
+      {
+        "heading": "Нормальная форма Бойса-Кодда (НФБК) (частная форма третьей нормальной формы)",
+        "level": 3
+      },
+      {
+        "heading": "Четвертая нормальная форма",
+        "level": 3
+      },
+      {
+        "heading": "Пятая нормальная форма",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:green\">Materials</span>",
+        "level": 2
+      },
+      {
+        "heading": "<span style=\"color:green\">Homework</span>",
+        "level": 2
+      },
+      {
+        "heading": "EN:",
+        "level": 3
+      },
+      {
+        "heading": "Create a database architecture for `Car service`",
+        "level": 4
+      },
+      {
+        "heading": "UA:",
+        "level": 3
+      },
+      {
+        "heading": "Створіть архітектуру бази даних для `Автосервісу`",
+        "level": 4
+      },
+      {
+        "heading": "<span style=\"color:#8E3900\">Lesson 18. Django custom user model</span>",
+        "level": 1
+      },
+      {
+        "heading": "<span style=\"color:green\">Agenda</span>",
+        "level": 2
+      },
+      {
+        "heading": "<span style=\"color:green\">Materials</span>",
+        "level": 2
+      },
+      {
+        "heading": "Django Girls",
+        "level": 4
+      },
+      {
+        "heading": "Metanit",
+        "level": 4
+      },
+      {
+        "heading": "YouTube",
+        "level": 4
+      },
+      {
+        "heading": "Simplebetterthancomplex",
+        "level": 4
+      },
+      {
+        "heading": "<span style=\"color:green\">Homework</span>",
+        "level": 2
+      },
+      {
+        "heading": "EN:",
+        "level": 3
+      },
+      {
+        "heading": "EN:",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:#8E3900\">Lesson 19. Django admin</span>",
+        "level": 1
+      },
+      {
+        "heading": "<span style=\"color:green\">Agenda</span>",
+        "level": 2
+      },
+      {
+        "heading": "Django admin.",
+        "level": 3
+      },
+      {
+        "heading": "Difference between functional and divisional project layout",
+        "level": 3
+      },
+      {
+        "heading": "Functional",
+        "level": 4
+      },
+      {
+        "heading": "Divisional",
+        "level": 4
+      },
+      {
+        "heading": "Create a separate authentication application",
+        "level": 3
+      },
+      {
+        "heading": "Create shared module",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:green\">Materials</span>",
+        "level": 2
+      },
+      {
+        "heading": "Django admin panel",
+        "level": 3
+      },
+      {
+        "heading": "Migrations",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:green\">Homework</span>",
+        "level": 2
+      },
+      {
+        "heading": "EN",
+        "level": 3
+      },
+      {
+        "heading": "UA",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:#8E3900\">Lesson 20. Django models. Django admin</span>",
+        "level": 1
+      },
+      {
+        "heading": "<span style=\"color:green\">Agenda</span>",
+        "level": 2
+      },
+      {
+        "heading": "<span style=\"color:green\">Materials</span>",
+        "level": 2
+      },
+      {
+        "heading": "Django admin panel",
+        "level": 3
+      },
+      {
+        "heading": "Migrations",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:green\">Homework</span>",
+        "level": 2
+      },
+      {
+        "heading": "EN",
+        "level": 3
+      },
+      {
+        "heading": "UA",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:#8E3900\">Lesson 21. Django rest framework introduction</span>",
+        "level": 1
+      },
+      {
+        "heading": "<span style=\"color:green\">Agenda</span>",
+        "level": 2
+      },
+      {
+        "heading": "Serialization:",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:green\">Materials</span>",
+        "level": 2
+      },
+      {
+        "heading": "Serialization",
+        "level": 3
+      },
+      {
+        "heading": "Django rest framework (**DRF**)",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:green\">Homework</span>",
+        "level": 2
+      },
+      {
+        "heading": "EN",
+        "level": 3
+      },
+      {
+        "heading": "UA",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:#8E3900\">Lesson 22. Serialization</span>",
+        "level": 1
+      },
+      {
+        "heading": "<span style=\"color:green\">Agenda</span>",
+        "level": 2
+      },
+      {
+        "heading": "Create an example to describe the seriazlization:",
+        "level": 3
+      },
+      {
+        "heading": "Update the mindmap",
+        "level": 3
+      },
+      {
+        "heading": "Update the retrieve model and serializers",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:green\">Materials</span>",
+        "level": 2
+      },
+      {
+        "heading": "<span style=\"color:green\">Homework</span>",
+        "level": 2
+      },
+      {
+        "heading": "No homework",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:#8E3900\">Lesson 23. DRF views. Create a POST view for creating a ticket</span>",
+        "level": 1
+      },
+      {
+        "heading": "<span style=\"color:green\">Agenda</span>",
+        "level": 2
+      },
+      {
+        "heading": "Let's create a ticket via the endpoint",
+        "level": 3
+      },
+      {
+        "heading": "Move serializers to the separate file",
+        "level": 3
+      },
+      {
+        "heading": "Smooth go to the authentication",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:green\">Materials</span>",
+        "level": 2
+      },
+      {
+        "heading": "Views:",
+        "level": 3
+      },
+      {
+        "heading": "Serializers",
+        "level": 3
+      },
+      {
+        "heading": "Documentation",
+        "level": 4
+      },
+      {
+        "heading": "<span style=\"color:green\">Homework</span>",
+        "level": 2
+      },
+      {
+        "heading": "EN:",
+        "level": 3
+      },
+      {
+        "heading": "TODO:",
+        "level": 4
+      },
+      {
+        "heading": "UA:",
+        "level": 3
+      },
+      {
+        "heading": "TODO:",
+        "level": 4
+      },
+      {
+        "heading": "<span style=\"color:#8E3900\">Lesson 24. DRF. Authentication types</span>",
+        "level": 1
+      },
+      {
+        "heading": "<span style=\"color:green\">Agenda</span>",
+        "level": 2
+      },
+      {
+        "heading": "Complete with tickets validation if the same name was provided",
+        "level": 3
+      },
+      {
+        "heading": "Start authentication with DRF",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:green\">Materials</span>",
+        "level": 2
+      },
+      {
+        "heading": "<span style=\"color:green\">Homework</span>",
+        "level": 2
+      },
+      {
+        "heading": "EN:",
+        "level": 3
+      },
+      {
+        "heading": "UA:",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:#8E3900\">Lesson 25. Introduction. Python basics remind</span>",
+        "level": 1
+      },
+      {
+        "heading": "<span style=\"color:green\">Agenda</span>",
+        "level": 2
+      },
+      {
+        "heading": "Introduction into CBV",
+        "level": 3
+      },
+      {
+        "heading": "Authentication",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:green\">Materials</span>",
+        "level": 2
+      },
+      {
+        "heading": "Authentication libraries",
+        "level": 3
+      },
+      {
+        "heading": "Youtube",
+        "level": 3
+      },
+      {
+        "heading": "Another",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:green\">Homework</span>",
+        "level": 2
+      },
+      {
+        "heading": "EN",
+        "level": 3
+      },
+      {
+        "heading": "Additional",
+        "level": 4
+      },
+      {
+        "heading": "UA",
+        "level": 3
+      },
+      {
+        "heading": "Додатково",
+        "level": 4
+      },
+      {
+        "heading": "<span style=\"color:#8E3900\">Lesson 26. Authentication. User creation. Update views.</span>",
+        "level": 1
+      },
+      {
+        "heading": "<span style=\"color:green\">Agenda</span>",
+        "level": 2
+      },
+      {
+        "heading": "Remind a little bit about JWT. How does it work. Access and refresh tokens.",
+        "level": 3
+      },
+      {
+        "heading": "Create user",
+        "level": 3
+      },
+      {
+        "heading": "Start with user creation",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:green\">Materials</span>",
+        "level": 1
+      },
+      {
+        "heading": "Django",
+        "level": 3
+      },
+      {
+        "heading": "Authentication libraries",
+        "level": 3
+      },
+      {
+        "heading": "Youtube",
+        "level": 3
+      },
+      {
+        "heading": "Another",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:green\">Homework</span>",
+        "level": 2
+      },
+      {
+        "heading": "EN",
+        "level": 3
+      },
+      {
+        "heading": "UA",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:#8E3900\">Lesson 27. Assign ticket to operator</span>",
+        "level": 1
+      },
+      {
+        "heading": "<span style=\"color:green\">Agenda</span>",
+        "level": 2
+      },
+      {
+        "heading": "Start with assigning tickets",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:green\">Materials</span>",
+        "level": 2
+      },
+      {
+        "heading": "<span style=\"color:green\">Homework</span>",
+        "level": 2
+      },
+      {
+        "heading": "EN",
+        "level": 3
+      },
+      {
+        "heading": "UA",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:#8E3900\">Lesson 28. Finished with tickets resolve. Started with comments.</span>",
+        "level": 1
+      },
+      {
+        "heading": "<span style=\"color:green\">Agenda</span>",
+        "level": 2
+      },
+      {
+        "heading": "Architecture",
+        "level": 3
+      },
+      {
+        "heading": "Changes",
+        "level": 3
+      },
+      {
+        "heading": "Python code",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:green\">Homework</span>",
+        "level": 2
+      },
+      {
+        "heading": "EN:",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:#8E3900\">Lesson 29. Support comments. Finishing</span>",
+        "level": 1
+      },
+      {
+        "heading": "<span style=\"color:green\">Agenda</span>",
+        "level": 2
+      },
+      {
+        "heading": "Code changes",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:green\">Materials</span>",
+        "level": 2
+      },
+      {
+        "heading": "<span style=\"color:green\">Homework</span>",
+        "level": 2
+      },
+      {
+        "heading": "EN:",
+        "level": 3
+      },
+      {
+        "heading": "UA:",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:#8E3900\">Lesson 30. Docker Introduction</span>",
+        "level": 1
+      },
+      {
+        "heading": "<span style=\"color:green\">Agenda</span>",
+        "level": 2
+      },
+      {
+        "heading": "Create custom ubuntu-wolf operating system",
+        "level": 3
+      },
+      {
+        "heading": "Result Docker image",
+        "level": 3
+      },
+      {
+        "heading": "Running commands",
+        "level": 4
+      },
+      {
+        "heading": "Connect with our application",
+        "level": 3
+      },
+      {
+        "heading": "What is Docker compose",
+        "level": 3
+      },
+      {
+        "heading": "What is volumes?",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:green\">Materials</span>",
+        "level": 2
+      },
+      {
+        "heading": "Docker compose",
+        "level": 3
+      },
+      {
+        "heading": "Dockerize django",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:green\">Homework</span>",
+        "level": 2
+      },
+      {
+        "heading": "EN:",
+        "level": 3
+      },
+      {
+        "heading": "UA:",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:#8E3900\">Lesson 32. Finished with Django. Deployment</span>",
+        "level": 1
+      },
+      {
+        "heading": "<span style=\"color:green\">Agenda</span>",
+        "level": 2
+      },
+      {
+        "heading": "Cleanup the project",
+        "level": 3
+      },
+      {
+        "heading": "Change Files",
+        "level": 4
+      },
+      {
+        "heading": "Provide `.env` file",
+        "level": 4
+      },
+      {
+        "heading": "Setup Digital",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:green\">Materials</span>",
+        "level": 2
+      },
+      {
+        "heading": "<span style=\"color:green\">Homework</span>",
+        "level": 2
+      },
+      {
+        "heading": "EN:",
+        "level": 3
+      },
+      {
+        "heading": "UA:",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:#8E3900\">Lesson 33. Last lesson. Gunicorn deployment. Q&A. CV, contacts</span>",
+        "level": 1
+      },
+      {
+        "heading": "<span style=\"color:green\">Agenda</span>",
+        "level": 2
+      },
+      {
+        "heading": "Deployment with Gunicorn",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:green\">Materials</span>",
+        "level": 2
+      },
+      {
+        "heading": "Connections",
+        "level": 3
+      },
+      {
+        "heading": "Additional stuff",
+        "level": 3
+      },
+      {
+        "heading": "<span style=\"color:green\">Homework</span>",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "README",
+    "relativePath": "👨‍🏫 teaching/Backend introduction for PMs/README.md",
+    "headings": [
+      {
+        "heading": "Agenda",
+        "level": 4
+      },
+      {
+        "heading": "Slide 1 (introduction)",
+        "level": 2
+      },
+      {
+        "heading": "Slide 2 (Introduction to Backend Development)",
+        "level": 2
+      },
+      {
+        "heading": "Slide 3 (Technologies we use)",
+        "level": 2
+      },
+      {
+        "heading": "Slide 4(Understanding Backend Architecture)",
+        "level": 2
+      },
+      {
+        "heading": "Communication between presentation and business tiers",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "Philosophy Basics",
+    "relativePath": "👨‍🎓 education/Philosophy Basics.md"
+  },
+  {
+    "fileName": "☑️ Reminder",
+    "relativePath": "☑️ Reminder.md",
+    "tags": [
+      "computools"
+    ],
+    "frontmatter": {
+      "kanban-plugin": "board"
+    },
+    "headings": [
+      {
+        "heading": "Inbox",
+        "level": 2
+      },
+      {
+        "heading": "Periodic Tasks",
+        "level": 2
+      },
+      {
+        "heading": "Backlog",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "template.excalidraw",
+    "relativePath": "_templates/template.excalidraw.md",
+    "tags": [
+      "excalidraw"
+    ],
+    "frontmatter": {
+      "excalidraw-plugin": "parsed"
+    },
+    "headings": [
+      {
+        "heading": "Excalidraw Data",
+        "level": 1
+      },
+      {
+        "heading": "Text Elements",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "fileName": "New Project Template",
+    "relativePath": "_templates/New Project Template.md",
+    "headings": [
+      {
+        "heading": "✏️ About",
+        "level": 3
+      },
+      {
+        "heading": "🔨 Solutions",
+        "level": 3
+      },
+      {
+        "heading": "🔗 Links",
+        "level": 3
+      },
+      {
+        "heading": "🏗️ Technologies stack",
+        "level": 3
+      }
+    ]
+  }
+]
