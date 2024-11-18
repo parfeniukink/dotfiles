@@ -24,16 +24,12 @@ This folder represent the NVIM configuration setup for working with:
 
 ```bash
 # MacOS
-brew install fzf # searching
-brew install the_silver_searcher # searching
-brew install ripgrep
+brew install fzf the_silver_searcher ripgrep fd # search
 brew install node
 brew install ctags-exuberant
 
 # Ubuntu
-sudo apt-get install fzf
-sudo apt-get install silversearcher-ag
-sudo apt-get install ripgrep
+sudo apt-get install fzf silversearcher-ag ripgrep fd-find # search
 sudo apt-get install nodejs
 sudo apt-get install exuberant-ctags
 ```
