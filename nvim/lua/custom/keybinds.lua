@@ -29,3 +29,8 @@ vim.g.leader = "\\"
 nmap("<S-T>", ":tabnew<CR>")
 nmap("<S-S>", ":vsplit<CR>")
 nmap("<S-W>", ":split<CR>")
+
+
+-- Panels resize
+vim.api.nvim_set_keymap('n', '<C-h>', ':horizontal resize +2<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-k>', ':vertical resize +2<CR>', { noremap = true, silent = true })

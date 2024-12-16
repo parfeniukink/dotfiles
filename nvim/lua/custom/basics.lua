@@ -46,5 +46,3 @@ vim.cmd("set expandtab")
 
 -- bufflisted [testing]
 vim.cmd("set buflisted")
-
-vim.cmd("set guitablabel=%t")

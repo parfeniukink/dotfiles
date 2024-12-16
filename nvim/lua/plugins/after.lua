@@ -10,11 +10,6 @@ vim.cmd([[
     hi DiagnosticWarnSign  guifg=#DB794A
     hi DiagnosticInfoSign  guifg=#4AA7DB
     hi DiagnosticHintSign  guifg=#4ADBA0
-
-    hi NormalFloat ctermbg=NONE guibg=NONE
-    hi NormalNC ctermbg=NONE guibg=NONE
-    hi Normal ctermbg=NONE guibg=NONE
-
 ]])
 
 
@@ -25,6 +20,7 @@ vim.cmd([[
       set termguicolors
     endif
 ]])
+
 
 -- Treesitter configuration
 local tssitter_status, ts = pcall(require, "nvim-treesitter.configs")
@@ -131,9 +127,24 @@ nmap("t", ":TagbarToggle<CR>")
 -- ===================================================================
 require('telescope').setup {
     defaults = {
-        file_ignore_patterns = { "node_modules", "venv", ".git", "build", "ios", "macos" }
+        file_ignore_patterns = { "node_modules", ".git", "build", "ios", "macos", "__pycache__", "venv", ".env" },
+        vimgrep_arguments = {
+            'rg',
+            '--color=never',
+            '--no-heading',
+            '--with-filename',
+            '--line-number',
+            '--column',
+            '--smart-case'
+        },
+    },
+    pickers = {
+        find_files = {
+            find_command = { "fd", "--type", "f", "--hidden", "--follow", "--exclude", ".git" }
+        }
     }
 }
+
 map("n", "<C-P>", ":Telescope find_files<CR>", {})
 map("n", "<C-F>", ":Telescope live_grep<CR>", {})
 
@@ -201,13 +212,12 @@ vim.keymap.set("n", "<Leader>w", function() harpoon.ui:toggle_quick_menu(harpoon
 vim.keymap.set("n", "<Leader>q", function() harpoon:list():prev() end)
 vim.keymap.set("n", "<Leader>e", function() harpoon:list():next() end)
 
-
 -- ===================================================================
 -- LSP setup
 -- ===================================================================
 require("mason").setup()
 require("mason-lspconfig").setup({
-    ensure_installed = { "lua_ls", "tsserver", "ruff_lsp", "jedi_language_server", "gopls" }
+    ensure_installed = { "lua_ls", "ts_ls", "pyright", "gopls", "svelte" }
 })
 
 local lspconfig = require('lspconfig')
@@ -244,7 +254,7 @@ end
 
 vim.keymap.set('n', '<S-e>', ":LspRestart<CR>", {})
 
-require("lspconfig").lua_ls.setup {
+lspconfig.lua_ls.setup {
     on_attach = lsp_on_attach,
     settings = {
         Lua = {
@@ -261,43 +271,78 @@ require("lspconfig").lua_ls.setup {
     }
 }
 
--- require("lspconfig").pyright.setup({
---     on_attach = lsp_on_attach,
---     filetypes = { "python" },
--- })
-
-require("lspconfig").jedi_language_server.setup({
+lspconfig.pyright.setup({
     on_attach = lsp_on_attach,
-    init_options = {
-        completion = {
-            disableSnippets = true,
-        },
+    settings = {
+        python = {
+            analysis = {
+                autoSearchPaths = true,
+                diagnosticMode = "workspace",
+                useLibraryCodeForTypes = true
+            }
+        }
     }
 })
 
-require("lspconfig").ruff_lsp.setup({
+
+lspconfig.gopls.setup({
     on_attach = lsp_on_attach,
-    init_options = {
-        settings = {
-            args = {
-                "--extend-select=W,COM,ICN",
-                "--ignore=E501,E722,COM812",
+    filetypes = { "go", "gomod" },
+})
+
+
+
+lspconfig.ts_ls.setup({
+    on_attach = lsp_on_attach,
+    filetypes = { "javascript", "typescript", "typescriptreact", "css" },
+})
+lspconfig.tailwindcss.setup({
+    on_attach = lsp_on_attach,
+    filetypes = { "html", "css", "javascript", "typescript", "typescriptreact" },
+})
+
+lspconfig.svelte.setup({
+    on_attach = lsp_on_attach,
+    filetypes = { "svelte", "svelte.ts", "css" },
+    settings = {
+        svelte = {
+            plugin = {
+                svelte = {
+                    enable = true,
+                },
+                typescript = {
+                    enable = true,
+                },
             },
         },
     },
 })
 
-require("lspconfig").gopls.setup({
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+lspconfig.html.setup {
+    init_options = {
+        configurationSection = { "html", "css", "javascript" },
+        embeddedLanguages = {
+            css = true,
+            javascript = true
+        },
+        provideFormatter = true
+    }
+}
+
+lspconfig.dartls.setup({
     on_attach = lsp_on_attach,
-    filetypes = { "go", "gomod" },
-})
-require("lspconfig").tsserver.setup({
-    on_attach = lsp_on_attach,
-    filetypes = { "javascript", "typescript", "typescriptreact" },
-})
-require("lspconfig").tailwindcss.setup({
-    on_attach = lsp_on_attach,
-    filetypes = { "html", "css", "javascript", "typescript", "typescriptreact" },
+    settings = {
+        dart = {
+            analysisExcludedFolders = {
+                vim.fn.expand("/opt/homebrew"),
+                vim.fn.expand("$HOME/.pub-cache"),
+                vim.fn.expand("$HOME/flutter"),
+            }
+        }
+    }
 })
 
 local cmp = require("cmp")
@@ -319,8 +364,8 @@ cmp.setup({
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
     }, {
-        { name = 'buffer' },
         { name = 'path' },
+        { name = 'buffer' },
     }),
 })
 
@@ -372,22 +417,26 @@ vim.diagnostic.config({
 local conform = require("conform")
 conform.setup({
     formatters_by_ft = {
+        go = { "gofmt" },
         python = { "isort", "black" },
-        html = { "prettier" },
-        css = { "prettier" },
+        dart = { "dart_format" },
         javascript = { "prettier" },
         typescript = { "prettier" },
         typescriptreact = { "prettier" },
+        svelte = { "prettier" },
+        html = { "prettier" },
+        css = { "prettier" },
+        sql = { "sqlfmt" },
         json = { "prettier" },
         yaml = { "prettier" },
         markdown = { "prettier" },
-        sql = { "sqlfmt" }
+
     },
-    format_on_save = {
-        async = true,
-        timeout_ms = 200,
-        lsp_fallback = true
-    },
+    format_on_save = nil,
+    --     async = false,
+    --     timeout_ms = 100,
+    --     lsp_fallback = true
+    -- },
     notify_on_error = true,
 
 })
@@ -403,46 +452,9 @@ end, {})
 
 
 
-
--- GitHub Copilot
--- -------------------------------------------------------------------
-vim.g.copilot_no_tab_map = true
--- this line is mandatory
-vim.api.nvim_set_keymap("i", "<C-H>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
-
-vim.g.copilot_filetypes = {
-    ["*"] = false,
-    ["lua"] = true,
-    ["javascript"] = true,
-    ["typescript"] = true,
-    ["typescriptreact"] = true,
-    ["c"] = true,
-    ["c++"] = true,
-    ["go"] = true,
-    ["rust"] = true,
-    ["swift"] = true,
-    ["dart"] = true,
-    ["python"] = true,
-    ["dockerfile"] = true,
-    ["compose"] = true,
-}
-
-
-
--- rest.nvim
--- -------------------------------------------------------------------
-map("n", "<leader>re", "<cmd>lua require('rest-nvim').run()<CR>", {})
-
-
 -- todo-list.nvim
 -- -------------------------------------------------------------------
 map("n", "<leader>t", "<cmd>TodoTelescope<CR>", {})
-
-
-
--- flutter tools
--- -------------------------------------------------------------------
-require("flutter-tools").setup({})
 
 
 
@@ -496,4 +508,12 @@ require("catppuccin").setup({
 
 })
 
-vim.cmd.colorscheme "catppuccin"
+-- vim.cmd.colorscheme "catppuccin"
+vim.cmd.colorscheme "gruvbox"
+
+-- apply background transparency
+vim.cmd([[
+    hi NormalFloat ctermbg=NONE guibg=NONE
+    hi NormalNC ctermbg=NONE guibg=NONE
+    hi Normal ctermbg=NONE guibg=NONE
+]])

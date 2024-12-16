@@ -1,5 +1,6 @@
 -- This module
 local lazypath = vim.fn.stdpath("config") .. "/lazy/lazy.nvim"
+
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
         "git",
@@ -34,10 +35,11 @@ lazy.setup({
     },
 
     {
-        "nvim-telescope/telescope.nvim",
-        tag = "0.1.1",
+        "parfeniukink/telescope.nvim",
+        branch = "master",
         dependencies = { "nvim-lua/plenary.nvim" }
     },
+
     {
         "ThePrimeagen/harpoon",
         branch = "harpoon2",
@@ -49,8 +51,8 @@ lazy.setup({
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate"
     },
-    { "catppuccin/nvim",    name = "catppuccin", priority = 1000 },
-    "EdenEast/nightfox.nvim",
+    { "catppuccin/nvim",          name = "catppuccin", priority = 1000 },
+    { "ellisonleao/gruvbox.nvim", priority = 1000,     config = true, },
 
     -- better tabs
     "nanozuki/tabby.nvim",
@@ -77,9 +79,6 @@ lazy.setup({
         ft = { "markdown", "mermaid" },
     },
 
-    -- http client
-    { "rest-nvim/rest.nvim" },
-
     -- smart comments
     "tpope/vim-commentary",
 
@@ -101,10 +100,6 @@ lazy.setup({
     "saadparwaiz1/cmp_luasnip",
     "rafamadriz/friendly-snippets",
 
-    -- GitHub Copilot
-    -- "zbirenbaum/copilot.lua",
-    "github/copilot.vim",
-
     -- formatting
     {
         "stevearc/conform.nvim",
@@ -112,33 +107,6 @@ lazy.setup({
         opts = {},
     },
 
-    -- flutter tools
-    {
-        'akinsho/flutter-tools.nvim',
-        lazy = false,
-        dependencies = {
-            'nvim-lua/plenary.nvim'
-        },
-        config = true,
-    },
-
-    -- sql
-    {
-        'kristijanhusak/vim-dadbod-ui',
-        dependencies = {
-            { 'tpope/vim-dadbod',                     lazy = true },
-            { 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql', 'sqlite3' }, lazy = true },
-        },
-        cmd = {
-            'DBUI',
-            'DBUIToggle',
-            'DBUIAddConnection',
-            'DBUIFindBuffer',
-        },
-        init = function()
-            vim.g.db_ui_use_nerd_fonts = 1
-            vim.g.db_ui_save_location = "~/.local/share/db_ui/queries"
-        end,
-    },
-
+    -- svelte
+    'leafOfTree/vim-svelte-plugin'
 })

@@ -12,11 +12,11 @@ _This configuration is clean and simple in order to keep the transparency of all
 This folder represent the NVIM configuration setup for working with:
 
 - Python
-- Rust
 - Golang
 - Lua
 - JS/TS
 - HTML/CSS
+- Svelte
 
 <br>
 
@@ -39,7 +39,7 @@ sudo apt-get install exuberant-ctags
 - [Lua](https://www.lua.org)
 - [lazy.nvim](https://github.com/folke/lazy.nvim) plugin manager
 - Previews
-  - [nightfox](https://github.com/EdenEast/nightfox.nvim) colorscheme
+  - [nanozuki/tabby.nvim](#) better tabs
   - [nvim-neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim) files manager
   - [csv preview](https://github.com/chrisbra/csv.vim)
   - [markdown-preview](https://github.com/iamcco/markdown-preview.nvim) markdown preview tool
@@ -50,17 +50,16 @@ sudo apt-get install exuberant-ctags
 - Git tools
   - [fugitive](https://github.com/tpope/vim-fugitive)
   - [gitsigns](https://github.com/lewis6991/gitsigns.nvim)
-- Autocompletion & dev docs & suggestions \* code quality tools
+- Autocompletion & dev docs & suggestions & code quality tools
   - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) with all following adds for autocomplete:
     - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
     - [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
     - [cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)
     - [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
-    - [lsp_saga](https://github.com/nvimdev/lspsaga.nvim) enchancement plugin
-  - [copilot](https://github.com/features/copilot) Microsoft code AI tool
+    - [rafamadriz/friendly-snippets](#)
   - [conform](https://github.com/stevearc/conform.nvim) formatting tool
 - [vim-commentary](https://github.com/tpope/vim-commentary) smart comments with shortcut
-- [rest](https://github.com/rest-nvim/rest.nvim) REST client via curl
+- [leafOfTree/vim-svelte-plugin](#) Svelte plugin
 
 <br>
 
