@@ -1,14 +1,13 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 export TERM=xterm-256color
 
 # Disable terminal startup message
 ZSH_DISABLE_COMPFIX=true
 
-# Path to your oh-my-zsh installation.
+# path to your oh-my-zsh installation.
 export ZSH="/Users/dmytroparfeniuk/.oh-my-zsh"
-export PATH=$PATH:/usr/local/sbin
+
+# path to your bin/sbin
+export PATH=$PATH:/usr/local/sbin:/usr/local/bin
 
 # Langs preferences
 export LANG="en_US.UTF-8"
@@ -26,12 +25,6 @@ export VISUAL="$EDITOR"
 bindkey "^[[1;3C" forward-word
 bindkey "^[[1;3D" backward-word
 
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -40,7 +33,7 @@ bindkey "^[[1;3D" backward-word
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to automatically update without prompting.
 # DISABLE_UPDATE_PROMPT="true"
@@ -93,158 +86,168 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# [Homebrew]
+# [homebrew]
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 
 # =============================================================
-# User configuration
+# user configuration
+# =============================================================
+DEV_FOLDER="$HOME/dev"
+
+# [tldr]
+TLDR_AUTO_UPDATE_DISABLED=1
+
+
+# =============================================================
+# user aliases
 # =============================================================
 
-export PATH=$PATH:/usr/local/sbin:/usr/local/bin
-export PATH=$PATH:/usr/local/opt/openssl@1.1/bin
-export PATH=$PATH:/usr/local/opt/curl/bin
-
-
-# ==================================
-# Aliases
-# ==================================
-# [Base]
+# navigation
+alias tmp="cd /tmp"
 alias downloads="cd ~/Downloads"
 alias desktop="cd ~/Desktop"
 alias zshrc="nv ~/.zshrc"
 alias icloud="/Users/dmytroparfeniuk/Library/Mobile\ Documents/com~apple~CloudDocs"
+alias notes="cd /Users/dmytroparfeniuk/Library/Mobile\ Documents/com~apple~CloudDocs/Notes/Dmytro && nvim"
 
+alias ssh_config="nv ~/.ssh/config"
+alias nvim_config="nv ~/.config/nvim"
+
+# dev navigation
+alias dev="cd $DEV_FOLDER"
+alias archive="cd $DEV_FOLDER/archived"
+alias forks="cd $DEV_FOLDER/forks"
+alias proj="cd $DEV_FOLDER/projects"
+alias tools="cd $DEV_FOLDER/tools"
+alias mine="cd $DEV_FOLDER/parfeniukink"
+
+# basic commands
 alias e="exit"
-alias cls="clear"
+alias quit="exit"
+alias q="exit"
 alias copy="pbcopy" # cat file.txt | copy
 alias du="du -h -s"
-
-# [.ENV files]
 alias ee="set -o allexport; source .env; set +o allexport" # Export from .env
+alias utc='export TS="UTC"'
 
-# [Projects folder]
-PROJECTS="$HOME/Projects"
-alias proj="cd $PROJECTS"
+# [grep]
+alias grep="grep --color=auto"
+alias grep_empty="grep '^$'"
 
-# [SSH]
-alias ssh_config="nv ~/.ssh/config"
+# [llama.cpp]
+export PATH="$HOME/llama.cpp/build/bin:$PATH"
 
-# [Docker]
+
+# [docker]
 alias d="docker"
 alias di="docker images | sort"
 alias da="docker attach"
-alias dc="docker-compose"
-alias db="docker-compose build"
-alias dcup="docker-compose up -d --no-recreate"
-alias dcps="docker-compose ps"
-alias dcd="docker-compose down"
-alias dcr="docker-compose restart"
-alias dce="docker-compose exec"
-alias dcl="docker-compose logs"
-alias dclt="docker-compose logs --tail 10"
-alias dcerase="docker-compose rm -v -f"
+alias dc="docker compose"
+alias db="docker compose build"
+alias dcup="docker compose up -d --no-recreate"
+alias dcps="docker compose ps"
+alias dcd="docker compose down"
+alias dcr="docker compose restart"
+alias dce="docker compose exec"
+alias dcl="docker compose logs"
+alias dclt="docker compose logs --tail 10"
 
-# [Files]
+# [kubernetes]
+alias ku="kubectl"
+
+# [fs info]
 alias ls="ls -lFh"
 alias l="eza -l --icons --time-style iso --header --no-user --sort type"
 alias la="eza -l --icons --time-style iso --header --no-user --sort type -a"
 alias llg="eza -l --icons --time-style iso --header --no-user --sort type -a --git-ignore"
-alias t="tree -L"
+alias t="tree -C -a"
 
-# [TMUX]
+
+# [tmux]
 alias tl="tmux ls"
 alias ta="tmux attach -t"
 alias ts="tmux new -s"
 alias tk="tmux kill-session -t"
 
-# [VIM]
-alias nv="nvim"
-alias nvim_config="cd ~/.config/nvim/ && nvim ./"
+# [tmuxinator]
+alias tm="tmuxinator"
 
-# [Gtime]
+# [neovim]
+export PATH=$PATH:$DEV_FOLDER/tools/neovim/bin
+alias nv="nvim"
+
+# [gtime]
 # Usage: time [-v] python script.py
 alias time="gtime -v"
 
-# [GIT]
+# [git]
 alias pc="pre-commit"
-
-# ==================================
-# Databases
-# ==================================
-export PATH=/opt/homebrew/opt/postgresql@13/bin:$PATH
-export PATH=/opt/homebrew/opt/postgresql@14/bin:$PATH
-
+alias wip="git add . && git commit -m '🚧 WIP' -n && git push"
 
 
 # ==================================
-# Golang
+# [postgresql]
 # ==================================
+export PATH=/opt/homebrew/opt/postgresql@16/bin:$PATH
+# export PATH=$PATH:$DEV_FOLDER/tools/postgresql/bin
+
+
+
+# [golang]
 # export GOROOT=/opt/homebrew/opt/go
 # export GOPATH=~/go
+# export GOPROXY="https://proxy.golang.org"
 # export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 
-
-# ==================================
-# Rust
-# ==================================
+# [rust]
 export PATH=$PATH:/Users/dmytroparfeniuk/.rustup/toolchains/stable-x86_64-apple-darwin/bin
 RUST_BACKTRACE=full
 
 
 
-# ==================================
-# Python
-# ==================================
-export PYTHONBREAKPOINT=pudb.set_trace
-# export PYTHONDEVMODE=0
+# [python]
+alias python="python3"
+export PYTHONBREAKPOINT=ipdb.set_trace
+export PYTHONDEVMODE=1
+export PYTHONASYNCIODEBUG=1
 # export PYTHONMALLOC=malloc
 
-# [Ctags]
 alias ctags_update="ctags -R --fields=+l --languages=python --python-kinds=-iv -f tags"
 
-alias python="python3"
-alias pip="pip3"
 alias activate="source venv/bin/activate"
+alias venv3.8="virtualenv --python python3.8 venv && source venv/bin/activate && pip install pip-tools"
 alias venv3.9="virtualenv --python python3.9 venv && source venv/bin/activate && pip install pip-tools"
 alias venv3.10="virtualenv --python python3.10 venv && source venv/bin/activate && pip install pip-tools"
 alias venv3.11="virtualenv --python python3.11 venv && source venv/bin/activate && pip install pip-tools"
 alias venv3.12="virtualenv --python python3.12 venv && source venv/bin/activate && pip install pip-tools"
+alias venv3.13="virtualenv --python python3.13 venv && source venv/bin/activate && pip install pip-tools"
 
-# [Poetry]
-export PATH="$HOME/.local/bin:$PATH"
+# poetry
 alias poetry_venvs="cd $HOME/Library/Caches/pypoetry/virtualenvs/"
+export PATH="$HOME/.local/bin:$PATH"
 
 
 
-# ==================================
-# Dart
-# ==================================
-
-# [Flutter]
-# export PATH="$HOME/flutter/bin:$PATH"
-
-# [CocaPods]
+# [dart]
+# path to pub packages
+PATH="$PATH":"$HOME/.pub-cache/bin"
+# path to flutter binaries
+export PATH="$HOME/flutter/bin:$PATH"
+# CocaPods
 export GEM_HOME=$HOME/.gem
 export PATH=$GEM_HOME/bin:$PATH
 
 
-
-# ==================================
-# Kafka
-# ==================================
+# [kafka]
 export PATH=/opt/homebrew/opt/kafka/bin:$PATH
-
-
 
 
 # ==================================
 # API Keys
 # ==================================
-
-
-
-# ==================================
-# TMP aliases
-# ==================================
+export OPENAI_API_KEY=
+export HF_API_KEY=
+export HF_API_KEY_READONLY=
+export CLOUDE_API_KEY=
