@@ -40,12 +40,6 @@ lazy.setup({
         dependencies = { "nvim-lua/plenary.nvim" }
     },
 
-    {
-        "ThePrimeagen/harpoon",
-        branch = "harpoon2",
-        dependencies = { "nvim-lua/plenary.nvim" }
-    },
-
     -- colorschemes
     {
         "nvim-treesitter/nvim-treesitter",
@@ -53,6 +47,7 @@ lazy.setup({
     },
     { "catppuccin/nvim",          name = "catppuccin", priority = 1000 },
     { "ellisonleao/gruvbox.nvim", priority = 1000,     config = true, },
+    { "rose-pine/neovim",         name = "rose-pine" },
 
     -- better tabs
     "nanozuki/tabby.nvim",
@@ -108,5 +103,5 @@ lazy.setup({
     },
 
     -- svelte
-    'leafOfTree/vim-svelte-plugin'
+    'leafOfTree/vim-svelte-plugin',
 })

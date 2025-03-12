@@ -4,9 +4,9 @@ bindings = [
   { key = "Y",          mods = "Control|Shift",     action = "Copy" },
   { key = "Key0",       mods = "Control",           action = "ResetFontSize" },
   { key = "Equals",     mods = "Control",           action = "IncreaseFontSize" },
-  { key = "N",          mods = "Control",           action = "SpawnNewInstance" },
+  { key = "N",          mods = "Control|Shift",           action = "SpawnNewInstance" },
+
   # option + arrow
   { key = "Left",       mods = "Alt",               chars = "\u001bb" },
   { key = "Right",      mods = "Alt",               chars = "\u001bf" },
 ]
-

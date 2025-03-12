@@ -91,17 +91,9 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 
 # =============================================================
-# user configuration
+# [user configuration]
 # =============================================================
 DEV_FOLDER="$HOME/dev"
-
-# [tldr]
-TLDR_AUTO_UPDATE_DISABLED=1
-
-
-# =============================================================
-# user aliases
-# =============================================================
 
 # navigation
 alias tmp="cd /tmp"
@@ -109,12 +101,12 @@ alias downloads="cd ~/Downloads"
 alias desktop="cd ~/Desktop"
 alias zshrc="nv ~/.zshrc"
 alias icloud="/Users/dmytroparfeniuk/Library/Mobile\ Documents/com~apple~CloudDocs"
-alias notes="cd /Users/dmytroparfeniuk/Library/Mobile\ Documents/com~apple~CloudDocs/Notes/Dmytro && nvim"
+alias notes="/Users/dmytroparfeniuk/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Dmytro && nvim"
+
 
 alias ssh_config="nv ~/.ssh/config"
 alias nvim_config="nv ~/.config/nvim"
 
-# dev navigation
 alias dev="cd $DEV_FOLDER"
 alias archive="cd $DEV_FOLDER/archived"
 alias forks="cd $DEV_FOLDER/forks"
@@ -122,47 +114,22 @@ alias proj="cd $DEV_FOLDER/projects"
 alias tools="cd $DEV_FOLDER/tools"
 alias mine="cd $DEV_FOLDER/parfeniukink"
 
-# basic commands
+# [system commands]
 alias e="exit"
 alias quit="exit"
 alias q="exit"
 alias copy="pbcopy" # cat file.txt | copy
 alias du="du -h -s"
-alias ee="set -o allexport; source .env; set +o allexport" # Export from .env
 alias utc='export TS="UTC"'
+alias ls="ls -lFh"
+
+# [git]
+alias pc="pre-commit"
+alias wip="git add . && git commit -m '🚧 WIP' -n && git push"
 
 # [grep]
 alias grep="grep --color=auto"
 alias grep_empty="grep '^$'"
-
-# [llama.cpp]
-export PATH="$HOME/llama.cpp/build/bin:$PATH"
-
-
-# [docker]
-alias d="docker"
-alias di="docker images | sort"
-alias da="docker attach"
-alias dc="docker compose"
-alias db="docker compose build"
-alias dcup="docker compose up -d --no-recreate"
-alias dcps="docker compose ps"
-alias dcd="docker compose down"
-alias dcr="docker compose restart"
-alias dce="docker compose exec"
-alias dcl="docker compose logs"
-alias dclt="docker compose logs --tail 10"
-
-# [kubernetes]
-alias ku="kubectl"
-
-# [fs info]
-alias ls="ls -lFh"
-alias l="eza -l --icons --time-style iso --header --no-user --sort type"
-alias la="eza -l --icons --time-style iso --header --no-user --sort type -a"
-alias llg="eza -l --icons --time-style iso --header --no-user --sort type -a --git-ignore"
-alias t="tree -C -a"
-
 
 # [tmux]
 alias tl="tmux ls"
@@ -181,16 +148,38 @@ alias nv="nvim"
 # Usage: time [-v] python script.py
 alias time="gtime -v"
 
-# [git]
-alias pc="pre-commit"
-alias wip="git add . && git commit -m '🚧 WIP' -n && git push"
+# [tldr]
+TLDR_AUTO_UPDATE_DISABLED=1
 
+# [eza]
+alias l="eza -l --icons --time-style iso --header --no-user --sort type"
+alias la="eza -l --icons --time-style iso --header --no-user --sort type -a"
+alias llg="eza -l --icons --time-style iso --header --no-user --sort type -a --git-ignore"
+alias t="tree -C -a"
 
-# ==================================
+# [llama.cpp]
+export PATH="$HOME/llama.cpp/build/bin:$PATH"
+
+# [docker]
+alias d="docker"
+alias di="docker images | sort"
+alias da="docker attach"
+alias dc="docker compose"
+alias db="docker compose build"
+alias dcup="docker compose up -d --no-recreate"
+alias dcps="docker compose ps"
+alias dcd="docker compose down"
+alias dcr="docker compose restart"
+alias dce="docker compose exec"
+alias dcl="docker compose logs"
+alias dclt="docker compose logs --tail 10"
+
+# [kubernetes]
+alias ku="kubectl"
+
 # [postgresql]
-# ==================================
-export PATH=/opt/homebrew/opt/postgresql@16/bin:$PATH
-# export PATH=$PATH:$DEV_FOLDER/tools/postgresql/bin
+# export PATH=/opt/homebrew/opt/postgresql@16/bin:$PATH
+export PATH=$PATH:$DEV_FOLDER/tools/postgresql/bin
 
 
 
@@ -199,6 +188,7 @@ export PATH=/opt/homebrew/opt/postgresql@16/bin:$PATH
 # export GOPATH=~/go
 # export GOPROXY="https://proxy.golang.org"
 # export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
 
 
 # [rust]
@@ -245,9 +235,6 @@ export PATH=/opt/homebrew/opt/kafka/bin:$PATH
 
 
 # ==================================
-# API Keys
+# export API keys
 # ==================================
-export OPENAI_API_KEY=
-export HF_API_KEY=
-export HF_API_KEY_READONLY=
-export CLOUDE_API_KEY=
+source ~/.env

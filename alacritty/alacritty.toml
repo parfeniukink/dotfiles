@@ -1,6 +1,5 @@
 import = [
     "~/.config/alacritty/keybindings.toml",
-    "~/.config/alacritty/catppuccin-macchiato.toml",
     "~/.config/alacritty/gruvbox.toml",
 ]
 
@@ -10,7 +9,7 @@ TERM = "xterm-256color"
 
 
 [font]
-size= 16
+size= 14
 offset.x = 1
 offset.y = 2
 normal = { family = "ComicShannsMono Nerd Font", style = "Regular" }
@@ -19,7 +18,7 @@ bold = { family = "ComicShannsMono Nerd Font", style = "Bold" }
 
 [window]
 decorations = "transparent"  # buttonless / full / none
-opacity = 1
+opacity = 0.96
 title = "Alacritty"
 startup_mode = "Windowed"
 dynamic_padding = false
