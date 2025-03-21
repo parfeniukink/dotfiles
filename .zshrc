@@ -22,8 +22,8 @@ ZSH_THEME="robbyrussell"
 export EDITOR=nvim
 export VISUAL="$EDITOR"
 
-bindkey "^[[1;3C" forward-word
-bindkey "^[[1;3D" backward-word
+# bindkey "^[[1;3C" forward-word
+# bindkey "^[[1;3D" backward-word
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -108,11 +108,12 @@ alias ssh_config="nv ~/.ssh/config"
 alias nvim_config="nv ~/.config/nvim"
 
 alias dev="cd $DEV_FOLDER"
-alias archive="cd $DEV_FOLDER/archived"
-alias forks="cd $DEV_FOLDER/forks"
-alias proj="cd $DEV_FOLDER/projects"
 alias tools="cd $DEV_FOLDER/tools"
 alias mine="cd $DEV_FOLDER/parfeniukink"
+alias poc="cd $DEV_FOLDER/parfeniukink/poc"
+alias proj="cd $DEV_FOLDER/projects"
+alias archive="cd $DEV_FOLDER/archived"
+alias dotfiles="cd $DEV_FOLDER/parfeniukink/dotfiles && nvim"
 
 # [system commands]
 alias e="exit"
@@ -122,6 +123,10 @@ alias copy="pbcopy" # cat file.txt | copy
 alias du="du -h -s"
 alias utc='export TS="UTC"'
 alias ls="ls -lFh"
+
+# [environment variables]
+alias ee="set -o allexport; source .env; set +o allexport" # Export from .env
+
 
 # [git]
 alias pc="pre-commit"
@@ -178,8 +183,8 @@ alias dclt="docker compose logs --tail 10"
 alias ku="kubectl"
 
 # [postgresql]
-# export PATH=/opt/homebrew/opt/postgresql@16/bin:$PATH
-export PATH=$PATH:$DEV_FOLDER/tools/postgresql/bin
+export PATH=/opt/homebrew/opt/postgresql@16/bin:$PATH
+# export PATH=$PATH:$DEV_FOLDER/tools/postgresql/bin
 
 
 

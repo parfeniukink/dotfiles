@@ -142,55 +142,27 @@ nmap("t", ":TagbarToggle<CR>")
 -- ===================================================================
 -- telescope setup
 -- ===================================================================
-local pickers = require "telescope.pickers"
-local finders = require "telescope.finders"
-local make_entry = require "telescope.make_entry"
-local conf = require "telescope.config".values
-
-local live_multigrep = function(opts)
+local previewers = require("telescope.previewers")
+local sorters = require("telescope.sorters")
+local largeFilesIgnoringPreviewer = function(filepath, bufnr, opts)
     opts = opts or {}
-    opts.cwd = opts.cwd or vim.uv.cwd()
 
-    local finder = finders.new_async_job {
-        command_generator = function(prompt)
-            if not prompt or prompt == "" then
-                return nil
-            end
-
-            local pieces = vim.split(prompt, "  ")
-            local args = { "rg" }
-            if pieces[1] then
-                table.insert(args, "-e")
-                table.insert(args, pieces[1])
-            end
-
-            if pieces[2] then
-                table.insert(args, "-g")
-                table.insert(args, pieces[2])
-            end
-
-            ---@diagnostic disable-next-line: deprecated
-            return vim.tbl_flatten {
-                args,
-                { "--color=never", "--no-heading", "--with-filename", "--line-number", "--column", "--smart-case" },
-            }
-        end,
-        entry_maker = make_entry.gen_from_vimgrep(opts),
-        cwd = opts.cwd,
-    }
-
-    pickers.new(opts, {
-        debounce = 100,
-        prompt_title = "Multi Grep",
-        finder = finder,
-        previewer = conf.grep_previewer(opts),
-        sorter = require("telescope.sorters").empty(),
-    }):find()
+    filepath = vim.fn.expand(filepath)
+    vim.loop.fs_stat(filepath, function(_, stat)
+        if not stat then return end
+        if stat.size > 100000 then
+            return
+        else
+            previewers.buffer_previewer_maker(filepath, bufnr, opts)
+        end
+    end)
 end
 
 require('telescope').setup {
     defaults = {
-        file_ignore_patterns = { "node_modules", ".git", "build", "ios", "macos", "__pycache__", "venv", ".env" },
+        wrap_results = true,
+        file_ignore_patterns = { "node_modules", ".git/", "build", "ios", "macos", "__pycache__", "venv", ".env" },
+        buffer_previewer_maker = largeFilesIgnoringPreviewer,
         vimgrep_arguments = {
             'rg',
             '--color=never',
@@ -201,16 +173,81 @@ require('telescope').setup {
             '--smart-case'
         },
     },
+
     pickers = {
-        find_files = {
-            find_command = { "fd", "--type", "f", "--hidden", "--follow", "--exclude", ".git" }
+        oldfiles = { initial_mode = "normal", sorter = sorters.fuzzy_with_index_bias() },
+        command_history = { sorter = sorters.fuzzy_with_index_bias() },
+        find_files = { hidden = true, },
+        git_files = { show_untracked = true, wrap_results = true }
+    },
+    extensions = {
+        fzf = {
+            fuzzy = true,                   -- false will only do exact matching
+            override_generic_sorter = true, -- override the generic sorter
+            override_file_sorter = true,    -- override the file sorter
+            case_mode = "smart_case",       -- or "ignore_case" or "respect_case"
+            -- the default case_mode is "smart_case"
         }
     }
 }
 
+-- To get fzf loaded and working with telescope, you need to call
+-- load_extension, somewhere after setup function:
+require('telescope').load_extension('fzf')
+
 map("n", "<C-P>", ":Telescope find_files<CR>", {})
 map("n", "<C-F>", ":Telescope live_grep<CR>", {})
-vim.keymap.set("n", "<leader>f", live_multigrep)
+
+-- setup live multigrep search type
+local pickers = require "telescope.pickers"
+local finders = require "telescope.finders"
+local make_entry = require "telescope.make_entry"
+local conf = require "telescope.config".values
+
+local live_multigrep = function(opts)
+    opts = opts or {}
+    opts.cwd = opts.cwd or vim.loop.cwd()
+
+    local finder = finders.new_job {
+        fn_command = function(prompt)
+            if not prompt or prompt == "" then
+                return nil
+            end
+
+            local pieces = vim.split(prompt, " ")
+            local search_term = pieces[1]
+            local file_types = vim.list_slice(pieces, 2)
+
+            if not search_term or search_term == "" then
+                return nil
+            end
+
+            local args = { "rg", "--color=never", "--no-heading", "--with-filename", "--line-number", "--column",
+                "--smart-case", search_term }
+
+            if #file_types > 0 then
+                for _, ft in ipairs(file_types) do
+                    table.insert(args, "-g")
+                    table.insert(args, ft)
+                end
+            end
+
+            return args
+        end,
+        entry_maker = make_entry.gen_from_vimgrep(opts),
+        cwd = opts.cwd,
+    }
+
+    pickers.new(opts, {
+        debounce = 100,
+        prompt_title = "Live Multi Grep",
+        finder = finder,
+        previewer = conf.grep_previewer(opts),
+        sorter = require("telescope.sorters").empty(),
+    }):find()
+end
+
+vim.keymap.set("n", "<leader>f", live_multigrep, { desc = "Live Multi Grep" })
 
 
 
@@ -221,9 +258,6 @@ vim.keymap.set("n", "<leader>f", live_multigrep)
 -- disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
-
--- set termguicolors to enable highlight groups
-vim.opt.termguicolors = true
 
 
 local HEIGHT_RATIO = 0.8 -- You can change this
@@ -340,10 +374,12 @@ lspconfig.pyright.setup({
     on_attach = lsp_on_attach,
     settings = {
         python = {
+            disableOrganizeImports = false,
             analysis = {
                 autoSearchPaths = true,
-                diagnosticMode = "workspace",
-                useLibraryCodeForTypes = false
+                useLibraryCodeForTypes = false,   -- extract types if not provided
+                diagnosticMode = "openFilesOnly", -- enum { openFilesOnly, workspace }
+                typeCheckingMode = "basic"        -- enum { basic, strict, off }
             }
         }
     }
@@ -453,7 +489,7 @@ cmp.setup.filetype({ "sql" }, {
 })
 
 
--- Diagnostic
+-- diagnostic
 -- -------------------------------------------------------------------
 function PrintDiagnostics(opts, bufnr, line_nr, client_id)
     bufnr = bufnr or 0
@@ -533,141 +569,52 @@ end, {})
 map("n", "<leader>h", "<cmd>TodoTelescope<CR>", {})
 
 
-
--- Setup colorscheme
--- -------------------------------------------------------------------
--- require("catppuccin").setup({
---     flavour = "macchiato",
---     integrations = {
---         cmp = true,
---         gitsigns = true,
---         nvimtree = true,
---         treesitter = true,
---         native_lsp = {
---             enabled = true,
---             virtual_text = {
---                 errors = { "italic" },
---                 hints = { "italic" },
---                 warnings = { "italic" },
---                 information = { "italic" },
---             },
---             underlines = {
---                 errors = { "underline" },
---                 hints = { "underline" },
---                 warnings = { "underline" },
---                 information = { "underline" },
---             },
---             inlay_hints = {
---                 background = false,
---             },
---         },
---     },
---     show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
---     term_colors = false,        -- sets terminal colors (e.g. `g:terminal_color_0`)
---     dim_inactive = {
---         enabled = false,        -- dims the background color of inactive window
---         shade = "dark",
---         percentage = 0.15,      -- percentage of the shade to apply to the inactive window
---     },
---     no_italic = false,          -- Force no italic
---     no_bold = true,             -- Force no bold
---     no_underline = false,       -- Force no underline
---     custom_highlights = function(colors)
---         return {
---             NormalFloat = { fg = colors.text, bg = colors.grey },
---             Comment = { bg = colors.none, fg = colors.grey },
---             TabLineSel = { bg = colors.surface2, fg = colors.text },
---             CmpBorder = { fg = colors.surface2 },
---             Pmenu = { bg = colors.none },
---         }
---     end
-
--- })
-
-require("rose-pine").setup({
-    variant = "moon",      -- auto, main, moon, or dawn
-    dark_variant = "moon", -- main, moon, or dawn
-    dim_inactive_windows = false,
-    extend_background_behind_borders = true,
-
-    enable = {
-        terminal = true,
-        legacy_highlights = false, -- Improve compatibility for previous versions of Neovim
-        migrations = true,        -- Handle deprecated options automatically
+-- kanagawa.nvim
+-- :KanagawaCompile
+require('kanagawa').setup({
+    compile = true,   -- enable compiling the colorscheme
+    undercurl = true, -- enable undercurls
+    commentStyle = { italic = false },
+    functionStyle = {},
+    keywordStyle = { italic = false },
+    statementStyle = { bold = false },
+    typeStyle = {},
+    transparent = true,    -- do not set background color
+    dimInactive = false,   -- dim inactive window `:h hl-NormalNC`
+    terminalColors = true, -- define vim.g.terminal_color_{0,17}
+    colors = {             -- add/modify theme and palette colors
+        palette = {},
+        theme = {
+            wave = {},
+            lotus = {},
+            dragon = {},
+            all = {
+                ui = {
+                    bg_gutter = "none"
+                }
+            }
+        },
     },
-
-    styles = {
-        bold = false,
-        italic = true,
-        transparency = true,
-    },
-
-    groups = {
-        border = "muted",
-        link = "iris",
-        panel = "surface",
-
-        error = "love",
-        hint = "iris",
-        info = "foam",
-        note = "pine",
-        todo = "rose",
-        warn = "gold",
-
-        git_add = "foam",
-        git_change = "rose",
-        git_delete = "love",
-        git_dirty = "rose",
-        git_ignore = "muted",
-        git_merge = "iris",
-        git_rename = "pine",
-        git_stage = "iris",
-        git_text = "rose",
-        git_untracked = "subtle",
-
-        h1 = "iris",
-        h2 = "foam",
-        h3 = "rose",
-        h4 = "gold",
-        h5 = "pine",
-        h6 = "foam",
-    },
-
-    palette = {
-        -- Override the builtin palette per variant
-        -- moon = {
-        --     base = '#18191a',
-        --     overlay = '#363738',
-        -- },
-    },
-
-    -- NOTE: Highlight groups are extended (merged) by default. Disable this
-    -- per group via `inherit = false`
-    highlight_groups = {
-        -- Comment = { fg = "foam" },
-        -- StatusLine = { fg = "love", bg = "love", blend = 15 },
-        -- VertSplit = { fg = "muted", bg = "muted" },
-        -- Visual = { fg = "base", bg = "text", inherit = false },
-    },
-
-    before_highlight = function(group, highlight, palette)
-        -- Disable all undercurls
-        -- if highlight.undercurl then
-        --     highlight.undercurl = false
-        -- end
-        --
-        -- Change palette colour
-        -- if highlight.fg == palette.pine then
-        --     highlight.fg = palette.foam
-        -- end
+    overrides = function(colors) -- add/modify highlights
+        return {
+            Folded = { bg = "NONE", fg = colors.theme.ui.fg_dim },
+            FoldColumn = { bg = "NONE", fg = colors.theme.ui.fg_dim },
+            LineNr = { fg = colors.theme.ui.fg_dim, bg = "NONE" },
+            NormalFloat = { bg = "none" },
+            FloatBorder = { bg = "none" },
+        }
     end,
+    theme = "wave",    -- Load "wave" theme
+    background = {     -- map the value of 'background' option to a theme
+        dark = "wave", -- try "dragon" !
+        light = "lotus"
+    },
 })
+vim.cmd("colorscheme kanagawa")
 
-vim.cmd("colorscheme gruvbox")
-
--- apply background transparency
-vim.cmd([[
-    hi NormalFloat ctermbg=NONE guibg=NONE
-    hi NormalNC ctermbg=NONE guibg=NONE
-    hi Normal ctermbg=NONE guibg=NONE
-]])
+-- apply background transparency for themes which don't support those
+-- vim.cmd([[
+--     hi NormalFloat ctermbg=NONE guibg=NONE
+--     hi NormalNC ctermbg=NONE guibg=NONE
+--     hi Normal ctermbg=NONE guibg=NONE
+-- ]])

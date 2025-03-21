@@ -1,7 +1,7 @@
 [keyboard]
 bindings = [
-  { key = "P",          mods = "Control|Shift",     action = "Paste" },
-  { key = "Y",          mods = "Control|Shift",     action = "Copy" },
+  { key = "C",          mods = "Control|Shift",     action = "Copy" },
+  { key = "V",          mods = "Control|Shift",     action = "Paste" },
   { key = "Key0",       mods = "Control",           action = "ResetFontSize" },
   { key = "Equals",     mods = "Control",           action = "IncreaseFontSize" },
   { key = "N",          mods = "Control|Shift",           action = "SpawnNewInstance" },

@@ -34,11 +34,19 @@ lazy.setup({
         }
     },
 
+    -- fzf
     {
-        'nvim-telescope/telescope.nvim',
-        branch = 'master',
-        -- or tag = '0.1.8',
-        dependencies = { 'nvim-lua/plenary.nvim' }
+        "nvim-telescope/telescope-fzf-native.nvim",
+        build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release"
+    },
+    {
+        "nvim-telescope/telescope.nvim",
+        build = "make",
+        branch = "master",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope-fzf-native.nvim"
+        }
     },
 
     -- colorschemes
@@ -46,25 +54,27 @@ lazy.setup({
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate"
     },
-    { "catppuccin/nvim",          name = "catppuccin", priority = 1000 },
-    { "ellisonleao/gruvbox.nvim", priority = 1000,     config = true, },
-    { "rose-pine/neovim",         name = "rose-pine" },
+    { "ellisonleao/gruvbox.nvim", priority = 1000, config = true, },
+    { "rebelot/kanagawa.nvim" },
 
     -- better tabs
-    "nanozuki/tabby.nvim",
+    {
+        "nanozuki/tabby.nvim",
+        dependencies = 'nvim-tree/nvim-web-devicons'
+    },
 
     -- colorize:
-    -- TODO:
-    -- FIX:
-    -- HACK:
-    -- NOTE:
+    -- todo:
+    -- fix:
+    -- hack:
+    -- note:
     {
         "folke/todo-comments.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
 
     },
 
-    -- Markdown preview
+    -- markdown preview
     {
         "iamcco/markdown-preview.nvim",
         cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
@@ -85,7 +95,7 @@ lazy.setup({
     -- tag bar
     "majutsushi/tagbar",
 
-    -- LSP
+    -- lsp
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",

@@ -1,6 +1,6 @@
 import = [
     "~/.config/alacritty/keybindings.toml",
-    "~/.config/alacritty/gruvbox.toml",
+    "~/.config/alacritty/kanagawa.toml",
 ]
 
 
@@ -13,12 +13,12 @@ size= 14
 offset.x = 1
 offset.y = 2
 normal = { family = "ComicShannsMono Nerd Font", style = "Regular" }
-bold = { family = "ComicShannsMono Nerd Font", style = "Bold" }
+bold = { family = "ComicShannsMono Nerd Font", style = "Regular" }
 
 
 [window]
 decorations = "transparent"  # buttonless / full / none
-opacity = 0.96
+opacity = 0.95
 title = "Alacritty"
 startup_mode = "Windowed"
 dynamic_padding = false
