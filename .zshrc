@@ -123,10 +123,9 @@ alias copy="pbcopy" # cat file.txt | copy
 alias du="du -h -s"
 alias utc='export TS="UTC"'
 alias ls="ls -lFh"
+alias ee="set -o allexport; source .env; set +o allexport" # export from .env
 
-# [environment variables]
-alias ee="set -o allexport; source .env; set +o allexport" # Export from .env
-
+alias dns-restart="sudo killall -HUP mDNSResponder" # restart dsn
 
 # [git]
 alias pc="pre-commit"
@@ -135,6 +134,9 @@ alias wip="git add . && git commit -m '🚧 WIP' -n && git push"
 # [grep]
 alias grep="grep --color=auto"
 alias grep_empty="grep '^$'"
+
+# [bat]
+alias cat="bat"
 
 # [tmux]
 alias tl="tmux ls"
@@ -166,6 +168,9 @@ alias t="tree -C -a"
 export PATH="$HOME/llama.cpp/build/bin:$PATH"
 
 # [docker]
+# use buildx
+export DOCKER_BUILDKIT=1
+
 alias d="docker"
 alias di="docker images | sort"
 alias da="docker attach"
@@ -237,6 +242,16 @@ export PATH=$GEM_HOME/bin:$PATH
 
 # [kafka]
 export PATH=/opt/homebrew/opt/kafka/bin:$PATH
+
+
+# [k8s]
+export KUBECONFIG=$HOME/.k3s.yaml
+alias k="kubectl"
+alias kg="kubectl get"
+alias ka="kubectl apply -f"
+alias kd="kubectl delete"
+alias kl="kubectl get all -o wide"
+alias kn="kubectl config set-context --namespace="
 
 
 # ==================================
