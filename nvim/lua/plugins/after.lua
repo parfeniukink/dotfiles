@@ -194,61 +194,10 @@ require('telescope').setup {
 -- To get fzf loaded and working with telescope, you need to call
 -- load_extension, somewhere after setup function:
 require('telescope').load_extension('fzf')
+require('plugins.telescope.multigrep').setup()
 
 map("n", "<C-P>", ":Telescope find_files<CR>", {})
 map("n", "<C-F>", ":Telescope live_grep<CR>", {})
-
--- setup live multigrep search type
-local pickers = require "telescope.pickers"
-local finders = require "telescope.finders"
-local make_entry = require "telescope.make_entry"
-local conf = require "telescope.config".values
-
-local live_multigrep = function(opts)
-    opts = opts or {}
-    opts.cwd = opts.cwd or vim.loop.cwd()
-
-    local finder = finders.new_job {
-        fn_command = function(prompt)
-            if not prompt or prompt == "" then
-                return nil
-            end
-
-            local pieces = vim.split(prompt, " ")
-            local search_term = pieces[1]
-            local file_types = vim.list_slice(pieces, 2)
-
-            if not search_term or search_term == "" then
-                return nil
-            end
-
-            local args = { "rg", "--color=never", "--no-heading", "--with-filename", "--line-number", "--column",
-                "--smart-case", search_term }
-
-            if #file_types > 0 then
-                for _, ft in ipairs(file_types) do
-                    table.insert(args, "-g")
-                    table.insert(args, ft)
-                end
-            end
-
-            return args
-        end,
-        entry_maker = make_entry.gen_from_vimgrep(opts),
-        cwd = opts.cwd,
-    }
-
-    pickers.new(opts, {
-        debounce = 100,
-        prompt_title = "Live Multi Grep",
-        finder = finder,
-        previewer = conf.grep_previewer(opts),
-        sorter = require("telescope.sorters").empty(),
-    }):find()
-end
-
-vim.keymap.set("n", "<leader>f", live_multigrep, { desc = "Live Multi Grep" })
-
 
 
 
