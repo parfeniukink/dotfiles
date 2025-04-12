@@ -63,6 +63,13 @@ lazy.setup({
         dependencies = 'nvim-tree/nvim-web-devicons'
     },
 
+    -- harpoon
+    {
+        "ThePrimeagen/harpoon",
+        branch = "harpoon2",
+        dependencies = { "nvim-lua/plenary.nvim" }
+    },
+
     -- colorize:
     -- todo:
     -- fix:
@@ -105,6 +112,8 @@ lazy.setup({
     "L3MON4D3/LuaSnip",
     "saadparwaiz1/cmp_luasnip",
     "rafamadriz/friendly-snippets",
+    -- llm integration
+    'huggingface/llm.nvim',
 
     -- formatting
     {
@@ -115,4 +124,5 @@ lazy.setup({
 
     -- svelte
     'leafOfTree/vim-svelte-plugin',
+
 })

@@ -12,7 +12,6 @@ vim.cmd([[
     hi DiagnosticHintSign  guifg=#4ADBA0
 ]])
 
-
 vim.cmd([[
     if exists('+termguicolors')
       let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
@@ -80,6 +79,17 @@ require('tabby.tabline').set(function(line)
     }
 end)
 
+
+-- ===================================================================
+-- harpoon setup
+-- ===================================================================
+local harpoon = require "harpoon"
+harpoon:setup()
+
+vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
+vim.keymap.set("n", "<leader>w", function() harpoon:list():prev() end)
+vim.keymap.set("n", "<leader>r", function() harpoon:list():next() end)
+vim.keymap.set("n", "<leader>\\", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 
 
 -- ===================================================================
@@ -197,7 +207,8 @@ require('telescope').load_extension('fzf')
 require('plugins.telescope.multigrep').setup()
 
 map("n", "<C-P>", ":Telescope find_files<CR>", {})
-map("n", "<C-F>", ":Telescope live_grep<CR>", {})
+-- note: replaced with multigrep in plugins.telescope.multigrep
+-- map("n", "<C-F>", ":Telescope live_grep<CR>", {})
 
 
 
@@ -510,6 +521,35 @@ vim.keymap.set("n", "<C-L>", function()
 end, {})
 
 
+
+-- huggingface/llm.nvim
+-- -------------------------------------------------------------------
+-- local llm = require('llm')
+
+-- llm.setup({
+--     api_token = os.getenv("OPENAI__API_KEY"),
+--     model = os.getenv("OPENAI__MODEL") or "gpt-4o-mini",
+--     backend = "openai", -- huggingface | ollama | openai | tgi
+--     url = "https://api.openai.com/v1/chat/completions",
+--     messages = {
+--         { role = "system", content = "You are simple code assistant. Provide autocompletion without overhead, based on the content" },
+--     },
+--     request_body = {
+--         parameters = {
+--             temperature = 0.2,
+--             top_p = 0.95,
+--             max_tokens = 250
+--         },
+--     },
+--     accept_keymap = "<leader>\\",
+--     dismiss_keymap = "<leader>a",
+
+--     context_window = 1024,
+
+--     -- manual mode
+--     enable_suggestions_on_startup = true,
+--     enable_suggestions_on_files = "*",
+-- })
 
 
 -- todo-list.nvim
