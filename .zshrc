@@ -4,7 +4,7 @@ export TERM=xterm-256color
 ZSH_DISABLE_COMPFIX=true
 
 # path to your oh-my-zsh installation.
-export ZSH="/Users/dmytroparfeniuk/.oh-my-zsh"
+export ZSH="/Users/parfeniukink/.oh-my-zsh"
 
 # path to your bin/sbin
 export PATH=$PATH:/usr/local/sbin:/usr/local/bin
@@ -15,9 +15,9 @@ export LC_ALL="en_US.UTF-8"
 export LC_CTYPE="en_US.UTF-8"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="robbyrussell"
 # ZSH_THEME="agnoster"
-# ZSH_THEME="simple"
+ZSH_THEME="simple"
 
 export EDITOR=nvim
 export VISUAL="$EDITOR"
@@ -93,27 +93,27 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # =============================================================
 # [user configuration]
 # =============================================================
-DEV_FOLDER="$HOME/dev"
+DEV="$HOME/dev"
 
 # navigation
 alias tmp="cd /tmp"
 alias downloads="cd ~/Downloads"
 alias desktop="cd ~/Desktop"
 alias zshrc="nv ~/.zshrc"
-alias icloud="/Users/dmytroparfeniuk/Library/Mobile\ Documents/com~apple~CloudDocs"
-alias notes="/Users/dmytroparfeniuk/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Dmytro && nvim"
+alias icloud="/Users/parfeniukink/Library/Mobile\ Documents/com~apple~CloudDocs"
+alias notes="/Users/parfeniukink/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Dmytro && nvim"
 
 
 alias ssh_config="nv ~/.ssh/config"
 alias nvim_config="nv ~/.config/nvim"
 
-alias dev="cd $DEV_FOLDER"
-alias tools="cd $DEV_FOLDER/tools"
-alias mine="cd $DEV_FOLDER/parfeniukink"
-alias poc="cd $DEV_FOLDER/parfeniukink/poc"
-alias proj="cd $DEV_FOLDER/projects"
-alias archive="cd $DEV_FOLDER/archived"
-alias dotfiles="cd $DEV_FOLDER/parfeniukink/dotfiles && nvim"
+alias dev="cd $DEV"
+alias tools="cd $DEV/tools"
+alias mine="cd $DEV/parfeniukink"
+alias poc="cd $DEV/parfeniukink/poc"
+alias proj="cd $DEV/projects"
+alias archive="cd $DEV/archived"
+alias dotfiles="cd $DEV/parfeniukink/dotfiles && nvim"
 
 # [system commands]
 alias e="exit"
@@ -148,7 +148,6 @@ alias tk="tmux kill-session -t"
 alias tm="tmuxinator"
 
 # [neovim]
-export PATH=$PATH:$DEV_FOLDER/tools/neovim/bin
 alias nv="nvim"
 
 # [gtime]
@@ -188,8 +187,7 @@ alias dclt="docker compose logs --tail 10"
 alias ku="kubectl"
 
 # [postgresql]
-export PATH=/opt/homebrew/opt/postgresql@16/bin:$PATH
-# export PATH=$PATH:$DEV_FOLDER/tools/postgresql/bin
+export PATH=/opt/homebrew/opt/postgresql@17/bin:$PATH
 
 
 
@@ -202,8 +200,8 @@ export PATH=/opt/homebrew/opt/postgresql@16/bin:$PATH
 
 
 # [rust]
-export PATH=$PATH:/Users/dmytroparfeniuk/.rustup/toolchains/stable-x86_64-apple-darwin/bin
-RUST_BACKTRACE=full
+# export PATH=$PATH:/Users/dmytroparfeniuk/.rustup/toolchains/stable-x86_64-apple-darwin/bin
+# RUST_BACKTRACE=full
 
 
 
@@ -214,7 +212,7 @@ export PYTHONDEVMODE=1
 export PYTHONASYNCIODEBUG=1
 # export PYTHONMALLOC=malloc
 
-alias ctags_update="ctags -R --fields=+l --languages=python --python-kinds=-iv -f tags"
+# alias ctags_update="ctags -R --fields=+l --languages=python --python-kinds=-iv -f tags"
 
 alias activate="source venv/bin/activate"
 alias venv3.8="virtualenv --python python3.8 venv && source venv/bin/activate && pip install pip-tools"
@@ -232,20 +230,20 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # [dart]
 # path to pub packages
-PATH="$PATH":"$HOME/.pub-cache/bin"
+# PATH="$PATH":"$HOME/.pub-cache/bin"
 # path to flutter binaries
-export PATH="$HOME/flutter/bin:$PATH"
+# export PATH="$HOME/flutter/bin:$PATH"
 # CocaPods
-export GEM_HOME=$HOME/.gem
-export PATH=$GEM_HOME/bin:$PATH
+# export GEM_HOME=$HOME/.gem
+# export PATH=$GEM_HOME/bin:$PATH
 
 
 # [kafka]
-export PATH=/opt/homebrew/opt/kafka/bin:$PATH
+# export PATH=/opt/homebrew/opt/kafka/bin:$PATH
 
 
 # [k8s]
-export KUBECONFIG=$HOME/.k3s.yaml
+# export KUBECONFIG=$HOME/.k3s.yaml
 alias k="kubectl"
 alias kg="kubectl get"
 alias ka="kubectl apply -f"
@@ -257,4 +255,5 @@ alias kn="kubectl config set-context --namespace="
 # ==================================
 # export API keys
 # ==================================
-source ~/.env
+# automatically done by dotenv pluging
+# source ~/.env
