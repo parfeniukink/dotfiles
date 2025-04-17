@@ -45,7 +45,10 @@ lazy.setup({
         branch = "master",
         dependencies = {
             "nvim-lua/plenary.nvim",
-            "nvim-telescope/telescope-fzf-native.nvim"
+            "nvim-telescope/telescope-fzf-native.nvim",
+          config = function()
+            require("telescope").load_extension("fzf")
+          end,
         }
     },
 

@@ -276,7 +276,7 @@ map("n", "<C-I>", ":NvimTreeFindFileToggle<CR>", {})
 -- ===================================================================
 require("mason").setup()
 require("mason-lspconfig").setup({
-    ensure_installed = { "lua_ls", "ts_ls", "pyright", "gopls", "svelte" }
+    ensure_installed = { "lua_ls", "ts_ls", "tailwindcss", "pyright", "svelte" }
 })
 
 local lspconfig = require('lspconfig')
@@ -356,10 +356,10 @@ lspconfig.pyright.setup({
 -- })
 
 
-lspconfig.gopls.setup({
-    on_attach = lsp_on_attach,
-    filetypes = { "go", "gomod" },
-})
+-- lspconfig.gopls.setup({
+--     on_attach = lsp_on_attach,
+--     filetypes = { "go", "gomod" },
+-- })
 
 
 
