@@ -116,7 +116,14 @@ lazy.setup({
     "saadparwaiz1/cmp_luasnip",
     "rafamadriz/friendly-snippets",
     -- llm integration
-    'huggingface/llm.nvim',
+    {
+        "olimorris/codecompanion.nvim",
+        opts = {},
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-treesitter/nvim-treesitter",
+        },
+    },
 
     -- formatting
     {

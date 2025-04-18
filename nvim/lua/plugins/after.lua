@@ -84,7 +84,11 @@ end)
 -- harpoon setup
 -- ===================================================================
 local harpoon = require "harpoon"
-harpoon:setup()
+harpoon:setup({
+    settings = {
+        save_on_toggle = true
+    }
+})
 
 vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
 vim.keymap.set("n", "<leader>w", function() harpoon:list():prev() end)
@@ -369,7 +373,7 @@ lspconfig.ts_ls.setup({
 })
 lspconfig.tailwindcss.setup({
     on_attach = lsp_on_attach,
-    filetypes = { "html", "css", "javascript", "typescript", "typescriptreact" },
+    filetypes = { "html", "css", "javascript", "typescript", "typescriptreact", "svelte" },
 })
 
 lspconfig.svelte.setup({
@@ -519,6 +523,144 @@ vim.keymap.set("n", "<C-L>", function()
         lsp_fallback = true,
     })
 end, {})
+
+
+-- codecompanion
+-- -------------------------------------------------------------------
+require("codecompanion").setup({
+    opts = {
+        system_prompt = function(opts)
+            return [[
+               You are an AI programming assistant named "Dmytro2.0".
+               You are currently plugged in to the Neovim text editor on a user's machine.
+
+                Your core tasks include:
+                - Answering general programming questions.
+                - Explaining how the code in a Neovim buffer works.
+                - Reviewing the selected code in a Neovim buffer.
+                - Proposing fixes for problems in the selected code.
+                - Proposing relevant improvements if you have enough information.
+                - Finding relevant code to the user's query.
+                - Generating unit tests for the selected code.
+                - Proposing fixes for test failures.
+                - Answering questions about Neovim.
+
+                You must:
+                - Follow the user's requirements carefully and to the letter.
+                - Keep your answers short and impersonal, especially if the user responds with context outside of your tasks.
+                - Minimize other prose.
+                - Use Markdown formatting in your answers.
+                - Avoid including line numbers in code blocks.
+                - Avoid wrapping the whole response in triple backticks.
+                - Only return code that's relevant to the task at hand. You may not need to return all of the code that the user has shared.
+                - Use actual line breaks instead of '\n' in your response to begin new lines.
+                - Use '\n' only when you want a literal backslash followed by a character 'n'.
+                - All non-code responses must be in %s.
+
+                When given a task:
+                1. Think step-by-step and describe your plan for what to build in pseudocode, written out in great detail, unless asked not to do so.
+                2. Output the code in a single code block, being careful to only return relevant code.
+                3. You should always generate short suggestions for the next user turns that are relevant to the conversation.
+                4. You can only give one reply for each conversation turn.
+            ]]
+        end,
+    },
+    adapters = {
+        openai = function()
+            return require("codecompanion.adapters").extend("openai", {
+                env = {
+                    url = "https://api.openai.com/v1/",
+                    api_key = os.getenv("OPENAI__API_KEY"),
+                    chat_url = "/chat/completions",
+                    models_endpoint = "/models",
+                },
+                schema = {
+                    model = {
+                        default = os.getenv("OPENAI__MODEL"),
+                    },
+                    temperature = {
+                        order = 2,
+                        mapping = "parameters",
+                        type = "number",
+                        optional = true,
+                        default = 0.8,
+                        desc = "0.8 - random, 0.2 - deterministic.",
+                        validate = function(n)
+                            return n >= 0 and n <= 2, "Must be between 0 and 2"
+                        end,
+                    },
+                    max_completion_tokens = {
+                        order = 3,
+                        mapping = "parameters",
+                        type = "integer",
+                        optional = true,
+                        default = nil,
+                        desc = "An upper bound for the number of tokens that can be generated for a completion.",
+                        validate = function(n)
+                            return n > 0, "Must be greater than 0"
+                        end,
+                    },
+                    stop = {
+                        order = 4,
+                        mapping = "parameters",
+                        type = "string",
+                        optional = true,
+                        default = nil,
+                        desc =
+                        "When this pattern is encountered the LLM will stop generating text and return. Multiple stop patterns may be set by specifying multiple separate stop parameters in a modelfile.",
+                        validate = function(s)
+                            return s:len() > 0, "Cannot be an empty string"
+                        end,
+                    },
+                    logit_bias = {
+                        order = 5,
+                        mapping = "parameters",
+                        type = "map",
+                        optional = true,
+                        default = nil,
+                        desc =
+                        "Modify the likelihood of specified tokens appearing in the completion. Maps tokens (specified by their token ID) to an associated bias value from -100 to 100. Use https://platform.openai.com/tokenizer to find token IDs.",
+                        subtype_key = {
+                            type = "integer",
+                        },
+                        subtype = {
+                            type = "integer",
+                            validate = function(n)
+                                return n >= -100 and n <= 100, "Must be between -100 and 100"
+                            end,
+                        },
+                    },
+                },
+            })
+        end,
+    },
+
+    display = {
+        inline = {
+            layout = "vertical", -- vertical|horizontal|buffer
+        },
+    },
+    strategies = {
+        chat = {
+            adapter = "openai"
+        },
+        inline = {
+            keymaps = {
+                accept_change = {
+                    modes = { n = "<leader>k" },
+                    description = "Accept the suggested change",
+                },
+                reject_change = {
+                    modes = { n = "<leader>l" },
+                    description = "Reject the suggested change",
+                },
+            },
+        },
+    },
+})
+
+nmap("<leader>i", ":CodeCompanionChat<CR>")
+vmap("<leader>o", ":CodeCompanionChat /buffer ")
 
 
 
