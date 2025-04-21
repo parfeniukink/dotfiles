@@ -79,8 +79,6 @@ DISABLE_AUTO_UPDATE="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
-    nmap
-    aws
 	dotenv
 )
 
@@ -108,11 +106,9 @@ alias ssh_config="nv ~/.ssh/config"
 alias nvim_config="nv ~/.config/nvim"
 
 alias dev="cd $DEV"
-alias tools="cd $DEV/tools"
 alias mine="cd $DEV/parfeniukink"
-alias poc="cd $DEV/parfeniukink/poc"
+alias poc="cd $DEV/parfeniukink/poc && nvim"
 alias proj="cd $DEV/projects"
-alias archive="cd $DEV/archived"
 alias dotfiles="cd $DEV/parfeniukink/dotfiles && nvim"
 
 # [system commands]
@@ -164,11 +160,11 @@ alias llg="eza -l --icons --time-style iso --header --no-user --sort type -a --g
 alias t="tree -C -a"
 
 # [llama.cpp]
-export PATH="$HOME/llama.cpp/build/bin:$PATH"
+# export PATH="$HOME/llama.cpp/build/bin:$PATH"
 
 # [docker]
-# use buildx
-export DOCKER_BUILDKIT=1
+# use buildx (automatic with OrbStack)
+# export DOCKER_BUILDKIT=1
 
 alias d="docker"
 alias di="docker images | sort"
@@ -224,7 +220,7 @@ alias venv3.13="virtualenv --python python3.13 venv && source venv/bin/activate 
 
 # poetry
 alias poetry_venvs="cd $HOME/Library/Caches/pypoetry/virtualenvs/"
-export PATH="$HOME/.local/bin:$PATH"
+# export PATH="$HOME/.local/bin:$PATH"
 
 
 
@@ -243,7 +239,7 @@ export PATH="$HOME/.local/bin:$PATH"
 
 
 # [k8s]
-# export KUBECONFIG=$HOME/.k3s.yaml
+export KUBECONFIG=$HOME/.config/.k3s.yaml
 alias k="kubectl"
 alias kg="kubectl get"
 alias ka="kubectl apply -f"
