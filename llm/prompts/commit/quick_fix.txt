@@ -1,0 +1,7 @@
+🐛 fix HEX characters representation in `Model`
+
+### TL;DR
+- cleaned `Model.content` with regular expression
+
+### LINKS
+- https://www.website.com

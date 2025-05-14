@@ -1,0 +1,42 @@
+## TL;DR
+
+- `user facts` and `user document` database tables are added
+- `manage.py commands are added
+  - from `manage.py upsert_user_facts`
+  - and from `manage.py upsert_user_document`
+
+> _doublecheck some ciritcal parts, please_
+
+## LINKS
+
+- https://www.website.com
+
+## REASONING
+
+- the system needs to populate users facts, based on the profile and insights information
+- the system needs to populate users documents, based on the profile and facts about the user
+
+## DETAILED
+
+- `settings.py` has updated
+- `manage.py upsert_user_facts`
+  - provides `-u` parameter to specify user `UUID` to collect facts only about a single user
+  - omit `-u` parameter to run the process for all the users in database
+- `manage.py upsert_user_document`
+  - provides `-u` parameter to specify user `UUID` to generate document only for a single user
+  - omit `-u` parameter to run the process for all the users in database
+  - only LLM is used to DETERMINE the FACTS about the user
+  - after generation process information is embedded with default embedding model (`settings.EMBEDDING_MODEL`)
+- `SetupEngineManager.upsert_user_document` celery task implements how the document is generated
+  - generation process uses information from user's profile and generated facts
+  - only LLM is used to DETERMINE the DOCUMENT's content
+  - after generation process information is embedded with default embedding model (`settings.EMBEDDING_MODEL`)
+- improved logger usage with `logging.getLogger`
+- `ai.pipeline.prompts` now include templates for: _extracting facts from user profile_, _extracting facts from insights_ and _generating user document from facts_
+  - input, output, prompt structures are added
+  - Jinja2 templates are added
+- `tests/matchmaker/test_manager.py::TestSetupEngineManager` updated
+  - `test_upsert_user_facts` is added
+  - `test_upsert_user_document` is added
+  - mocks are added
+- `identity/` includes only formatting changes

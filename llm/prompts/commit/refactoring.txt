@@ -1,0 +1,40 @@
+## TL;DR
+
+Some improvements, related to the dependencies mangement and project dev-tools configuration
+
+## LINKS
+
+- https://peps.python.org/pep-0621/
+
+
+## REASONING
+
+1. `pip freeze`-like DOES NOT allow to separate DIRECT and TRANSITIVE depeendencies
+2. `pip-tools` prevents bugs issues, since it automatically checks compatible versions of packages which could be ommited by develper
+3. `pip-tools` provides 'audit' functionality which allows to inspect, verify, and understand which packages are used, why they're included, and whether any of them have known vulnerabilities or undesired transitive dependencies
+4. `pip-tools` allows easily upgrade dependencies. With regular `pip freeze` you can't upgrade transitive dependencies automatically
+5. from 2020 `pyproject.toml` is a candidate for storing python project metadata according to the PEP-621
+6. better to have all configurations (if possible) in a single file (`pyproject.toml`) instead of multiple
+
+## DETAILS
+
+1. `pip-tools` is used for managing project dependencies (requirements)
+2. `ruff` is upgraded
+3. `django-stubs-ext` is removed. Transitive dependency of `django-stubs`
+4. `coverage` is removed. Transitive dependency of `pytest-cov`
+5. `asgiref` is removed. Transitive dependency of `django`
+6. `sinch` is removed. Unused dependency. `SinchAdminSessionAuth` is used
+7. `openai` is upgraded
+8. `elevenlabs` is upgraded
+9. `.egg-info` is added to the `.gitignore`
+10. `Makefile` now includes commands to work with `pip-tools`
+11. `factory-boy` is upgraded to `v3.3.3`. Fixed MRO ordering with `Generic` classes
+12. `mypy` configuration is moved to the `pyproject.toml`
+13. `pytest` configuration is moved to the `pyproject.toml`
+
+
+## Future Improvements
+
+- [ ] Remove all transitive dependencies
+- [ ] Install security checkers (`safety`, `bandit`)
+
