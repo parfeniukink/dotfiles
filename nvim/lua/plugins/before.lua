@@ -46,9 +46,9 @@ lazy.setup({
         dependencies = {
             "nvim-lua/plenary.nvim",
             "nvim-telescope/telescope-fzf-native.nvim",
-          config = function()
-            require("telescope").load_extension("fzf")
-          end,
+            config = function()
+                require("telescope").load_extension("fzf")
+            end,
         }
     },
 
@@ -57,8 +57,9 @@ lazy.setup({
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate"
     },
-    { "ellisonleao/gruvbox.nvim", priority = 1000, config = true, },
+    { "ellisonleao/gruvbox.nvim",  priority = 1000, config = true, },
     { "rebelot/kanagawa.nvim" },
+    { "NLKNguyen/papercolor-theme" },
 
     -- better tabs
     {
@@ -95,6 +96,9 @@ lazy.setup({
         ft = { "markdown", "mermaid" },
     },
 
+    -- center viewport if 1 buffer
+    'smithbm2316/centerpad.nvim',
+
     -- smart comments
     "tpope/vim-commentary",
 
@@ -121,7 +125,7 @@ lazy.setup({
         opts = {},
         dependencies = {
             "nvim-lua/plenary.nvim",
-            "nvim-treesitter/nvim-treesitter",
+            { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
         },
     },
 

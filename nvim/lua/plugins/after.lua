@@ -34,7 +34,7 @@ ts.setup {
         enable = true,
         disable = {},
     },
-    ensure_installed = {},
+    ensure_installed = { "lua", "markdown", "markdown_inline", "yaml", "toml", "python", "javascript", "svelte", "typescript" },
     autotag = {
         enable = true,
     },
@@ -142,7 +142,7 @@ nmap("gdl", ":diffget //3<CR>")
 require('gitsigns').setup {}
 map("n", "gn", ":Gitsigns next_hunk<CR>", {})
 map("n", "gp", ":Gitsigns prev_hunk<CR>", {})
-map("n", "<Leader>pr", ":Gitsigns preview_hunk_inline<CR>", {})
+map("n", "<Leader>pr", ":Gitsigns preview_hunk<CR>", {})
 
 
 
@@ -295,8 +295,11 @@ lsp_defaults.capabilities = vim.tbl_deep_extend(
 
 vim.diagnostic.config({
     virtual_text = false,
-    signs = false,
     severity_sort = true,
+    update_in_insert = false,
+
+    signs = true,
+    underline = false,
 })
 
 local lsp_on_attach = function(_, _)
@@ -528,6 +531,164 @@ end, {})
 -- codecompanion
 -- -------------------------------------------------------------------
 require("codecompanion").setup({
+    prompt_library = {
+        ["Documentation Generation"] = {
+            strategy = "chat",
+            description = "Documentation Generation",
+            opts = {
+                ignore_system_prompt = true,
+            },
+            references = {
+                {
+                    type = "file",
+                    path = { -- This can be a string or a table of values
+                        "/Users/parfeniukink/dev/parfeniukink/dotfiles/llm/references/docstrings.py",
+                    },
+                },
+            },
+            prompts = {
+                {
+                    role = "system",
+                    content = [[
+                        You are an AI documentation assistant named "DmytroDocs".
+                        You are integrated with Neovim on a user's machine.
+
+                        Your core tasks include:
+                        - Generating clear, concise documentation for code snippets or full buffers.
+                        - Writing explanations for functions, classes, and modules.
+                        - Creating usage examples.
+                        - Following common documentation standards (e.g., docstrings, markdown).
+                        - Ensuring documentation is easy to understand.
+
+                        You must:
+                        - Follow user instructions carefully.
+                        - Use Markdown formatting for outputs.
+                        - Avoid unnecessary verbosity.
+                        - Provide only relevant code or text without extra markup.
+                        - Use actual line breaks instead of '\n' for new lines.
+
+                        When given a task:
+                        1. Read the code thoroughly.
+                        2. Generate appropriate documentation.
+                        3. Format it properly for the user's context.
+                    ]]
+                },
+                {
+                    role = "user",
+                    content = "Generate the documentation, based on the code I provided to you."
+                }
+            },
+        },
+        ["Commit Message"] = {
+            strategy = "chat",
+            description = "Commit Message",
+            opts = {
+                ignore_system_prompt = true,
+            },
+            references = {
+                {
+                    type = "file",
+                    path = { -- This can be a string or a table of values
+                        "/Users/parfeniukink/dev/parfeniukink/dotfiles/llm/prompts/commit/quick_fix.txt",
+                        "/Users/parfeniukink/dev/parfeniukink/dotfiles/llm/prompts/commit/feature_implementation.txt",
+                        "/Users/parfeniukink/dev/parfeniukink/dotfiles/llm/prompts/commit/refactoring.txt",
+                    },
+                },
+            },
+            prompts = {
+                {
+                    role = "system",
+                    content = [[
+                        You are an AI documentation assistant named "DmytroCommit".
+                        You are integrated with Neovim on a user's machine.
+
+                        Your core tasks include:
+                        - Reading Git diffs to understand the context of changes, made by human
+                        - Generating clear, easy-to-read commit messages for pull requests and git history
+                        - Additionaly correct spelling in made changes to prevent grammar mistakes
+
+                        You must:
+                        - Follow user instructions carefully.
+                        - Use Markdown formatting for outputs.
+                        - Avoid unnecessary verbosity.
+                        - Provide the output only in way that is defined in provided references
+                    ]]
+                },
+                {
+                    role = "user",
+                    content = "Generate the commit messages, based on the diff I provided to you."
+                }
+            },
+        },
+        ["Unit Test"] = {
+            strategy = "chat",
+            description = "Unit/Integration Test Generation",
+            opts = {
+                ignore_system_prompt = true,
+            },
+            prompts = {
+                {
+                    role = "system",
+                    content = [[
+                        You are an AI tests assistant named "DmytroTest".
+                        You are integrated with Neovim on a user's machine.
+
+                        Your core tasks include:
+                        - Generating clear test cases, based on some example
+                        - Generating clear test cases, in thin functions, using pytest if no examples provided
+
+                        You must:
+                        - Output only the code according to the context
+                        - Prefer docstrings instead of comments
+                        - Avoid unnecessary verbosity.
+                        - Use actual line breaks instead of '\n' for new lines.
+
+                    ]]
+                },
+                {
+                    role = "user",
+                    content = "Generate the test case, based on the code I provided to you."
+                }
+            },
+        },
+        ["Teacher Homework Reviewer"] = {
+            strategy = "chat",
+            description = "Teacher Homework Reviewer",
+            opts = {
+                ignore_system_prompt = true,
+            },
+            prompts = {
+                {
+                    role = "system",
+                    content = [[
+                        You are an AI assistant for reviewing student's homeworks.
+                        You are integrated with Neovim on a user's machine.
+
+                        Your core tasks include:
+                        - Analyze the homework task for further homework review
+                        - Analyze the homework itself to provide the feedback for student
+                        - Generating clean, without extra verbose replies which will allow student to fix the issue
+
+                        You must:
+                        - Not directly provide the answer for student
+                        - Include function names to specify directly where is the problem but not fix it
+                        - Not care if student adds extra job in homework. It is good
+                        - Help studen't to understand what is the issue
+                        - Include official documentation / trusted resources links for references if possible
+                        - Include recommendations even if the homework is good and working to boost student
+                        - Include the mark for the homewok from 0 to 100 and include in your response as separate information block in the end
+                        - Use actual line breaks instead of '\n' for new lines.
+
+                        The Task always goes first, then student's files below, and then, the language of the response.
+                    ]]
+                },
+                {
+                    role = "user",
+                    content = "TASK:\n\n\nHOMEWORK:"
+                }
+            },
+        },
+    },
     opts = {
         system_prompt = function(opts)
             return [[
@@ -636,6 +797,9 @@ require("codecompanion").setup({
     },
 
     display = {
+        action_palette = {
+            show_default_prompt_library = false
+        },
         inline = {
             layout = "vertical", -- vertical|horizontal|buffer
         },
@@ -660,8 +824,9 @@ require("codecompanion").setup({
 })
 
 nmap("<leader>i", ":CodeCompanionChat<CR>")
-vmap("<leader>o", ":CodeCompanionChat /buffer ")
-
+nmap("<leader>2", ":CodeCompanionAction<CR>")
+vmap("<leader>2", ":CodeCompanionAction<CR>")
+vmap("<leader>3", ":CodeCompanionChat add<CR>")
 
 
 -- huggingface/llm.nvim
@@ -700,48 +865,52 @@ vmap("<leader>o", ":CodeCompanionChat /buffer ")
 map("n", "<leader>h", "<cmd>TodoTelescope<CR>", {})
 
 
--- kanagawa.nvim
--- :KanagawaCompile
-require('kanagawa').setup({
-    compile = true,   -- enable compiling the colorscheme
-    undercurl = true, -- enable undercurls
-    commentStyle = { italic = false },
-    functionStyle = {},
-    keywordStyle = { italic = false },
-    statementStyle = { bold = false },
-    typeStyle = {},
-    transparent = true,    -- do not set background color
-    dimInactive = false,   -- dim inactive window `:h hl-NormalNC`
-    terminalColors = true, -- define vim.g.terminal_color_{0,17}
-    colors = {             -- add/modify theme and palette colors
-        palette = {},
-        theme = {
-            wave = {},
-            lotus = {},
-            dragon = {},
-            all = {
-                ui = {
-                    bg_gutter = "none"
-                }
-            }
-        },
+
+-- centerpad.nvim
+-- -------------------------------------------------------------------
+map('n', '<leader>z', '<cmd>Centerpad<cr>', { silent = true, noremap = true })
+
+
+require("gruvbox").setup({
+    terminal_colors = true,
+    undercurl = false,
+    underline = false,
+    bold = false,
+    italic = {
+        strings = false,
+        emphasis = false,
+        comments = false,
+        operators = false,
+        folds = false,
     },
-    overrides = function(colors) -- add/modify highlights
-        return {
-            Folded = { bg = "NONE", fg = colors.theme.ui.fg_dim },
-            FoldColumn = { bg = "NONE", fg = colors.theme.ui.fg_dim },
-            LineNr = { fg = colors.theme.ui.fg_dim, bg = "NONE" },
-            NormalFloat = { bg = "none" },
-            FloatBorder = { bg = "none" },
-        }
-    end,
-    theme = "wave",    -- Load "wave" theme
-    background = {     -- map the value of 'background' option to a theme
-        dark = "wave", -- try "dragon" !
-        light = "lotus"
-    },
+    strikethrough = true,
+    invert_selection = false,
+    invert_signs = false,
+    invert_tabline = false,
+    invert_intend_guides = false,
+    inverse = true,    -- invert background for search, diffs, statuslines and errors
+    contrast = "soft", -- can be "hard", "soft" or empty string
+    palette_overrides = {},
+    overrides = {},
+    dim_inactive = false,
+    transparent_mode = true,
 })
-vim.cmd("colorscheme kanagawa")
+
+vim.cmd([[
+    colorscheme gruvbox
+    set background=dark
+]])
+
+
+-- vim.g.PaperColor_Theme_Options = {
+--     theme = {
+--         default = {
+--             transparent_background = 1,
+--         },
+--     },
+-- }
+-- vim.cmd("colorscheme PaperColor")
+-- vim.cmd("set background=light")
 
 -- apply background transparency for themes which don't support those
 -- vim.cmd([[
