@@ -1,0 +1,11 @@
+--hidden                             # Include hidden files
+--glob=!{.git,node_modules,venv}     # Ignore common noisy directories
+--smart-case                         # Case-insensitive unless uppercase used
+--follow                             # Follow symlinks
+--line-number                        # Show line numbers
+--column                             # Show column numbers
+--color=always                       # Always use color
+--max-columns=200                    # Prevent issues with long lines
+--no-heading                         # Don't group results by file (scripting)
+--sort-files                         # Sort files in output
+

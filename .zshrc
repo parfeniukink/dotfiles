@@ -131,6 +131,9 @@ alias wip="git add . && git commit -m '🚧 WIP' -n && git push"
 alias grep="grep --color=auto"
 alias grep_empty="grep '^$'"
 
+# [rg]
+alias R="rg"
+
 # [bat]
 alias cat="bat"
 
@@ -248,8 +251,14 @@ alias kl="kubectl get all -o wide"
 alias kn="kubectl config set-context --namespace="
 
 
+alias run_services="brew services start postgresql@17; brew services start redis; brew services start rabbitmq"
+alias stop_services="brew services stop postgresql@17; brew services stop redis; brew services stop rabbitmq"
+
 # ==================================
 # export API keys
 # ==================================
 # automatically done by dotenv pluging
 # source ~/.env
+
+# Created by `pipx` on 2025-05-06 06:25:06
+export PATH="$PATH:/Users/parfeniukink/.local/bin"
