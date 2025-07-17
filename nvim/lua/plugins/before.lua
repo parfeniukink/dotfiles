@@ -57,7 +57,8 @@ lazy.setup({
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate"
     },
-    { "ellisonleao/gruvbox.nvim",  priority = 1000, config = true, },
+    { "catppuccin/nvim",           name = "catppuccin", priority = 1000 },
+    { "ellisonleao/gruvbox.nvim",  priority = 1000,     config = true, },
     { "rebelot/kanagawa.nvim" },
     { "NLKNguyen/papercolor-theme" },
 
@@ -109,6 +110,26 @@ lazy.setup({
     -- tag bar
     "majutsushi/tagbar",
 
+
+    -- sql
+    {
+        'kristijanhusak/vim-dadbod-ui',
+        dependencies = {
+            { 'tpope/vim-dadbod',                     lazy = true },
+            { 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }, lazy = true }, -- Optional
+        },
+        cmd = {
+            'DBUI',
+            'DBUIToggle',
+            'DBUIAddConnection',
+            'DBUIFindBuffer',
+        },
+        init = function()
+            -- Your DBUI configuration
+            vim.g.db_ui_use_nerd_fonts = 1
+        end,
+    },
+
     -- lsp
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
@@ -119,6 +140,16 @@ lazy.setup({
     "L3MON4D3/LuaSnip",
     "saadparwaiz1/cmp_luasnip",
     "rafamadriz/friendly-snippets",
+    {
+        'nvim-flutter/flutter-tools.nvim',
+        lazy = true,
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+        },
+        config = true,
+    },
+
+
     -- llm integration
     {
         "olimorris/codecompanion.nvim",

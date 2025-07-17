@@ -175,7 +175,7 @@ end
 require('telescope').setup {
     defaults = {
         wrap_results = true,
-        file_ignore_patterns = { "node_modules", ".git/", "build", "ios", "macos", "__pycache__", "venv", ".env" },
+        file_ignore_patterns = { "**/node_modules/", "**/.git/", "**/ios/", "**/macos/", "**/build/", "**/__pycache__/", "**/venv/" },
         buffer_previewer_maker = largeFilesIgnoringPreviewer,
         vimgrep_arguments = {
             'rg',
@@ -191,7 +191,7 @@ require('telescope').setup {
     pickers = {
         oldfiles = { initial_mode = "normal", sorter = sorters.fuzzy_with_index_bias() },
         command_history = { sorter = sorters.fuzzy_with_index_bias() },
-        find_files = { hidden = true, },
+        find_files = { hidden = true },
         git_files = { show_untracked = true, wrap_results = true }
     },
     extensions = {
@@ -292,7 +292,6 @@ lsp_defaults.capabilities = vim.tbl_deep_extend(
     lsp_defaults.capabilities,
     require('cmp_nvim_lsp').default_capabilities()
 )
-
 vim.diagnostic.config({
     virtual_text = false,
     severity_sort = true,
@@ -300,6 +299,8 @@ vim.diagnostic.config({
 
     signs = true,
     underline = false,
+    show_
+
 })
 
 local lsp_on_attach = function(_, _)
@@ -319,6 +320,10 @@ local lsp_on_attach = function(_, _)
 end
 
 vim.keymap.set('n', '<S-e>', ":LspRestart<CR>", {})
+
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+    border = "rounded",
+})
 
 lspconfig.lua_ls.setup {
     on_attach = lsp_on_attach,
@@ -410,18 +415,18 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 --     }
 -- }
 
-lspconfig.dartls.setup({
-    on_attach = lsp_on_attach,
-    settings = {
-        dart = {
-            analysisExcludedFolders = {
-                vim.fn.expand("/opt/homebrew"),
-                vim.fn.expand("$HOME/.pub-cache"),
-                vim.fn.expand("$HOME/flutter"),
-            }
-        }
-    }
-})
+-- lspconfig.dartls.setup({
+--     on_attach = lsp_on_attach,
+--     settings = {
+--         dart = {
+--             analysisExcludedFolders = {
+--                 vim.fn.expand("/opt/homebrew"),
+--                 vim.fn.expand("$HOME/.pub-cache"),
+--                 vim.fn.expand("$HOME/flutter"),
+--             }
+--         }
+--     }
+-- })
 
 local cmp = require("cmp")
 
@@ -486,7 +491,6 @@ vim.diagnostic.config({
         source = "always", -- Or "if_many"
     },
 })
-
 
 
 
@@ -688,6 +692,152 @@ require("codecompanion").setup({
                 }
             },
         },
+        ["Teacher Create Lesson"] = {
+            strategy = "chat",
+            description = "Teacher Create Lesson",
+            opts = {
+                ignore_system_prompt = true,
+            },
+            references = {
+                {
+                    type = "file",
+                    path = { -- This can be a string or a table of values
+                        "/Users/parfeniukink/dev/parfeniukink/dotfiles/llm/prompts/teacher/lessons/1_introduction.md",
+                        "/Users/parfeniukink/dev/parfeniukink/dotfiles/llm/prompts/teacher/lessons/2_start_digital_journal_project.md",
+                        "/Users/parfeniukink/dev/parfeniukink/dotfiles/llm/prompts/teacher/lessons/3_finish_digital_journal_project.md",
+                        "/Users/parfeniukink/dev/parfeniukink/dotfiles/llm/prompts/teacher/lessons/4_persistent_storage_files.md",
+                    },
+                },
+            },
+            prompts = {
+                {
+                    role = "system",
+                    content = [[
+                        You are an AI assistant for CREATING/EDITING/REVIEWING
+                        lessons teacher materials for students for the course "Python Pro"
+                        which is oriented on people, who are basically have minimal knowledge
+                        in development (hello world applications and basic python concepts).
+                        As minimum you will receive only the theme of the lesson.
+                        As maximum - existing materials that could be used only as a reference.
+
+                        You are integrated with Neovim on a user's machine.
+
+                        Your core tasks include:
+                        - You have to take files with examples and use them as a baseline for generating course materials
+                        - Depending on user's request either create a new one or update the existing lesson.
+                            - if you create a new lesson you MUST follow the same structure from existing files examples.
+                            - if you edit the lesson - you MUST follow user's instructions, like improvement, whatever
+                        - When you create a new lesson it must be as consistent as provided examples. The whole point of
+                            the course is to be consistent in themes to improve the project with time to represent the example
+                        - When building materials remember about time. The duration of the lesson is 3 hours.
+
+                    ]]
+                },
+                {
+                    role = "user",
+                    content = "Create the lesson content, based on the information I've provided to you."
+                }
+            },
+        },
+        ["Set Matches"] = {
+            strategy = "chat",
+            description = "Set Matches",
+            opts = {
+                ignore_system_prompt = true,
+            },
+            prompts = {
+                {
+                    role = "system",
+                    content = [[
+Below you can see the expected candidates order (positions):
+
+    1. Candidate 1, 0.93
+    2. Candidate 10, 0.92
+    3. Candidate 4, 0.89
+    4. Candidate 6, 0.87
+    5. Candidate 7, 0.85
+    6. Candidate 2, 0.81
+    7. Candidate 3, 0.78
+    8. Candidate 8, 0.76
+    9. Candidate 5, 0.72
+    10. Candidate 9, 0.70
+
+Add `position match` column to the table. possible values in the cell: `🟡`, `🟢`, `🔴`
+- if new position == position in the baseline candidates order - put `🟢`
+- if (new position - 1) or (new position + 1) == position in the baseline candidates order - put `🟡`
+- else - put `🔴`
+
+Other requirements:
+- The result table must be the same but with additional column
+- no other tables changes should be applied
+
+no other verbosity. only the table.
+                    ]]
+                },
+                {
+                    role = "user",
+                    content = "Provide a result table with `position match` column"
+                }
+            },
+        },
+        ["Scores Analyzer"] = {
+            strategy = "chat",
+            description = "Scores Analyzer",
+            opts = {
+                ignore_system_prompt = true,
+            },
+            references = {
+                {
+                    type = "file",
+                    path = {
+                        "/tmp/scores1.csv",
+                        "/tmp/scores2.csv",
+                        "/tmp/scores3.csv",
+                        "/tmp/scores4.csv",
+                        "/tmp/scores5.csv",
+                    },
+                },
+            },
+            prompts = {
+                {
+                    role = "system",
+                    content = [[
+You are a tool to analyze scores and build tables.
+
+Below you can see the EXPECTED positions of candidates (they are already ordered by the compatibility score, 0.93 for the 'Candidate 1').
+
+Candidate 1, 0.93 - position 1
+Candidate 10, 0.92 - position 2
+Candidate 4, 0.89 - position 3
+Candidate 6, 0.87 - position 4
+Candidate 7, 0.85 - position 5
+Candidate 2, 0.81 - position 6
+Candidate 3, 0.78 - position 7
+Candidate 8, 0.76 - position 8
+Candidate 5, 0.72 - position 9
+Candidate 9, 0.70 - position 10
+
+
+Your task is next:
+- Analyze CSV files with scores (5 different runs)
+- Put this data into markdown table with columns: `candidate,id,iter1,iter2,iter3,iter4,iter5,avg,baseline,position match`.
+- Column `baseline` includes the expected (baseline) score.
+- In `avg` column put a sum of scores for candidate from all iterations divided by number of iterations.
+- Don't include `id` field to your analytics
+- Order items in the table by `avg` column descending.
+- Add `position match` column with empty cells as last column. The content is based on the position (corresponding to the ordering by `avg` value)
+    - set 🟢 if the position (order number) in result table (ordered by `avg`) == expected position
+    - set 🟡 if the position (order number) difference is 1
+    - set 🔴 in other cases
+- No other verbosity, only table.
+                    ]]
+                },
+                {
+                    role = "user",
+                    content = "Provide table, based on scores for me"
+                }
+            },
+        },
     },
     opts = {
         system_prompt = function(opts)
@@ -866,6 +1016,25 @@ map("n", "<leader>h", "<cmd>TodoTelescope<CR>", {})
 
 
 
+-- DBUI
+-- -------------------------------------------------------------------
+vim.g.db_ui_icons = {
+    expanded = "▾",
+    collapsed = "▸",
+    saved_query = "*",
+    new_query = "+",
+    tables = "~",
+    buffers = "»",
+    connection_ok = "✓",
+    connection_error = "✕",
+}
+
+vim.g.db_ui_disable_progress_bar = 1
+
+map('n', '<leader>s', '<Plug>(DBUI_SaveQuery)', { silent = true, noremap = true })
+
+
+
 -- centerpad.nvim
 -- -------------------------------------------------------------------
 map('n', '<leader>z', '<cmd>Centerpad<cr>', { silent = true, noremap = true })
@@ -896,11 +1065,33 @@ require("gruvbox").setup({
     transparent_mode = true,
 })
 
+require("catppuccin").setup({
+    flavour = "mocha",
+    transparent_background = false,
+    integrations = {
+        gitsigns = true,
+        nvimtree = true,
+        treesitter = true,
+    },
+    color_overrides = {
+        mocha = {
+            base = "#3E2F1C", -- dark brown base (instead of original)
+            mantle = "#4B3928",
+            crust = "#5A4535",
+            text = "#D6C7A1", -- soft beige text
+            surface0 = "#5B482D",
+            surface1 = "#7D6642",
+            surface2 = "#A8895C",
+        }
+    }
+})
+
+
+-- gruvbox / catpuccin / simplebrown
 vim.cmd([[
-    colorscheme gruvbox
+    colorscheme simplebrown
     set background=dark
 ]])
-
 
 -- vim.g.PaperColor_Theme_Options = {
 --     theme = {
@@ -913,8 +1104,8 @@ vim.cmd([[
 -- vim.cmd("set background=light")
 
 -- apply background transparency for themes which don't support those
--- vim.cmd([[
---     hi NormalFloat ctermbg=NONE guibg=NONE
---     hi NormalNC ctermbg=NONE guibg=NONE
---     hi Normal ctermbg=NONE guibg=NONE
--- ]])
+vim.cmd([[
+    hi NormalFloat ctermbg=NONE guibg=NONE
+    hi NormalNC ctermbg=NONE guibg=NONE
+    hi Normal ctermbg=NONE guibg=NONE
+]])
