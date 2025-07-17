@@ -1,7 +1,7 @@
 [general]
 import = [
     "~/.config/alacritty/keybindings.toml",
-    "~/.config/alacritty/gruvbox.toml",
+    "~/.config/alacritty/simplebrown.toml",
 ]
 
 
@@ -23,7 +23,7 @@ bold = { family = "ComicShannsMono Nerd Font", style = "Bold" }
 
 [window]
 decorations = "transparent"  # buttonless / full / none
-opacity = 0.98
+opacity = 1
 startup_mode = "Windowed"
 padding = { x = 4, y = 24 }
 dimensions  = { columns = 165, lines = 50 }
