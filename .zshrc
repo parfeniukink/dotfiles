@@ -105,11 +105,14 @@ alias notes="/Users/parfeniukink/Library/Mobile\ Documents/iCloud~md~obsidian/Do
 alias ssh_config="nv ~/.ssh/config"
 alias nvim_config="nv ~/.config/nvim"
 
+
 alias dev="cd $DEV"
 alias mine="cd $DEV/parfeniukink"
 alias poc="cd $DEV/parfeniukink/poc && nvim"
 alias proj="cd $DEV/projects"
 alias dotfiles="cd $DEV/parfeniukink/dotfiles && nvim"
+
+alias pentest="cd ~/Documents/pentest"
 
 # [system commands]
 alias e="exit"
@@ -170,7 +173,7 @@ alias t="tree -C -a"
 # export DOCKER_BUILDKIT=1
 
 alias d="docker"
-alias di="docker images | sort"
+alias di="docker images"
 alias da="docker attach"
 alias dc="docker compose"
 alias db="docker compose build"
@@ -203,6 +206,8 @@ export PATH=/opt/homebrew/opt/postgresql@17/bin:$PATH
 # RUST_BACKTRACE=full
 
 
+# [ruby]
+export PATH="/opt/homebrew/Cellar/ruby/3.4.4/bin:$PATH"
 
 # [python]
 alias python="python3"
@@ -229,12 +234,12 @@ alias poetry_venvs="cd $HOME/Library/Caches/pypoetry/virtualenvs/"
 
 # [dart]
 # path to pub packages
-# PATH="$PATH":"$HOME/.pub-cache/bin"
+PATH="$PATH":"$HOME/.pub-cache/bin"
 # path to flutter binaries
-# export PATH="$HOME/flutter/bin:$PATH"
+export PATH="$HOME/flutter/bin:$PATH"
 # CocaPods
-# export GEM_HOME=$HOME/.gem
-# export PATH=$GEM_HOME/bin:$PATH
+export GEM_HOME=$HOME/.gem
+export PATH=$GEM_HOME/bin:$PATH
 
 
 # [kafka]
@@ -251,8 +256,18 @@ alias kl="kubectl get all -o wide"
 alias kn="kubectl config set-context --namespace="
 
 
-alias run_services="brew services start postgresql@17; brew services start redis; brew services start rabbitmq"
-alias stop_services="brew services stop postgresql@17; brew services stop redis; brew services stop rabbitmq"
+# [brew services]
+alias start_services="brew services start postgresql@17; brew services start redis; brew services start rabbitmq; brew services start memcached; brew services start mailpit"
+alias stop_services="brew services stop postgresql@17; brew services stop redis; brew services stop rabbitmq; brew services stop memcached; brew services stop mailpit"
+
+# [brew services]
+alias wgup="sudo wg-quick up homecp"
+alias wgdown="sudo wg-quick down homecp"
+
+# [Metasploit]
+PATH=$PATH:/opt/metasploit-framework/bin
+
+
 
 # ==================================
 # export API keys
