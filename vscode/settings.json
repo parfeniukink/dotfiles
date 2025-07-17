@@ -1,160 +1,140 @@
 {
-    "editor.cursorStyle": "block",
-    "editor.wordWrap": "off",
-    "editor.tabSize": 4,
-    "editor.fontSize": 13,
-    "editor.lineHeight": 22,
-    // "editor.fontFamily": "Jetbrains Mono Light",
-    "editor.fontFamily": "JetBrainsMono Nerd Font",
-    "editor.insertSpaces": true,
-    "editor.linkedEditing": true,
-    "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
-    "editor.rulers": [
-        // 79
-    ],
-    "editor.suggestSelection": "first",
-    "explorer.confirmDelete": false,
-    "explorer.confirmDragAndDrop": false,
-    "debug.console.closeOnEnd": true,
-    "workbench.tree.indent": 25,
-    "workbench.tree.renderIndentGuides": "none",
-    "workbench.editor.showIcons": false,
-    "workbench.editor.tabSizing": "shrink",
-    "workbench.editor.pinnedTabSizing": "compact",
-    "workbench.editorAssociations": {
-        "*.ipynb": "jupyter-notebook",
-        "*.sqlite3": "default"
-    },
-    // Third party
-    "vim.vimrc.enable": true,
-    "vim.foldfix": true,
-    "vim.useSystemClipboard": true,
-    "git.autofetch": true,
-    "gitlens.codeLens.authors.enabled": false,
-    "gitlens.codeLens.recentChange.enabled": false,
-    "gitlens.codeLens.enabled": false,
-    "gitlens.hovers.currentLine.over": "line",
-    "gitlens.currentLine.enabled": false,
-    "python.linting.flake8Path": "flake8",
-    "python.linting.enabled": true,
-    "python.linting.pylintArgs": [
-        "--reports",
-        "12",
-        "--disable",
-        "I0011"
-    ],
-    "python.linting.flake8Args": [
-        "--ignore=E501"
-    ],
-    "security.workspace.trust.untrustedFiles": "open",
-    "notebook.cellToolbarLocation": {
-        "default": "right",
-        "jupyter-notebook": "left"
-    },
-    "launch": {
-        "configurations": [],
-        "compounds": []
-    },
-    "editor.renderWhitespace": "none",
-    "docker.containers.groupBy": "Compose Project Name",
-    "gitlens.advanced.messages": {
-        "suppressFileNotUnderSourceControlWarning": true
-    },
-    "isort.path": [
-        "isort"
-    ],
-    "python.formatting.provider": "black",
-    "python.linting.mypyArgs": [
-        "--follow-imports=silent",
-        "--show-column-numbers",
-        "--no-pretty"
-    ],
-    "editor.minimap.enabled": false,
-    "terminal.external.osxExec": "Alacritty.app",
-    "terminal.explorerKind": "external",
-    "terminal.integrated.defaultProfile.osx": "zsh",
-    "CodeGPT.query.language": "English",
-    "vim.normalModeKeyBindings": [
-        {
-            "before": [
-                "<space>"
-            ],
-            "commands": [
-                "editor.action.commentLine"
-            ],
-            "when": "editorTextFocus && !editorReadonly"
-        }
-    ],
-    "vim.visualModeKeyBindings": [
-        {
-            "before": [
-                "<space>"
-            ],
-            "commands": [
-                "editor.action.commentLine"
-            ],
-            "when": "editorTextFocus && !editorReadonly"
-        }
-    ],
-    "dart.openDevTools": "flutter",
-    "workbench.layoutControl.enabled": false,
-    "window.titleBarStyle": "native",
-    "window.nativeTabs": true,
-    "explorer.decorations.badges": false,
-    "dart.devToolsBrowser": "default",
-    "workbench.iconTheme": "file-icons",
-    "python.analysis.typeCheckingMode": "basic",
-    "[python]": {
-        "editor.formatOnType": true,
-        "editor.defaultFormatter": "ms-python.python"
-    },
-    "editor.inlineSuggest.enabled": true,
-    "vim.smartRelativeLine": true,
-    "editor.formatOnSaveMode": "modifications",
-    "python.analysis.stubPath": "stubs",
-    // "python.analysis.inlayHints.functionReturnTypes": true,
-    // "python.analysis.inlayHints.variableTypes": true,
-    "python.analysis.inlayHints.pytestParameters": true,
-    "workbench.colorTheme": "Kanagawa",
-    "github.copilot.enable": {
-        "*": false,
-        "yaml": false,
-        "plaintext": false,
-        "markdown": false,
-        "scminput": false
-    },
-    "python.linting.flake8Enabled": true,
-    "json.schemas": [
-    
-    ],
-    "[html]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[css]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[jinja]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
-    },
-    "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[javascriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[jsonc]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "window.zoomLevel": 1,
-    "editor.lineNumbers": "relative",
-
+  "editor.cursorStyle": "block",
+  "editor.wordWrap": "off",
+  "editor.tabSize": 4,
+  "editor.fontSize": 13,
+  "editor.lineHeight": 22,
+  // "editor.fontFamily": "Jetbrains Mono Light",
+  "editor.fontFamily": "JetBrainsMono Nerd Font",
+  "editor.insertSpaces": true,
+  "editor.linkedEditing": true,
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+  "editor.rulers": [
+    // 79
+  ],
+  "editor.suggestSelection": "first",
+  "editor.renderWhitespace": "none",
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "debug.console.closeOnEnd": true,
+  "workbench.tree.indent": 25,
+  "workbench.tree.renderIndentGuides": "none",
+  "workbench.editor.showIcons": false,
+  "workbench.editor.tabSizing": "shrink",
+  "workbench.editor.pinnedTabSizing": "compact",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook",
+    "*.sqlite3": "default"
+  },
+  // Third party
+  "vim.vimrc.enable": true,
+  "vim.foldfix": true,
+  "vim.useSystemClipboard": true,
+  "git.autofetch": true,
+  "gitlens.codeLens.authors.enabled": false,
+  "gitlens.codeLens.recentChange.enabled": false,
+  "gitlens.codeLens.enabled": false,
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.currentLine.enabled": false,
+  "python.linting.flake8Path": "flake8",
+  "python.linting.enabled": true,
+  "python.linting.pylintArgs": ["--reports", "12", "--disable", "I0011"],
+  "python.linting.flake8Args": ["--ignore=E501"],
+  "security.workspace.trust.untrustedFiles": "open",
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "launch": {
+    "configurations": [],
+    "compounds": []
+  },
+  "docker.containers.groupBy": "Compose Project Name",
+  "gitlens.advanced.messages": {
+    "suppressFileNotUnderSourceControlWarning": true
+  },
+  "isort.path": ["isort"],
+  "python.formatting.provider": "black",
+  "python.linting.mypyArgs": [
+    "--follow-imports=silent",
+    "--show-column-numbers",
+    "--no-pretty"
+  ],
+  "editor.minimap.enabled": false,
+  "terminal.external.osxExec": "Alacritty.app",
+  "terminal.explorerKind": "external",
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "CodeGPT.query.language": "English",
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["<space>"],
+      "commands": ["editor.action.commentLine"],
+      "when": "editorTextFocus && !editorReadonly"
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["<space>"],
+      "commands": ["editor.action.commentLine"],
+      "when": "editorTextFocus && !editorReadonly"
+    }
+  ],
+  "dart.openDevTools": "flutter",
+  "workbench.layoutControl.enabled": false,
+  "window.titleBarStyle": "native",
+  "window.nativeTabs": true,
+  "explorer.decorations.badges": false,
+  "dart.devToolsBrowser": "default",
+  "workbench.iconTheme": "file-icons",
+  "python.analysis.typeCheckingMode": "basic",
+  "[python]": {
+    "editor.formatOnType": true,
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  "editor.inlineSuggest.enabled": true,
+  "vim.smartRelativeLine": true,
+  "editor.formatOnSaveMode": "modifications",
+  "python.analysis.stubPath": "stubs",
+  // "python.analysis.inlayHints.functionReturnTypes": true,
+  // "python.analysis.inlayHints.variableTypes": true,
+  "python.analysis.inlayHints.pytestParameters": true,
+  "workbench.colorTheme": "Kanagawa",
+  "github.copilot.enable": {
+    "*": false,
+    "yaml": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "python.linting.flake8Enabled": true,
+  "json.schemas": [],
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jinja]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "window.zoomLevel": 1,
+  "editor.lineNumbers": "relative"
 }
