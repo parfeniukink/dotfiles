@@ -1,6 +1,7 @@
 [general]
 import = [
     "~/.config/alacritty/keybindings.toml",
+    # "~/.config/alacritty/gruvbox-light.toml",
     "~/.config/alacritty/simplebrown.toml",
 ]
 
@@ -10,15 +11,14 @@ TERM = "xterm-256color"
 
 
 [font]
-size= 16
+size= 14
 offset.x = 1
 offset.y = 2
 normal = { family = "ComicShannsMono Nerd Font", style = "Regular" }
 bold = { family = "ComicShannsMono Nerd Font", style = "Bold" }
-
 # normal = { family = "JetBrainsMono Nerd Font Mono", style = "Regular" }
 # bold = { family = "JetBrainsMono Nerd Font Mono", style = "Bold" }
-# italic = { family = "JetBrainsMono Nerd Font Mono", style = "Italic" }
+# italic = { family = "JetBrainsMono Nerd Font Mono", style = "Thin" }
 
 
 [window]

@@ -64,10 +64,3 @@ magenta = "#a8895c"
 cyan    = "#735f3a"
 white   = "#a5a486"
 
-[[colors.indexed_colors]]
-index = 16
-color = "#b0935a"   # peach/keyword
-
-[[colors.indexed_colors]]
-index = 17
-color = "#e6d7a7"   # cursor/bright fg
