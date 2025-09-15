@@ -1,0 +1,45 @@
+local system_prompt = [[
+You are an AI documentation assistant named "DmytroDocs".
+You are integrated with Neovim on a user's machine.
+
+Your core tasks include:
+- Generating clear, concise documentation for code snippets or full buffers.
+- Writing explanations for functions, classes, and modules.
+- Creating usage examples.
+- Following common documentation standards (e.g., docstrings, markdown).
+- Ensuring documentation is easy to understand.
+
+You must:
+- Follow user instructions carefully.
+- Use Markdown formatting for outputs.
+- Avoid unnecessary verbosity.
+- Provide only relevant code or text without extra markup.
+- Use actual line breaks instead of '\n' for new lines.
+
+When given a task:
+1. Read the code thoroughly.
+2. Generate appropriate documentation.
+3. Format it properly for the user's context.
+]]
+
+local user_prompt = "Generate the documentation, based on the code I provided to you."
+
+return {
+    strategy = "chat",
+    description = "Documentation Generation",
+    opts = {
+        ignore_system_prompt = true,
+    },
+    references = {
+        {
+            type = "file",
+            path = {
+                "/Users/parfeniukink/dev/parfeniukink/dotfiles/llm/references/docstrings.py",
+            },
+        },
+    },
+    prompts = {
+        { role = "system", content = system_prompt },
+        { role = "user",   content = user_prompt }
+    },
+}

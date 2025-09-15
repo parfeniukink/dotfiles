@@ -1,0 +1,2 @@
+nmap("t", ":TagbarToggle<CR>")
+

@@ -1,7 +1,7 @@
 -- relative numbers
--- vim.opt.rnu = true
+vim.opt.rnu = true
 -- numbers width
--- vim.opt.nuw = 2
+vim.opt.nuw = 2
 vim.opt.signcolumn = "yes"
 
 
@@ -46,3 +46,14 @@ vim.cmd("set expandtab")
 
 -- bufflisted [testing]
 vim.cmd("set buflisted")
+
+
+-- markdown configuration
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "markdown",
+    callback = function()
+        vim.opt_local.tabstop = 4
+        vim.opt_local.shiftwidth = 4
+        vim.opt_local.expandtab = true
+    end,
+})

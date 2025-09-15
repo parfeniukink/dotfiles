@@ -1,4 +1,4 @@
 -- vim.opt.runtimepath:prepend("~/.config/nvim/lazy/lazy.nvim")
 
-require("custom")
+require("core")
 require("plugins")

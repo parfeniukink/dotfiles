@@ -17,15 +17,14 @@ local palette = {
     type = "#d46101",    -- light brown
     -- method = "#e67f48",    -- orange
     -- type = "#e67f48",
+    --
 
     const = "#ffa07a", -- light salmon
     cursor = "#e6d7a7",
     line = "#4b3928",
     -- git diff
     diffadd = "#48643b",
-    diffchg = "#735f3a",
-    diffgone = "#3e2f1c",
-    diffdel = "#704b32",
+    diffchg = "#dda727",
     gitadd = "#627454",
     gitchg = "#b6a265",
     gitdel = "#a85a32",
@@ -34,6 +33,17 @@ local palette = {
     red = "#d76453",
     sky = "#95bdff",
     visual = "#735731",
+}
+
+local new_palette = {
+    white = "#d1d1d1",
+    black = "#231b0f",
+    gray = "#c1b894",
+    default = "#e2d8ad", -- fg soft yellow
+    green_light = "#b8bb26",
+    green_dark = "#808638",
+    red = "#d76453",
+    red_dark = "#a64d3f",
 }
 
 
@@ -83,10 +93,10 @@ hi("GitSignsChange", { fg = palette.gitchg })
 hi("GitSignsDelete", { fg = palette.gitdel })
 
 -- Diff
-hi("DiffAdd", { bg = palette.diffadd })
-hi("DiffChange", { bg = palette.diffchg })
-hi("DiffDelete", { bg = palette.diffdel })
-hi("DiffText", { bg = palette.gitchg })
+hi("DiffAdd", { bg = "#686d43" })
+hi("DiffChange", { bg = "#525742", fg = palette.diffchg })
+hi("DiffDelete", { bg = "#525742", fg = new_palette.gray })
+hi("DiffText", { bg = "#525742", fg = "#dda727" })
 
 hi("diffLine", { link = "Normal" })
 hi("diffSubName", { link = "Normal" })
@@ -118,7 +128,11 @@ hi("FoldColumn", { fg = palette.fg, bg = palette.bg })
 
 
 -- Diagnostics
-hi("DiagnosticHint", { fg = palette.red, bg = "NONE" })
+hi("DiagnosticHint", { fg = new_palette.white, bg = "NONE" })
+hi("DiagnosticError", { fg = new_palette.red, bg = "NONE" })
+
+hi("DiagnosticFloatingHint", { fg = new_palette.green_light, bg = "NONE" })
+hi("DiagnosticFloatingError", { fg = palette.red, bg = "NONE" })
 
 
 -- Python
@@ -153,4 +167,12 @@ hi("@lsp.type.property.lua", { link = "Normal" })
 -- TOML
 hi("@property.toml", { link = "Keyword" })
 
-hi("NormalFloat", { bg = "NONE" })
+hi("NormalFloat", { bg = new_palette.black })
+
+
+-- Markdown
+hi("@label.markdown", { bg = new_palette.black, fg = new_palette.white })
+hi("@markup.heading.1.markdown", { fg = new_palette.green_light })
+hi("@markup.heading.2.markdown", { fg = new_palette.green_light })
+
+hi("NvimTreeFolderArrowClosed", {bg = "NONE"})

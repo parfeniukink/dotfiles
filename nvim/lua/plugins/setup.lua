@@ -57,10 +57,10 @@ lazy.setup({
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate"
     },
-    { "catppuccin/nvim",           name = "catppuccin", priority = 1000 },
-    { "ellisonleao/gruvbox.nvim",  priority = 1000,     config = true, },
-    { "rebelot/kanagawa.nvim" },
-    { "NLKNguyen/papercolor-theme" },
+    { "ellisonleao/gruvbox.nvim", priority = 1000, config = true, },
+    -- { "catppuccin/nvim",           name = "catppuccin", priority = 1000 },
+    -- { "rebelot/kanagawa.nvim" },
+    -- { "NLKNguyen/papercolor-theme" },
 
     -- better tabs
     {
@@ -96,9 +96,6 @@ lazy.setup({
         end,
         ft = { "markdown", "mermaid" },
     },
-
-    -- center viewport if 1 buffer
-    'smithbm2316/centerpad.nvim',
 
     -- smart comments
     "tpope/vim-commentary",
@@ -142,13 +139,21 @@ lazy.setup({
     "rafamadriz/friendly-snippets",
     {
         'nvim-flutter/flutter-tools.nvim',
-        lazy = true,
+        lazy = false,
         dependencies = {
             'nvim-lua/plenary.nvim',
+            'stevearc/dressing.nvim', -- optional for vim.ui.select
         },
         config = true,
     },
-
+    -- formatting
+    {
+        "stevearc/conform.nvim",
+        event = { "BufReadPre", "BufNewFile" },
+        opts = {},
+    },
+    -- svelte
+    'leafOfTree/vim-svelte-plugin',
 
     -- llm integration
     {
@@ -159,15 +164,5 @@ lazy.setup({
             { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
         },
     },
-
-    -- formatting
-    {
-        "stevearc/conform.nvim",
-        event = { "BufReadPre", "BufNewFile" },
-        opts = {},
-    },
-
-    -- svelte
-    'leafOfTree/vim-svelte-plugin',
 
 })
