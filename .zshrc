@@ -15,9 +15,9 @@ export LC_ALL="en_US.UTF-8"
 export LC_CTYPE="en_US.UTF-8"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="robbyrussell"
+ZSH_THEME="robbyrussell"
 # ZSH_THEME="agnoster"
-ZSH_THEME="simple"
+# ZSH_THEME="simple"
 
 export EDITOR=nvim
 export VISUAL="$EDITOR"
@@ -134,9 +134,6 @@ alias wip="git add . && git commit -m '🚧 WIP' -n && git push"
 alias grep="grep --color=auto"
 alias grep_empty="grep '^$'"
 
-# [rg]
-alias R="rg"
-
 # [bat]
 alias cat="bat"
 
@@ -211,6 +208,7 @@ export PATH="/opt/homebrew/Cellar/ruby/3.4.4/bin:$PATH"
 
 # [python]
 alias python="python3"
+export PYTHONUNBUFFERED=1
 export PYTHONBREAKPOINT=ipdb.set_trace
 export PYTHONDEVMODE=1
 export PYTHONASYNCIODEBUG=1
@@ -268,6 +266,16 @@ alias wgdown="sudo wg-quick down homecp"
 PATH=$PATH:/opt/metasploit-framework/bin
 
 
+
+# [Ngrok]
+alias ng="ngrok http --url=pet-bobcat-calm.ngrok-free.app"
+
+
+# ==================================
+# [Sync commands]
+# ==================================
+alias syncnotes="rsync -azP /Users/parfeniukink/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Dmytro/ homecp:/home/homecp/ai-assistant/Dmytro/"
+alias syncdb="rsync -vP homecp:/home/homecp/data/fambb/dump.sql.gz /Users/parfeniukink/Library/Mobile\ Documents/com~apple~CloudDocs/dump.sql.gz"
 
 # ==================================
 # export API keys
